@@ -1,0 +1,37 @@
+/* Only this category. Transforms carry the child's marks/eraser and face along. */
+.living-target:is(.articulated-kid_baby,.articulated-kid_bows,.articulated-kid_curls,.articulated-kid_rain,.articulated-kid_sleepy) { --people-cycle: 2s; }
+.living-target.articulated-kid_baby { --people-cycle: 1.8s; }
+.living-target.articulated-kid_rain { --people-cycle: 2.4s; }
+.living-target.articulated-kid_sleepy { --people-cycle: 3.2s; }
+.living-target[class*="articulated-kid_"]:is(.dance,.hop) { animation:none; }
+[class*="articulated-kid_"] #living [data-part] { transform-box:view-box; }
+[class*="articulated-kid_"] #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]) { transform-origin:167px 151px; }
+[class*="articulated-kid_"] #living [data-part="leftarm"] { transform-origin:120px 164px; }
+[class*="articulated-kid_"] #living [data-part="rightarm"] { transform-origin:214px 164px; }
+[class*="articulated-kid_"] #living [data-part="leftleg"] { transform-origin:145px 238px; }
+[class*="articulated-kid_"] #living [data-part="rightleg"] { transform-origin:189px 238px; }
+[class*="articulated-kid_"].dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]) { animation:people-nod var(--people-cycle) ease-in-out infinite; }
+[class*="articulated-kid_"].dance #living [data-part="leftarm"] { animation:people-wave-left var(--people-cycle) ease-in-out infinite; }
+[class*="articulated-kid_"].dance #living [data-part="rightarm"] { animation:people-wave-right var(--people-cycle) ease-in-out infinite; }
+[class*="articulated-kid_"].dance #living [data-part="leftleg"] { animation:people-step-left var(--people-cycle) ease-in-out infinite; }
+[class*="articulated-kid_"].dance #living [data-part="rightleg"] { animation:people-step-right var(--people-cycle) ease-in-out infinite; }
+[class*="articulated-kid_"].hop #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]) { animation:people-nod 1100ms ease-in-out; }
+[class*="articulated-kid_"].hop #living [data-part="leftarm"] { animation:people-wave-left 1100ms ease-in-out; }
+[class*="articulated-kid_"].hop #living [data-part="rightarm"] { animation:people-wave-right 1100ms ease-in-out; }
+[class*="articulated-kid_"].hop #living [data-part="leftleg"] { animation:people-step-left 1100ms ease-in-out; }
+[class*="articulated-kid_"].hop #living [data-part="rightleg"] { animation:people-step-right 1100ms ease-in-out; }
+[class*="articulated-kid_"] #living :is(.expression-eye,.expression-mouth) { transform-box:fill-box; transform-origin:center; }
+[class*="articulated-kid_"].dance #living .expression-eye { animation:people-blink 4s linear infinite; }
+[class*="articulated-kid_"].hop #living .expression-mouth { animation:people-smile 1100ms ease-in-out; }
+@keyframes people-nod { 0%,50%,100% { transform:rotate(0); } 25% { transform:rotate(-5deg); } 75% { transform:rotate(5deg); } }
+@keyframes people-wave-left { 0%,100% { transform:rotate(0); } 30% { transform:rotate(22deg); } 65% { transform:rotate(8deg); } }
+@keyframes people-wave-right { 0%,100% { transform:rotate(0); } 30% { transform:rotate(-8deg); } 65% { transform:rotate(-22deg); } }
+@keyframes people-step-left { 0%,50%,100% { transform:rotate(0); } 25% { transform:rotate(8deg); } 75% { transform:rotate(-3deg); } }
+@keyframes people-step-right { 0%,50%,100% { transform:rotate(0); } 25% { transform:rotate(3deg); } 75% { transform:rotate(-8deg); } }
+@keyframes people-blink { 0%,43%,48%,100% { transform:scaleY(1); } 45%,46% { transform:scaleY(.14); } }
+@keyframes people-smile { 0%,100% { transform:scale(1); } 40%,65% { transform:scale(1.12,1.25); } }
+.people-mode { position:absolute; z-index:5; top:calc(14 * var(--u)); left:calc(490 * var(--u)); border:2px solid #9ad8ec; border-radius:22px; background:#fff; color:#366478; font:600 calc(18 * var(--u))/1.2 system-ui,sans-serif; padding:calc(9 * var(--u)) calc(16 * var(--u)); cursor:pointer; }
+.people-mode:focus-visible { outline:3px solid #3268bd; outline-offset:3px; }
+@media(prefers-reduced-motion:reduce) {
+ .living-target[class*="articulated-kid_"], .living-target[class*="articulated-kid_"] #living * { animation:none!important; transition:none!important; }
+}

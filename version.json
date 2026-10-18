@@ -1,9 +1,11 @@
 {
-  "version": "0.6.0-rc1",
-  "deployment": "combined-qa-only",
+  "version": "0.7.0-rc1",
+  "deployment": "baby-qa-only",
   "source_checkpoints": {
     "animals": "8b7446c48f9d11c104d29805a99f2b94bae5a6d1",
     "dinosaurs": "b5132add708ccdd887bbf428bfbd2749e2c6c4ef",
-    "launch": "019716bba6ca4187db26ef6261cbb3374f337ce4"
-  }
+    "launch": "019716bba6ca4187db26ef6261cbb3374f337ce4",
+    "baby": "95b8116e4d5f4bd700fddecd32f6dd02bb81a216"
+  },
+  "base_combined_checkpoint": "51372ab4633f5dc89432467f845f1522990ff52e"
 }
