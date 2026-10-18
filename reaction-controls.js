@@ -3,7 +3,7 @@
 export function reactionDescriptors(model) {
  const seen=new Set();
  return (Array.isArray(model?.reactions)?model.reactions:[]).filter(r=>{
-  if(!r||typeof r.id!=='string'||!/^[a-z][a-z0-9-]*$/.test(r.id)||seen.has(r.id)||typeof r.label!=='string'||!r.label.trim()||typeof r.icon!=='string'||!/^\s*<svg[\s>]/i.test(r.icon)||!/<\/svg>\s*$/i.test(r.icon)||typeof r.loop!=='boolean'||(!r.loop&&(!Number.isFinite(r.durationMs)||r.durationMs<=0)))return false;
+  if(!r||typeof r.id!=='string'||!/^[a-z][a-z0-9_-]*$/.test(r.id)||seen.has(r.id)||typeof r.label!=='string'||!r.label.trim()||typeof r.icon!=='string'||!/^\s*<svg[\s>]/i.test(r.icon)||!/<\/svg>\s*$/i.test(r.icon)||typeof r.loop!=='boolean'||(!r.loop&&(!Number.isFinite(r.durationMs)||r.durationMs<=0)))return false;
   seen.add(r.id);return true;
  });
 }

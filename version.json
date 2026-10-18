@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0-eight-rc1",
+  "version": "0.8.0-eight-rc2",
   "deployment": "eight-category-expansion-qa",
   "source_checkpoints": {
     "animals": "5dfb5d7825bc979b99c56edabe138fbb09d36f0b",
