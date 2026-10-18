@@ -1,0 +1,48 @@
+/* The whole painted part moves, including child marks and expression geometry. */
+.living-target:is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens):is(.dance,.hop){animation:none}
+:is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) #living [data-part]{transform-box:view-box}
+:is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) #living .expression-eye{transform-box:fill-box;transform-origin:center}
+:is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens).dance .expression-eye{animation:win-blink 4s linear infinite}
+.articulated-winter_snowman #living [data-part="body"]{transform-origin:167px 300px}
+.articulated-winter_snowman #living :is([data-part="head"],[data-part="hat"],[data-part="nose"]){transform-origin:167px 176px}
+.articulated-winter_snowman #living :is([data-part="arms"],[data-part="scarf"]){transform-origin:167px 190px}
+.articulated-winter_snowman.dance #living [data-part="body"]{animation:win-body 2s ease-in-out infinite}
+.articulated-winter_snowman.dance #living :is([data-part="head"],[data-part="hat"],[data-part="nose"]){animation:win-nod 2s ease-in-out infinite}
+.articulated-winter_snowman.dance #living [data-part="arms"]{animation:win-wave 2s ease-in-out infinite}
+.articulated-winter_snowman.dance #living [data-part="scarf"]{animation:win-scarf 2s ease-in-out infinite}
+.articulated-winter_snowman.hop #living [data-part="body"]{animation:win-bounce 1s ease-in-out}
+.articulated-winter_snowman.hop #living :is([data-part="head"],[data-part="hat"],[data-part="nose"]){animation:win-head-hop 1s ease-in-out}
+.articulated-winter_snowman.hop #living :is([data-part="arms"],[data-part="scarf"]){animation:win-wave-hop 1s ease-in-out}
+.articulated-winter_tree #living [data-part]{transform-origin:167px 300px}
+.articulated-winter_tree.dance #living [data-part]{animation:win-tree 2.8s ease-in-out infinite}
+.articulated-winter_tree.hop #living [data-part]{animation:win-tree-hop 1.2s ease-in-out}
+/* Layers share sway, decorations flex a little around their attachment plane. */
+.articulated-winter_tree.dance #living [data-part="star"]{animation:win-star 2.8s ease-in-out infinite}
+.articulated-winter_tree.hop #living [data-part="star"]{animation:win-star-hop 1.2s ease-in-out}
+.articulated-winter_mittens #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){transform-origin:118px 266px}
+.articulated-winter_mittens #living :is([data-part="right"],[data-part="rightCuff"],[data-part="rightPatch"]){transform-origin:217px 266px}
+.articulated-winter_mittens.dance #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){animation:win-left 2s ease-in-out infinite}
+.articulated-winter_mittens.dance #living :is([data-part="right"],[data-part="rightCuff"],[data-part="rightPatch"]){animation:win-right 2s ease-in-out infinite}
+.articulated-winter_mittens.hop #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){animation:win-left-hop 1s ease-in-out}
+.articulated-winter_mittens.hop #living :is([data-part="right"],[data-part="rightCuff"],[data-part="rightPatch"]){animation:win-right-hop 1s ease-in-out}
+@keyframes win-body{0%,50%,100%{transform:scale(1)}25%,75%{transform:scale(1.015,.985)}}
+@keyframes win-nod{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}}
+@keyframes win-wave{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes win-scarf{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(2deg)}75%{transform:rotate(-2deg)}}
+@keyframes win-bounce{0%,100%{transform:scale(1)}25%{transform:scale(1.04,.96)}55%{transform:translateY(-6px) scale(.98,1.02)}}
+@keyframes win-head-hop{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(4px) rotate(3deg)}55%{transform:translateY(-10px) rotate(-5deg)}}
+@keyframes win-wave-hop{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}55%{transform:translateY(-6px) rotate(8deg)}}
+@keyframes win-tree{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes win-star{0%,50%,100%{transform:rotate(0) translate(0,-248px) rotate(0) translate(0,248px)}25%{transform:rotate(-3deg) translate(0,-248px) rotate(-7deg) translate(0,248px)}75%{transform:rotate(3deg) translate(0,-248px) rotate(7deg) translate(0,248px)}}
+@keyframes win-tree-hop{0%,100%{transform:scale(1)}25%{transform:scale(1.025,.98)}55%{transform:scale(.985,1.015)}}
+@keyframes win-star-hop{0%,100%{transform:scale(1) translate(0,-248px) rotate(0) translate(0,248px)}25%{transform:scale(1.025,.98) translate(0,-248px) rotate(-12deg) translate(0,248px)}55%{transform:scale(.985,1.015) translate(0,-248px) rotate(12deg) translate(0,248px)}}
+@keyframes win-left{0%,50%,100%{transform:rotate(0)}25%{transform:translateY(-5px) rotate(-9deg)}75%{transform:rotate(4deg)}}
+@keyframes win-right{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:translateY(-5px) rotate(9deg)}}
+@keyframes win-left-hop{0%,100%{transform:rotate(0)}30%{transform:rotate(10deg)}60%{transform:translateY(-8px) rotate(-12deg)}}
+@keyframes win-right-hop{0%,100%{transform:rotate(0)}30%{transform:rotate(-10deg)}60%{transform:translateY(-8px) rotate(12deg)}}
+@keyframes win-blink{0%,42%,49%,100%{transform:scaleY(1)}45%,46%{transform:scaleY(.15)}}
+@media(prefers-reduced-motion:reduce){
+ .living-target:is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens),
+ :is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) #living [data-part],
+ :is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) .expression-eye{animation:none!important}
+}

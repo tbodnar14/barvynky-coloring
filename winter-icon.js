@@ -1,0 +1,2 @@
+// A broad six-arm snowflake stays distinct at the 65 px category-tab size.
+export function categoryIconSVG(){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 13 L50 87 M18 31 L82 69 M18 69 L82 31 M39 20 L50 31 L61 20 M39 80 L50 69 L61 80 M20 45 L31 39 L31 26 M69 74 L69 61 L80 55 M20 55 L31 61 L31 74 M69 26 L69 39 L80 45"/></g></svg>';}

@@ -1,0 +1,15 @@
+import {CHARACTERS as CARS} from './cars-art.js';
+import {categoryIconSVG as CARS_ICON} from './cars-icon.js';
+import {CHARACTERS as FRUIT} from './fruit-art.js';
+import {categoryIconSVG as FRUIT_ICON} from './fruit-icon.js';
+import {CHARACTERS as SPACE} from './space-art.js';
+import {categoryIconSVG as SPACE_ICON} from './space-icon.js';
+import {CHARACTERS as WINTER} from './winter-art.js';
+import {categoryIconSVG as WINTER_ICON} from './winter-icon.js';
+import {CHARACTERS as HALLOWEEN} from './halloween-art.js';
+import {categoryIconSVG as HALLOWEEN_ICON} from './halloween-icon.js';
+import {CHARACTERS as BUTTERFLIES} from './butterflies-art.js';
+import {categoryIconSVG as BUTTERFLIES_ICON} from './butterflies-icon.js';
+export const CATEGORY_MODELS={...CARS,...FRUIT,...SPACE,...WINTER,...HALLOWEEN,...BUTTERFLIES};
+export const CATEGORY_IDS={car:Object.keys(CARS),fruit:Object.keys(FRUIT),space:Object.keys(SPACE),tree:Object.keys(WINTER),pumpkin:Object.keys(HALLOWEEN),butterfly:Object.keys(BUTTERFLIES)};
+export const CATEGORY_ICONS={car:CARS_ICON,fruit:FRUIT_ICON,space:SPACE_ICON,tree:WINTER_ICON,pumpkin:HALLOWEEN_ICON,butterfly:BUTTERFLIES_ICON};

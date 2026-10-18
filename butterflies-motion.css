@@ -1,0 +1,32 @@
+/* Wings carry their own fill, strokes, outline and masks. Pattern regions use
+   exactly their host wing pivot and animation, so painted patches never drift. */
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth){--bf-period:1.8s;--bf-hop:1100ms}
+.articulated-butterfly_swallowtail{--bf-period:2.2s}
+.articulated-butterfly_moth{--bf-period:1.4s}
+.living-target:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop){animation:none}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living [data-part]{transform-box:view-box}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living [data-part="lowerLeft"]{transform-origin:162px 190px}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living [data-part="lowerRight"]{transform-origin:172px 190px}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living [data-part="head"]{transform-origin:167px 136px}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bf-left var(--bf-period) ease-in-out infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bf-right var(--bf-period) ease-in-out infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living [data-part="lowerLeft"]{animation:bf-lower-left var(--bf-period) ease-in-out infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living [data-part="lowerRight"]{animation:bf-lower-right var(--bf-period) ease-in-out infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living [data-part="head"]{animation:bf-nod 3s ease-in-out infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth) #living .expression-eye{transform-box:fill-box;transform-origin:center}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).dance #living .expression-eye{animation:bf-blink 3s linear infinite}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bf-left var(--bf-hop) ease-in-out}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bf-right var(--bf-hop) ease-in-out}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living [data-part="lowerLeft"]{animation:bf-lower-left var(--bf-hop) ease-in-out}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living [data-part="lowerRight"]{animation:bf-lower-right var(--bf-hop) ease-in-out}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living [data-part="head"]{animation:bf-nod var(--bf-hop) ease-in-out}
+:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth).hop #living .expression-eye{animation:bf-blink var(--bf-hop) linear}
+@keyframes bf-left{0%,100%{transform:scaleX(1) rotate(0)}35%{transform:scaleX(.58) rotate(5deg)}70%{transform:scaleX(.95) rotate(-2deg)}}
+@keyframes bf-right{0%,100%{transform:scaleX(1) rotate(0)}35%{transform:scaleX(.58) rotate(-5deg)}70%{transform:scaleX(.95) rotate(2deg)}}
+@keyframes bf-lower-left{0%,100%{transform:scaleX(1) rotate(0)}40%{transform:scaleX(.68) rotate(-4deg)}75%{transform:scaleX(.98) rotate(2deg)}}
+@keyframes bf-lower-right{0%,100%{transform:scaleX(1) rotate(0)}40%{transform:scaleX(.68) rotate(4deg)}75%{transform:scaleX(.98) rotate(-2deg)}}
+@keyframes bf-nod{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}70%{transform:rotate(5deg)}}
+@keyframes bf-blink{0%,35%,45%,100%{transform:scaleY(1)}40%{transform:scaleY(.2)}}
+@media(prefers-reduced-motion:reduce){:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop),:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop) #living *{animation:none!important;transform:none!important}}

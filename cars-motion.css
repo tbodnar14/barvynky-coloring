@@ -1,0 +1,20 @@
+/* Transform whole paint groups: a child's marks remain attached to the vehicle. */
+.living-target:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire):is(.dance,.hop){animation:none}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living [data-part="rearWheel"]{transform-origin:80px 254px}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living [data-part="frontWheel"]{transform-origin:254px 254px}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).dance #living [data-part]{animation:cars-bounce 1.2s ease-in-out infinite}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).dance #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cars-roll 1.2s linear infinite}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).hop #living [data-part]{animation:cars-greet 1100ms ease-in-out}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cars-wheel-greet 1100ms ease-in-out}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).dance .expression-eye{animation:cars-blink 2.4s linear infinite}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).hop .expression-eye{animation:cars-blink 1100ms linear}
+:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire).hop .expression-mouth{animation:cars-smile 1100ms ease-in-out}
+@keyframes cars-bounce{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-5px)}}
+@keyframes cars-roll{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes cars-greet{0%,100%{transform:translateY(0) rotate(0)}22%{transform:translateY(3px) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}78%{transform:translateY(1px) rotate(0)}}
+@keyframes cars-wheel-greet{0%,100%{transform:rotate(0)}22%{transform:rotate(-15deg)}50%{transform:translateY(-3px) rotate(25deg)}78%{transform:rotate(-8deg)}}
+@keyframes cars-blink{0%,38%,51%,100%{transform:scaleY(1)}43%,46%{transform:scaleY(.15)}}
+@keyframes cars-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.1,1.25)}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire),:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living *{animation:none!important}}
