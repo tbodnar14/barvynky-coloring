@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="3600" viewBox="-1200 -900 3600 3600" role="img" aria-label="Дитяча кімната з мольбертом та малюнком динозаврика">
+<!-- Extended original room; coordinates 0..1200 / 0..900 retain the original composition. -->
+<defs>
+  <linearGradient id="wall" gradientUnits="userSpaceOnUse" gradientTransform="scale(1200 900)" x2="1" y2="1"><stop stop-color="#da87f2"/><stop offset=".48" stop-color="#f1a7f9"/><stop offset="1" stop-color="#dd87ee"/></linearGradient>
+  <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#ffc46b"/><stop offset=".48" stop-color="#ffa445"/><stop offset="1" stop-color="#f58c2a"/></linearGradient>
+  <linearGradient id="woodside"><stop stop-color="#bd5b24"/><stop offset="1" stop-color="#ef9c45"/></linearGradient>
+  <linearGradient id="floor" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 523) scale(1200 377)" x2="0" y2="1"><stop stop-color="#edbd8d"/><stop offset=".5" stop-color="#ffe3ae"/><stop offset="1" stop-color="#ffd495"/></linearGradient>
+  <linearGradient id="rug" x2="0" y2="1"><stop stop-color="#9293ff"/><stop offset=".5" stop-color="#ac9bfd"/><stop offset="1" stop-color="#8376ed"/></linearGradient>
+  <radialGradient id="ruglight"><stop stop-color="#dac0ff" stop-opacity=".8"/><stop offset="1" stop-color="#c6aeff" stop-opacity="0"/></radialGradient>
+  <filter id="rug-pile" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".72 .92" numOctaves="3" seed="23" stitchTiles="stitch" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 1  0 0 0 0 .89  0 0 0 0 1  .6 .6 .6 0 -.61"/>
+  </filter>
+  <filter id="rug-mottle" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".025 .085" numOctaves="3" seed="8" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 .99 0 0 0 0 .82 0 0 0 0 1 0 0 0 .38 -.05"/>
+  </filter>
+  <clipPath id="rug-clip"><path d="M-49 599C-12 565 212 557 479 558C794 556 1094 565 1199 592C1231 600 1240 614 1197 628C1090 670 801 675 578 675C277 675 41 654-37 631Z"/></clipPath>
+  <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffef6"/><stop offset=".4" stop-color="#fff"/><stop offset="1" stop-color="#fffefd"/></linearGradient>
+  <linearGradient id="curtain"><stop stop-color="#ffcf37"/><stop offset=".48" stop-color="#ffe76e"/><stop offset="1" stop-color="#fff295"/></linearGradient>
+  <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#b6df68"/><stop offset="1" stop-color="#6bb641"/></linearGradient>
+  <linearGradient id="pot" x2="0" y2="1"><stop stop-color="#d28139"/><stop offset="1" stop-color="#b95723"/></linearGradient>
+  <linearGradient id="bear" x2="1" y2="1"><stop stop-color="#ffc36a"/><stop offset=".45" stop-color="#ffa943"/><stop offset="1" stop-color="#ed8732"/></linearGradient>
+  <linearGradient id="brush" x2="0" y2="1"><stop stop-color="#ff7cab"/><stop offset=".4" stop-color="#ff3479"/><stop offset="1" stop-color="#e91a65"/></linearGradient>
+  <linearGradient id="bristle" x2="1" y2="1"><stop stop-color="#ed8b1f"/><stop offset=".7" stop-color="#cf5f0b"/><stop offset="1" stop-color="#b34c06"/></linearGradient>
+  <linearGradient id="metal"><stop stop-color="#efebe8"/><stop offset=".45" stop-color="#e6c4c4"/><stop offset="1" stop-color="#c9a8aa"/></linearGradient>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#83dcf7"/><stop offset="1" stop-color="#adebfd"/></linearGradient>
+  <linearGradient id="green" x2="1" y2="1"><stop stop-color="#61c328"/><stop offset="1" stop-color="#38ae18"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="2" dy="5" stdDeviation="3" flood-color="#753e59" flood-opacity=".25"/></filter>
+  <filter id="softshadow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="7"/></filter>
+  <clipPath id="dinoclip"><path d="M261 359C238 328 239 251 258 208C270 180 290 175 311 188C325 196 332 212 341 218C365 224 365 244 349 255C335 264 317 261 297 257C294 271 295 286 299 299C326 296 344 307 358 319C376 332 391 330 399 313C409 291 421 270 444 263C424 280 425 304 422 324C418 359 394 375 370 382L279 382Z"/></clipPath>
+</defs>
+<!-- Original vector room artwork. Reference screenshots are used only as visual evidence, never embedded. -->
+<path fill="url(#wall)" d="M-1200-900H2400V2700H-1200Z"/>
+<path fill="#fff" opacity=".035" d="M150 0h36v525h-36zM318 0h44v525h-44zM511 0h36v525h-36zM697 0h38v525h-38zM1098 0h39v525h-39z"/>
+<!-- Lighthearted bunting is drawn into the room, independent of controls. -->
+<g stroke-linejoin="round"><path d="M-12 49Q43 36 127-11" fill="none" stroke="#7964a5" stroke-width="5"/><path d="M-12 49 28 38 26 102Q7 98-12 82Z" fill="#ffe75c" stroke="#e8ba40" stroke-width="2"/><path d="M75 17 130-10 142 60Q141 65 135 63Z" fill="#8edb55" stroke="#73b546" stroke-width="2"/><path d="m206-8 16 11 10-11" fill="#ff6e82"/><path d="M125 0 135 53" stroke="#b8ef85" stroke-width="3" fill="none"/></g>
+<!-- Window: visible sky and soft, generously proportioned white frame. -->
+<g filter="url(#shadow)">
+<path d="M852-15H1220V259H852Z" fill="#f9eeee" stroke="#e6c6cf" stroke-width="5"/>
+<path d="M868 0H1114V215H868ZM1158 0H1220V215H1158Z" fill="url(#sky)"/>
+<g fill="#dcf8ff" opacity=".85"><path d="M953 149c-15-18 2-37 20-34 3-29 41-31 49-5 22-20 51-9 56 13 20-7 40 4 44 24Z"/><path d="M868 57c13-4 17-14 15-26 22 2 32 30 16 43-7 6-22 8-31 8Z"/><path d="M1158 66c16-28 37-35 62-29v52h-62Z"/><path d="M868 215v-25c23-25 52-15 56 8 26-12 46-2 52 17Z"/></g>
+<path d="M1121 0h25v227h-25zM858 225h361v22H858Z" fill="#fffaf9"/>
+</g>
+<!-- Curtain hanging over the left window panel. -->
+<path d="M852-10H1000C989 21 970 59 949 88L958 123C954 148 958 172 971 192L875 204C865 169 859 139 860 111Z" fill="url(#curtain)" stroke="#eab14b" stroke-width="3"/>
+<path d="M865-6C863 32 869 61 875 85L890 90C882 51 880 18 884-6ZM924-6C923 34 909 70 898 92L912 93C942 59 952 17 954-6Z" fill="#ffd640" opacity=".55"/>
+<path d="M984 0C972 39 957 65 944 83" fill="none" stroke="#fff09b" stroke-width="7" opacity=".65"/>
+<path d="M874 124C875 151 881 175 889 198L907 196C900 173 896 146 896 124Z" fill="#ffe476"/>
+<path d="M932 124c2 24 8 47 17 68" fill="none" stroke="#fff2a2" stroke-width="7"/>
+<path d="M858 78c24 10 57 15 91 10l3 30c-20 9-57 3-91-8Z" fill="#ffcf3a" stroke="#eeb242" stroke-width="2"/>
+<path d="M868 81c27 9 53 12 76 10" stroke="#ffe879" stroke-width="4" fill="none"/>
+<!-- A few small handmade pictures taped to the wall. -->
+<g transform="rotate(-12 688 129)" filter="url(#shadow)"><path d="M651 69Q681 64 726 68L727 177L650 177Z" fill="#fffcd9"/><path d="M688 61h8l-1 17h-7z" fill="#f7dd8a"/><circle cx="690" cy="125" r="15" fill="none" stroke="#ffdc57" stroke-width="3"/><path d="M690 96v-9m0 67v9m-30-38h-9m69 0h9m-61-21-7-7m51 51 7 7m-7-51 7-7m-51 51-7 7" stroke="#ffdc57" stroke-width="4" stroke-linecap="round"/></g>
+<g transform="rotate(7 580 291)" filter="url(#shadow)"><path d="M535 222Q570 218 622 223L625 342L539 345Z" fill="#fffbd7"/><path d="M572 215h13l3 18h-14z" fill="#ffdf83"/>
+<path d="M581 323q-3-17 0-37M581 323q-21-29-32-23 5 18 32 25m0-2q22-33 31-22-2 18-31 24" fill="none" stroke="#78b66a" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M575 255C568 239 579 233 586 240C590 244 589 250 587 256C598 245 612 253 606 263C603 268 598 270 592 270C608 275 609 287 599 290C592 291 587 282 585 278C589 295 577 302 572 291C570 287 572 282 574 278C563 291 550 286 554 275C557 269 562 269 566 268C549 263 550 249 560 249C567 249 572 255 575 259Z" fill="#fff7c4" stroke="#a8a0ef" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M570 260Q578 253 586 260Q592 268 584 275Q575 281 568 272Q564 265 570 260Z" fill="#fff4ad" stroke="#ffdf55" stroke-width="4"/>
+</g>
+<!-- Lower wall trim and warm wooden floor extend into the space left by removed advertising. -->
+<path d="M-1200 479H2400V525H-1200Z" fill="#e8a5ed"/>
+<path d="M-1200 485H2400" fill="none" stroke="#f5bbf5" stroke-width="5"/>
+<path d="M-1200 523H2400V2700H-1200Z" fill="url(#floor)"/>
+<path d="M-1200 525H2400" stroke="#c38d73" stroke-opacity=".45" stroke-width="5"/>
+<g stroke="#d5a67c" stroke-width="2" opacity=".26"><path d="M-1005 525 -8081 2700M-898 525 -7434.6 2700M-791 525 -6788.2 2700M-684 525 -6141.8 2700M-577 525 -5495.4 2700M-470 525 -4849 2700M-363 525 -4202.6 2700M-256 525 -3556.2 2700M-149 525 -2909.8 2700M-42 525 -2263.4 2700M65 525 -1617 2700M171 525 -965.8 2700M278 525 -319.4 2700M386 525 322.2 2700M491 525 978.2 2700M599 525 1619.8 2700M707 525 2261.4 2700M815 525 2903 2700M922 525 3549.4 2700M1029 525 4195.8 2700M1137 525 4837.4 2700M1242 525 5493.4 2700M1349 525 6139.8 2700M1456 525 6786.2 2700M1563 525 7432.6 2700M1670 525 8079 2700M1777 525 8725.4 2700M1884 525 9371.8 2700M1991 525 10018.2 2700M2098 525 10664.6 2700M2205 525 11311 2700M2312 525 11957.4 2700M2419 525 12603.8 2700"/><path d="M-1200 620h3600M-1200 744h3600M-1200 896h3600M-1200 1080h3600M-1200 1300h3600M-1200 1560h3600M-1200 1864h3600M-1200 2216h3600M-1200 2620h3600"/></g>
+<ellipse cx="601" cy="637" rx="655" ry="42" fill="#735cb1" opacity=".24" filter="url(#softshadow)"/>
+<path d="M-49 599C-12 565 212 557 479 558C794 556 1094 565 1199 592C1231 600 1240 614 1197 628C1090 670 801 675 578 675C277 675 41 654-37 631Z" fill="url(#rug)" stroke="#7e68d4" stroke-width="3"/>
+<g clip-path="url(#rug-clip)"><ellipse cx="608" cy="608" rx="589" ry="57" fill="url(#ruglight)"/><rect x="-60" y="554" width="1310" height="125" filter="url(#rug-mottle)" opacity=".62"/><rect x="-60" y="554" width="1310" height="125" filter="url(#rug-pile)" opacity=".52"/>
+<path d="M-31 626C186 679 903 698 1194 630" fill="none" stroke="#7762cf" stroke-width="7" opacity=".35"/></g>
+<g fill="#c8b8ff" opacity=".36"><ellipse cx="1043" cy="594" rx="18" ry="4" transform="rotate(12 1043 594)"/><ellipse cx="1071" cy="603" rx="11" ry="3" transform="rotate(12 1071 603)"/><ellipse cx="559" cy="658" rx="15" ry="3"/><ellipse cx="468" cy="651" rx="10" ry="3"/></g>
+<!-- Left cabinet and leafy house plant. -->
+<g stroke="#bf7c38" stroke-width="3" stroke-linejoin="round"><path d="M-25 430H134V550L127 558H111L107 545H-25Z" fill="url(#wood)"/><path d="M-20 448H115V484H-20ZM-20 490H115V527H-20Z" fill="#ffbb63"/><path d="M-24 414Q-22 410-8 410H133Q145 411 146 423V438Q145 444 137 444H-24Z" fill="url(#wood)"/><path d="M-20 417H130Q140 417 140 425" fill="none" stroke="#ffe29b" stroke-width="4"/><circle cx="2" cy="464" r="7" fill="#ffda98"/><circle cx="2" cy="507" r="7" fill="#ffda98"/></g>
+<g fill="url(#leaf)" stroke="#85b852" stroke-width="2.5"><path d="M55 364C24 346 24 318 30 298 53 302 66 331 55 364Z"/><path d="M55 362C49 312 59 283 94 273 94 298 91 339 55 362Z"/><path d="M56 364C60 335 88 316 113 324 108 346 84 361 56 364Z"/><path d="M53 363C20 360 6 347 11 323 35 320 49 339 53 363Z"/></g>
+<g fill="none" stroke="#6a9f42" stroke-width="2.5" stroke-linecap="round"><path d="M54 371 77 292M57 370l-19-53m19 52 39-36m-42 36-28-30"/></g>
+<path d="M24 374H92L83 410Q54 423 34 410Z" fill="url(#pot)" stroke="#b46e32" stroke-width="3"/><rect x="18" y="363" width="82" height="19" rx="8" fill="#cb8139" stroke="#b66a34" stroke-width="3"/><path d="M24 368h68" stroke="#e6a35a" stroke-width="3" stroke-linecap="round"/>
+<!-- Easel: sloping wood legs, shelf, and bright paper. -->
+<ellipse cx="342" cy="606" rx="161" ry="23" fill="#663b85" opacity=".26" filter="url(#softshadow)"/>
+<g stroke="#954621" stroke-width="4" stroke-linejoin="round">
+<path d="M287 452 264 574q-1 7 8 8h24l34-132Z" fill="url(#woodside)"/>
+<path d="M214 459 190 608q-1 9 12 10h37l23-160Z" fill="url(#wood)"/>
+<path d="M421 457 459 599q3 8 14 7l38-3-40-151Z" fill="url(#wood)"/>
+<path d="M255 527 438 518l6 25-194 13Z" fill="url(#wood)"/>
+<path d="M307 439 332 523l30-3-15-80Z" fill="url(#wood)"/>
+<path d="M278 81Q287 75 310 79L324 162l-44 3-8-69Q271 84 278 81Z" fill="url(#wood)"/>
+</g>
+<path d="M220 478 201 601M434 474 472 595M282 88l8 58" fill="none" stroke="#ffd38b" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+<path d="M152 158Q170 154 184 158H465Q477 158 480 171L514 449 165 467 131 185Q127 171 152 158Z" fill="#d9d0c6" stroke="#a69175" stroke-width="4"/>
+<path d="M152 158H464Q474 159 476 170L510 447 167 462Z" fill="url(#paper)"/>
+<!-- The dinosaur is an original friendly drawing with visible green crayon marks. -->
+<path d="M261 359C238 328 239 251 258 208C270 180 290 175 311 188C325 196 332 212 341 218C365 224 365 244 349 255C335 264 317 261 297 257C294 271 295 286 299 299C326 296 344 307 358 319C376 332 391 330 399 313C409 291 421 270 444 263C424 280 425 304 422 324C418 359 394 375 370 382L279 382Z" fill="url(#green)" stroke="#228511" stroke-width="4" stroke-linejoin="round"/>
+<g clip-path="url(#dinoclip)" stroke="#76cd38" stroke-opacity=".52" stroke-width="5" stroke-linecap="round"><path d="M236 198 295 245M241 214l60 48m-62-33 57 46m-59-33 66 56m-68-37 58 51m-56-29 67 57m-62-31 65 55m-60-29 67 56m-56-28 49 43m-28-210 55 46m-45-59 58 53m-44-28 50 46m-26 87 45 41m-24-49 51 45m-12-43 36 36m-11-46 31 28m-9-47 32 29"/></g>
+<g fill="#379f19" stroke="#258c12" stroke-width="3"><path d="M271 206q-9-5-7-11 8-8 15 1 0 7-8 10Z"/><path d="M283 193q-7-7-1-12 9-2 12 6-2 7-11 6Z"/><path d="M285 219q-8-2-6-11 7-8 13 0 1 8-7 11Z"/><path d="M307 315q-12-4-9-13 10-7 22 2 1 10-13 11Z"/></g>
+<path d="M263 367Q301 380 340 362Q386 357 427 346C422 371 404 387 391 391L384 430Q374 433 359 430L358 390Q347 386 338 389L335 432Q320 435 311 431L307 394Q294 391 284 385L285 430Q272 434 259 430L254 390Z" fill="#fff" stroke="#46413e" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M263 367Q282 386 306 387M358 390Q356 358 376 356Q398 351 405 383" fill="none" stroke="#46413e" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M256 356q42 13 76 5" fill="none" stroke="#eebc31" stroke-width="8"/>
+<path d="M324 242q8 17 20 6" fill="none" stroke="#142c10" stroke-width="2.5" stroke-linecap="round"/>
+<ellipse cx="315" cy="222" rx="12" ry="13" fill="#fff" stroke="#263a1f" stroke-width="2"/><ellipse cx="316" cy="223" rx="9" ry="10" fill="#111"/><circle cx="312" cy="218" r="3.6" fill="#fff"/><circle cx="344" cy="231" r="3.5" fill="#18310e"/>
+<g stroke="#9c4b24" stroke-width="4" stroke-linejoin="round"><path d="M269 139q-13 2-13 12v11q0 9 13 10l92-1q13-1 13-10l-2-16q-1-8-14-8Z" fill="url(#wood)"/><path d="M177 455 525 438q14 1 16 12l1 11q-1 10-13 11L179 491q-13 0-15-11l-1-10q1-13 14-15Z" fill="url(#wood)"/></g>
+<path d="M271 143h81q9 0 10 4m-182 314 340-16" stroke="#ffdb92" stroke-width="4" stroke-linecap="round" fill="none"/><ellipse cx="357" cy="146" rx="6" ry="3" fill="#fff0c2"/>
+<!-- An oversized brush leans across the easel, with warm bristles and a glossy pink handle. -->
+<g stroke-linejoin="round">
+<path d="M351 391C371 404 405 417 432 437C461 459 491 480 499 491C503 500 495 503 485 501C458 497 420 481 397 465C377 447 358 428 342 408Z" fill="url(#brush)" stroke="#9e1648" stroke-width="4"/>
+<path d="M365 406C402 423 441 448 471 476" fill="none" stroke="#ff95b8" stroke-width="5" stroke-linecap="round"/>
+<path d="M335 390 350 383 383 404Q379 421 361 433L340 411Z" fill="url(#metal)" stroke="#8c6b6d" stroke-width="3"/>
+<path d="M347 393 371 409Q366 418 355 423" stroke="#b9999c" stroke-width="3" fill="none"/>
+<path d="M343 416C323 412 307 396 307 375C307 344 331 322 356 315C367 311 377 314 380 318C372 330 373 344 378 356C382 367 388 373 385 380C383 386 377 387 374 393C366 409 355 417 343 416Z" fill="url(#bristle)" stroke="#8d350e" stroke-width="4"/>
+<path d="M370 321C361 339 365 354 372 367C375 374 373 378 369 381" fill="none" stroke="#ffe5ac" stroke-width="5.5" stroke-linecap="round"/>
+<path d="M322 356C314 381 328 402 347 406" fill="none" stroke="#bd560b" stroke-width="4" stroke-linecap="round"/>
+</g>
+<!-- Teddy bear, softly shaded to keep the scene welcoming and playful. -->
+<g stroke="#d58b3f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="1128" cy="545" rx="88" ry="18" fill="#b66b61" opacity=".18" stroke="none"/>
+<ellipse cx="1086" cy="366" rx="20" ry="24" fill="url(#bear)" transform="rotate(-25 1086 366)"/><ellipse cx="1170" cy="371" rx="19" ry="24" fill="url(#bear)" transform="rotate(25 1170 371)"/>
+<path d="M1075 353q-7 6-6 13" stroke="#ffe2a2" stroke-width="4" fill="none"/><ellipse cx="1087" cy="369" rx="11" ry="14" fill="#ffdf9b" stroke="none"/><ellipse cx="1168" cy="373" rx="10" ry="14" fill="#ffdf9b" stroke="none"/>
+<path d="M1084 436q-31 9-43 30-7 17 6 22 17 8 39-19Z" fill="url(#bear)"/>
+<ellipse cx="1123" cy="480" rx="48" ry="60" fill="url(#bear)"/><ellipse cx="1121" cy="482" rx="33" ry="45" fill="#ffdc94" stroke="none"/>
+<path d="M1155 437q28 17 37 53 4 18-9 22-19 1-26-21l-15-38Z" fill="url(#bear)"/>
+<ellipse cx="1068" cy="516" rx="25" ry="34" fill="url(#bear)" transform="rotate(-25 1068 516)"/><ellipse cx="1119" cy="532" rx="25" ry="31" fill="url(#bear)" transform="rotate(14 1119 532)"/>
+<ellipse cx="1067" cy="517" rx="14" ry="23" fill="#ffe09e" stroke="none" transform="rotate(-25 1067 517)"/><ellipse cx="1119" cy="534" rx="14" ry="22" fill="#ffe09e" stroke="none" transform="rotate(14 1119 534)"/>
+<path d="M1071 385q9-35 48-35 40-2 55 35 16 39-15 56-21 12-56 3-37-11-32-59Z" fill="url(#bear)"/>
+<ellipse cx="1114" cy="414" rx="23" ry="19" fill="#ffdf9d" stroke="none"/>
+<ellipse cx="1095" cy="394" rx="4.5" ry="5" fill="#512c1b" stroke="none"/><ellipse cx="1133" cy="399" rx="4.5" ry="5" fill="#512c1b" stroke="none"/>
+<circle cx="1093.5" cy="392.5" r="1.4" fill="#fff" stroke="none"/><circle cx="1131.5" cy="397.5" r="1.4" fill="#fff" stroke="none"/>
+<path d="M1102 407q9-7 19 1 2 8-9 9-11-1-10-10Z" fill="#643922" stroke="none"/>
+<path d="M1112 416v9m0-2q-10 8-13-1m13 1q9 9 15 0" fill="none" stroke="#643922" stroke-width="2.5"/>
+</g>
+<!-- Small beach ball at the floor edge. -->
+<g transform="rotate(-21 1176 542)"><circle cx="1176" cy="542" r="36" fill="#14c9f7" stroke="#df9354" stroke-width="2"/><path d="M1140 542h72a36 36 0 0 1-72 0Z" fill="#ff5366"/><path d="M1176 506q-15 35 0 72a36 36 0 0 0 0-72Z" fill="#954be4"/><path d="M1176 506q-8 17-3 36h-33q-1-32 36-36Z" fill="#2dd6f7"/><path d="M1151 517q9-7 17-6" stroke="#95f0ff" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="1176" cy="541" r="7" fill="#fff"/></g>
+<!-- Airy wall glints echo the illustration's lacquered toy material without placing a button. -->
+<g fill="#fffacb" opacity=".8"><circle cx="643" cy="427" r="3"/><circle cx="1042" cy="402" r="3"/><path d="m683 502 3 6 6 3-6 3-3 6-3-6-6-3 6-3Z"/><circle cx="799" cy="519" r="3"/></g>
+</svg>

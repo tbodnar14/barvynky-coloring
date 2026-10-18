@@ -1,0 +1,39 @@
+/* Launch-only layout. One unit is one coordinate in the original 1200 × 900 art.
+   Keep controls and illustration on that same scale; extend the room beyond it. */
+.launch {
+  --launch-height: 100vh;
+  --launch-safe-top: env(safe-area-inset-top, 0px);
+  --launch-safe-right: env(safe-area-inset-right, 0px);
+  --launch-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --launch-safe-left: env(safe-area-inset-left, 0px);
+  --u: min(
+    calc((100vw - var(--launch-safe-left) - var(--launch-safe-right)) / 1200),
+    calc((var(--launch-height) - var(--launch-safe-top) - var(--launch-safe-bottom)) / 900)
+  );
+  --launch-left: calc(50% + (var(--launch-safe-left) - var(--launch-safe-right)) / 2 - 600 * var(--u));
+  width: 100%;
+  height: var(--launch-height);
+  background: #ffd495;
+}
+@supports (height: 100dvh) {
+  .launch { --launch-height: 100dvh; }
+}
+.launch .room {
+  /* CSS image replacement avoids touching the shared route renderer in app.js.
+     The original <img> keeps its meaningful alt text. */
+  content: url('./launch-background.svg');
+  inset: auto;
+  left: calc(var(--launch-left) - 1200 * var(--u));
+  top: calc(var(--launch-safe-top) - 900 * var(--u));
+  width: calc(3600 * var(--u));
+  height: calc(3600 * var(--u));
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+.launch .launch-play {
+  left: calc(var(--launch-left) + 646 * var(--u));
+  top: calc(var(--launch-safe-top) + 133 * var(--u));
+  width: calc(365 * var(--u));
+  height: calc(365 * var(--u));
+}
