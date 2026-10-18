@@ -2,6 +2,8 @@
 // pixels or application resources are embedded here. Coordinates are shared by
 // every part: a step changes the camera, never the anatomy or a saved stroke.
 import { ANIMALS as LEGACY } from './art.js';
+import { NEW_ANIMALS } from './new-animals.js';
+import { DINOSAURS } from './dinosaur-art.js';
 
 const fullCamera = () => ({ x: 217, y: 180, scale: 1.64 });
 const sheep = {
@@ -51,8 +53,8 @@ function adaptedAnimal(id, transform, steps, cameras) {
   const source = LEGACY[id];
   const [scale, dx, dy] = transform;
   const face = id === 'cat'
-    ? '<g fill="#000"><ellipse cx="259" cy="201" rx="8" ry="11"/><ellipse cx="341" cy="201" rx="8" ry="11"/><path d="M290 220 Q300 216 310 220 Q309 229 300 232 Q291 229 290 220Z"/></g><g fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"><path d="M300 232 L300 238 M284 237 Q289 249 300 239 Q311 249 316 237 M220 219 L182 213 M221 232 L185 239 M380 219 L418 213 M379 232 L415 239"/></g>'
-    : '<ellipse cx="411" cy="228" rx="9" ry="12" fill="#000"/><path d="M426 267 Q437 281 450 267" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>';
+    ? '<g fill="#000"><ellipse class="expression-eye" cx="259" cy="201" rx="8" ry="11"/><ellipse class="expression-eye" cx="341" cy="201" rx="8" ry="11"/><path d="M290 220 Q300 216 310 220 Q309 229 300 232 Q291 229 290 220Z"/></g><g fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"><path d="M300 232 L300 238 M284 237 Q289 249 300 239 Q311 249 316 237 M220 219 L182 213 M221 232 L185 239 M380 219 L418 213 M379 232 L415 239"/></g>'
+    : '<ellipse class="expression-eye" cx="411" cy="228" rx="9" ry="12" fill="#000"/><path class="expression-mouth" d="M426 267 Q437 281 450 267" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/>';
   return {
     name: source.name,
     viewBox: '0 0 335 332',
@@ -75,6 +77,8 @@ export const ANIMALS = {
     { x: 110, y: 165, scale: 2.05 },
     fullCamera(), fullCamera(), fullCamera(), fullCamera(),
   ]),
+  ...NEW_ANIMALS,
+  ...DINOSAURS,
   free: {
     name: 'Вільний малюнок',
     viewBox: '0 0 638 758',

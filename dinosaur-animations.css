@@ -1,0 +1,60 @@
+/* Animate the group containing region, clip and child's marks together.
+   Head details inherit head movement; only the actual eyes blink. Selectors follow CHARACTER-CONTRACT.md. */
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).dance { animation: none; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops) [data-part] { transform-box: view-box; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="head"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="frill"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="horns"] {
+  transform-origin: 232.5px 195.3px;
+  animation: dino-nod 1.8s ease-in-out infinite;
+}
+.articulated-bronto:is(.dance,.hop) [data-part="head"] { transform-origin: 230.64px 210.18px; }
+.articulated-stego:is(.dance,.hop) [data-part="head"] { transform-origin: 242.73px 194.37px; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="tail"] {
+  transform-origin: 103.23px 196.23px;
+  animation: dino-tail 1.2s ease-in-out infinite;
+}
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="body"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="spots"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="plates"] {
+  transform-origin: 164.61px 219.48px;
+  animation: dino-breathe 1.8s ease-in-out infinite;
+}
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="legs1"] {
+  transform-origin: 161.82px 222.27px;
+  animation: dino-step 1.8s ease-in-out infinite;
+}
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) [data-part="legs2"] {
+  transform-origin: 172.98px 217.62px;
+  animation: dino-step 1.8s ease-in-out -.9s infinite;
+}
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).dance .expression-eye {
+  transform-box: fill-box; transform-origin: center;
+  animation: dino-blink 3.6s linear infinite;
+}
+@keyframes dino-nod { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-6deg)} 75%{transform:rotate(5deg)} }
+@keyframes dino-tail { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-4deg)} 75%{transform:rotate(8deg)} }
+@keyframes dino-breathe { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+@keyframes dino-step { 0%,50%,100%{transform:rotate(0)} 25%{transform:rotate(6deg)} 75%{transform:rotate(-5deg)} }
+@keyframes dino-blink { 0%,42%,48%,100%{transform:scaleY(1)} 45%{transform:scaleY(.08)} }
+@media(prefers-reduced-motion:reduce) {
+  :is(.articulated-bronto,.articulated-stego,.articulated-triceratops), :is(.articulated-bronto,.articulated-stego,.articulated-triceratops) [data-part], :is(.articulated-bronto,.articulated-stego,.articulated-triceratops) .expression-eye { animation:none!important; }
+}
+
+/* Tap: brief part reaction, no whole-character bounce. */
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="head"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="frill"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="horns"] { animation: dino-nod 1.2s ease-in-out; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="tail"] { animation: dino-tail 1.2s ease-in-out; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="body"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="spots"],
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="plates"] { animation: dino-breathe 1.2s ease-in-out; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="legs1"] { animation: dino-step 1.2s ease-in-out; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop [data-part="legs2"] { animation: dino-step 1.2s ease-in-out; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops).hop .expression-eye { animation: dino-blink 1.2s linear; }
+:is(.articulated-bronto,.articulated-stego,.articulated-triceratops):is(.dance,.hop) .expression-mouth { animation: dino-smile 1.2s ease-in-out; }
+@keyframes dino-smile {0%,100%{transform:scale(1)}50%{transform:scale(1.05,1.15)}}
+
+@media(prefers-reduced-motion:reduce) {
+  :is(.articulated-bronto,.articulated-stego,.articulated-triceratops) .expression-mouth { animation:none!important; }
+}

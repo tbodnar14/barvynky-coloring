@@ -1,0 +1,293 @@
+/* Part motion for the new iteration only. Load after style.css.
+ * Every transform targets a data-part group: its paint, erasure mask, outline,
+ * and nested face remain together. All pivots use the shared 335 × 332 viewBox.
+ * Sheep keeps its existing choreography. No idle/layout styles are changed. */
+.living-target.articulated-animal:not(.articulated-sheep):is(.dance, .hop) {
+  animation: none;
+}
+.articulated-animal:not(.articulated-sheep) #living [data-part] {
+  transform-box: view-box;
+}
+.articulated-animal:not(.articulated-sheep) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Cat: the pink ear regions follow the same head pivot; the belly and paws
+ * belong to soft, so soft follows body exactly. Only the tail has its own beat. */
+.articulated-cat #living :is([data-part="head"], [data-part="ears"]) { transform-origin: 168px 190px; }
+.articulated-cat #living :is([data-part="body"], [data-part="soft"]) { transform-origin: 168px 315px; }
+.articulated-cat #living [data-part="tail"] { transform-origin: 244px 259px; }
+.articulated-cat.dance #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head 1.8s ease-in-out infinite; }
+.articulated-cat.dance #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body 1.8s ease-in-out infinite; }
+.articulated-cat.dance #living [data-part="tail"] { animation: am-cat-tail 1.8s ease-in-out infinite; }
+.articulated-cat.hop #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head-hop 900ms ease-in-out; }
+.articulated-cat.hop #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body-hop 900ms ease-in-out; }
+.articulated-cat.hop #living [data-part="tail"] { animation: am-cat-tail-hop 900ms ease-in-out; }
+.articulated-cat.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
+.articulated-cat.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+@keyframes am-cat-head {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(3px, -3px) rotate(-7deg); }
+  75% { transform: translate(-3px, -2px) rotate(7deg); }
+}
+@keyframes am-cat-body {
+  0%, 50%, 100% { transform: rotate(0) scale(1, 1); }
+  25% { transform: rotate(1.7deg) scale(1.015, .99); }
+  75% { transform: rotate(-1.7deg) scale(1.015, .99); }
+}
+@keyframes am-cat-tail {
+  0%, 50%, 100% { transform: rotate(0); }
+  25% { transform: translate(1px, 0) rotate(-14deg); }
+  75% { transform: translate(-1px, 0) rotate(16deg); }
+}
+@keyframes am-cat-head-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  18% { transform: translate(0, 4px) rotate(3deg); }
+  43% { transform: translate(0, -10px) rotate(-5deg); }
+  70% { transform: translate(0, 2px) rotate(2deg); }
+}
+@keyframes am-cat-body-hop {
+  0%, 100% { transform: translate(0, 0) scale(1, 1); }
+  18% { transform: scale(1.035, .96); }
+  43% { transform: translate(0, -6px) scale(.985, 1.025); }
+  70% { transform: translate(0, 1px) scale(1.015, .985); }
+}
+@keyframes am-cat-tail-hop {
+  0%, 100% { transform: rotate(0); }
+  18% { transform: rotate(12deg); }
+  43% { transform: translate(0, -4px) rotate(-20deg); }
+  70% { transform: rotate(10deg); }
+}
+
+/* Fish: body and stripe are one rigid painted surface. Tail/fins follow the
+ * small body sway before articulating, avoiding a gap at the tail attachment. */
+.articulated-fish #living :is([data-part="body"], [data-part="stripe"], [data-part="tail"], [data-part="fins"]) { transform-origin: 200px 172px; }
+.articulated-fish #living [data-part="sidefin"] { transform-origin: 232px 189px; }
+.articulated-fish.dance #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body 2.4s ease-in-out infinite; }
+.articulated-fish.dance #living [data-part="tail"] { animation: am-fish-tail 2.4s ease-in-out infinite; }
+.articulated-fish.dance #living [data-part="fins"] { animation: am-fish-fins 2.4s ease-in-out infinite; }
+.articulated-fish.dance #living [data-part="sidefin"] { animation: am-fish-sidefin 800ms ease-in-out infinite; }
+.articulated-fish.hop #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body-hop 900ms ease-in-out; }
+.articulated-fish.hop #living [data-part="tail"] { animation: am-fish-tail-hop 900ms ease-in-out; }
+.articulated-fish.hop #living [data-part="fins"] { animation: am-fish-fins-hop 900ms ease-in-out; }
+.articulated-fish.hop #living [data-part="sidefin"] { animation: am-fish-sidefin-hop 900ms ease-in-out; }
+.articulated-fish.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 4.8s linear infinite; }
+.articulated-fish.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+@keyframes am-fish-body {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(3px, -2px) rotate(1.7deg); }
+  75% { transform: translate(-3px, 2px) rotate(-1.7deg); }
+}
+@keyframes am-fish-tail {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0) translate(-89px, 0) rotate(0) scaleX(1) translate(89px, 0); }
+  25% { transform: translate(3px, -2px) rotate(1.7deg) translate(-89px, 0) rotate(-11deg) scaleX(.93) translate(89px, 0); }
+  75% { transform: translate(-3px, 2px) rotate(-1.7deg) translate(-89px, 0) rotate(11deg) scaleX(.93) translate(89px, 0); }
+}
+@keyframes am-fish-fins {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0) scaleY(1); }
+  25% { transform: translate(3px, -2px) rotate(1.7deg) scaleY(.96); }
+  75% { transform: translate(-3px, 2px) rotate(-1.7deg) scaleY(1.035); }
+}
+@keyframes am-fish-sidefin {
+  0%, 50%, 100% { transform: rotate(0) scaleX(1); }
+  25% { transform: rotate(-16deg) scaleX(.82); }
+  75% { transform: rotate(12deg) scaleX(.9); }
+}
+@keyframes am-fish-body-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  25% { transform: translate(3px, -2px) rotate(-3deg) scale(1.025, .985); }
+  60% { transform: translate(-2px, 1px) rotate(2deg) scale(.99, 1.01); }
+}
+@keyframes am-fish-tail-hop {
+  0%, 100% { transform: translate(-89px, 0) rotate(0) translate(89px, 0); }
+  18%, 55% { transform: translate(-89px, 0) rotate(-15deg) translate(89px, 0); }
+  36%, 72% { transform: translate(-89px, 0) rotate(13deg) translate(89px, 0); }
+}
+@keyframes am-fish-fins-hop {
+  0%, 100% { transform: scaleY(1); }
+  25%, 65% { transform: scaleY(1.06); }
+  45%, 80% { transform: scaleY(.97); }
+}
+@keyframes am-fish-sidefin-hop {
+  0%, 100% { transform: rotate(0); }
+  18%, 55% { transform: rotate(-20deg); }
+  36%, 72% { transform: rotate(15deg); }
+}
+
+/* Rabbit: ears inherit the head sway mathematically, then flex around their
+ * individual roots. This preserves each ear's attachment without SVG regrouping. */
+.articulated-rabbit #living :is([data-part="head"], [data-part="leftEar"], [data-part="rightEar"]) { transform-origin: 167px 211px; }
+.articulated-rabbit #living :is([data-part="body"], [data-part="belly"]) { transform-origin: 167px 286px; }
+.articulated-rabbit #living [data-part="leftPaw"] { transform-origin: 110px 304px; }
+.articulated-rabbit #living [data-part="rightPaw"] { transform-origin: 224px 304px; }
+.articulated-rabbit.dance #living [data-part="head"] { animation: am-rabbit-head 1.8s ease-in-out infinite; }
+.articulated-rabbit.dance #living [data-part="leftEar"] { animation: am-rabbit-left-ear 1.8s ease-in-out infinite; }
+.articulated-rabbit.dance #living [data-part="rightEar"] { animation: am-rabbit-right-ear 1.8s ease-in-out infinite; }
+.articulated-rabbit.dance #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body 1.8s ease-in-out infinite; }
+.articulated-rabbit.dance #living [data-part="leftPaw"] { animation: am-rabbit-left-paw 1.8s ease-in-out infinite; }
+.articulated-rabbit.dance #living [data-part="rightPaw"] { animation: am-rabbit-right-paw 1.8s ease-in-out infinite; }
+.articulated-rabbit.hop #living [data-part="head"] { animation: am-rabbit-head-hop 900ms ease-in-out; }
+.articulated-rabbit.hop #living [data-part="leftEar"] { animation: am-rabbit-left-ear-hop 900ms ease-in-out; }
+.articulated-rabbit.hop #living [data-part="rightEar"] { animation: am-rabbit-right-ear-hop 900ms ease-in-out; }
+.articulated-rabbit.hop #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body-hop 900ms ease-in-out; }
+.articulated-rabbit.hop #living :is([data-part="leftPaw"], [data-part="rightPaw"]) { animation: am-rabbit-paws-hop 900ms ease-in-out; }
+.articulated-rabbit.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
+.articulated-rabbit.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+.articulated-rabbit.hop #living .expression-mouth { animation: am-happy-mouth 900ms ease-in-out; }
+@keyframes am-rabbit-head {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(-2px, -3px) rotate(-5deg); }
+  75% { transform: translate(2px, -3px) rotate(5deg); }
+}
+@keyframes am-rabbit-left-ear {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0) translate(-44px, -88px) rotate(0) translate(44px, 88px); }
+  25% { transform: translate(-2px, -3px) rotate(-5deg) translate(-44px, -88px) rotate(-8deg) translate(44px, 88px); }
+  75% { transform: translate(2px, -3px) rotate(5deg) translate(-44px, -88px) rotate(5deg) translate(44px, 88px); }
+}
+@keyframes am-rabbit-right-ear {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0) translate(44px, -88px) rotate(0) translate(-44px, 88px); }
+  25% { transform: translate(-2px, -3px) rotate(-5deg) translate(44px, -88px) rotate(-4deg) translate(-44px, 88px); }
+  75% { transform: translate(2px, -3px) rotate(5deg) translate(44px, -88px) rotate(8deg) translate(-44px, 88px); }
+}
+@keyframes am-rabbit-body {
+  0%, 50%, 100% { transform: scale(1, 1); }
+  25%, 75% { transform: scale(1.025, .98); }
+}
+@keyframes am-rabbit-left-paw {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(0, -3px) rotate(-8deg); }
+  75% { transform: rotate(3deg); }
+}
+@keyframes am-rabbit-right-paw {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: translate(0, -3px) rotate(8deg); }
+}
+@keyframes am-rabbit-head-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(0, 5px) rotate(2deg); }
+  45% { transform: translate(0, -15px) rotate(-2deg); }
+  75% { transform: translate(0, 2px) rotate(0); }
+}
+@keyframes am-rabbit-left-ear-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0) translate(-44px, -88px) rotate(0) translate(44px, 88px); }
+  20% { transform: translate(0, 5px) rotate(2deg) translate(-44px, -88px) rotate(-10deg) translate(44px, 88px); }
+  45% { transform: translate(0, -15px) rotate(-2deg) translate(-44px, -88px) rotate(5deg) translate(44px, 88px); }
+  75% { transform: translate(0, 2px) rotate(0) translate(-44px, -88px) rotate(-6deg) translate(44px, 88px); }
+}
+@keyframes am-rabbit-right-ear-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0) translate(44px, -88px) rotate(0) translate(-44px, 88px); }
+  20% { transform: translate(0, 5px) rotate(2deg) translate(44px, -88px) rotate(10deg) translate(-44px, 88px); }
+  45% { transform: translate(0, -15px) rotate(-2deg) translate(44px, -88px) rotate(-5deg) translate(-44px, 88px); }
+  75% { transform: translate(0, 2px) rotate(0) translate(44px, -88px) rotate(6deg) translate(-44px, 88px); }
+}
+@keyframes am-rabbit-body-hop {
+  0%, 100% { transform: translate(0, 0) scale(1, 1); }
+  20% { transform: scale(1.055, .94); }
+  45% { transform: translate(0, -11px) scale(.98, 1.025); }
+  75% { transform: translate(0, 1px) scale(1.025, .98); }
+}
+@keyframes am-rabbit-paws-hop {
+  0%, 100% { transform: translate(0, 0) scaleY(1); }
+  20% { transform: scaleY(.9); }
+  45% { transform: translate(0, -8px) scaleY(1.02); }
+  75% { transform: translate(0, 1px) scaleY(.95); }
+}
+
+/* Turtle: the shell plates and underside move with the shell; head and feet
+ * make a slow alternating walk. Hop is a brief peek and foot wiggle. */
+.articulated-turtle #living [data-part="head"] { transform-origin: 260px 177px; }
+.articulated-turtle #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { transform-origin: 156px 244px; }
+.articulated-turtle #living [data-part="backLeg"] { transform-origin: 89px 248px; }
+.articulated-turtle #living [data-part="frontLeg"] { transform-origin: 226px 249px; }
+.articulated-turtle #living [data-part="tail"] { transform-origin: 54px 224px; }
+.articulated-turtle.dance #living [data-part="head"] { animation: am-turtle-head 2.8s ease-in-out infinite; }
+.articulated-turtle.dance #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell 2.8s ease-in-out infinite; }
+.articulated-turtle.dance #living [data-part="backLeg"] { animation: am-turtle-back-leg 2.8s ease-in-out infinite; }
+.articulated-turtle.dance #living [data-part="frontLeg"] { animation: am-turtle-front-leg 2.8s ease-in-out infinite; }
+.articulated-turtle.dance #living [data-part="tail"] { animation: am-turtle-tail 2.8s ease-in-out infinite; }
+.articulated-turtle.hop #living [data-part="head"] { animation: am-turtle-head-hop 1100ms ease-in-out; }
+.articulated-turtle.hop #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell-hop 1100ms ease-in-out; }
+.articulated-turtle.hop #living [data-part="backLeg"] { animation: am-turtle-back-hop 1100ms ease-in-out; }
+.articulated-turtle.hop #living [data-part="frontLeg"] { animation: am-turtle-front-hop 1100ms ease-in-out; }
+.articulated-turtle.hop #living [data-part="tail"] { animation: am-turtle-tail-hop 1100ms ease-in-out; }
+.articulated-turtle.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 5.6s linear infinite; }
+.articulated-turtle.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 1100ms linear; }
+.articulated-turtle.hop #living .expression-mouth { animation: am-happy-mouth 1100ms ease-in-out; }
+@keyframes am-turtle-head {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(2px, -2px) rotate(-4deg); }
+  75% { transform: translate(-1px, 1px) rotate(3deg); }
+}
+@keyframes am-turtle-shell {
+  0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(1px, -2px) rotate(-1deg); }
+  75% { transform: translate(-1px, -2px) rotate(1deg); }
+}
+@keyframes am-turtle-back-leg {
+  0%, 50%, 100% { transform: rotate(0); }
+  25% { transform: rotate(9deg); }
+  75% { transform: rotate(-8deg); }
+}
+@keyframes am-turtle-front-leg {
+  0%, 50%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(9deg); }
+}
+@keyframes am-turtle-tail {
+  0%, 50%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-7deg); }
+  75% { transform: rotate(7deg); }
+}
+@keyframes am-turtle-head-hop {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  22% { transform: translate(-5px, 2px) rotate(4deg); }
+  55% { transform: translate(4px, -4px) rotate(-6deg); }
+  80% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+@keyframes am-turtle-shell-hop {
+  0%, 100% { transform: translateY(0); }
+  22% { transform: translateY(1px); }
+  55% { transform: translateY(-3px); }
+}
+@keyframes am-turtle-back-hop {
+  0%, 100% { transform: rotate(0); }
+  22% { transform: rotate(6deg); }
+  55% { transform: rotate(-10deg); }
+  80% { transform: rotate(4deg); }
+}
+@keyframes am-turtle-front-hop {
+  0%, 100% { transform: rotate(0); }
+  22% { transform: rotate(-6deg); }
+  55% { transform: rotate(10deg); }
+  80% { transform: rotate(-4deg); }
+}
+@keyframes am-turtle-tail-hop {
+  0%, 100% { transform: rotate(0); }
+  25%, 70% { transform: rotate(-10deg); }
+  45%, 85% { transform: rotate(8deg); }
+}
+
+/* These eye transforms affect expression geometry only, never the face's
+ * nested coordinate-remapping group. The character's own marks are untouched. */
+@keyframes am-blink {
+  0%, 42%, 49%, 100% { transform: scaleY(1); }
+  45%, 46% { transform: scaleY(.13); }
+}
+@keyframes am-curious-blink {
+  0%, 13%, 31%, 100% { transform: scaleY(1); }
+  20%, 24% { transform: scaleY(.15); }
+  50%, 72% { transform: scaleY(1.08); }
+}
+@keyframes am-happy-mouth {
+  0%, 100% { transform: scale(1, 1); }
+  45%, 65% { transform: scale(1.04, 1.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .living-target.articulated-animal:not(.articulated-sheep):is(.dance, .hop),
+  .articulated-animal:not(.articulated-sheep) #living [data-part],
+  .articulated-animal:not(.articulated-sheep) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
+    animation: none !important;
+  }
+}
