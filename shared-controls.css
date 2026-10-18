@@ -1,6 +1,4 @@
 /* Small controls use the same illustrated buttons as the existing scene. */
-.touch-undo{left:calc(25 * var(--u));top:calc(137 * var(--u));min-width:48px;min-height:48px}
-.touch-undo:disabled{opacity:.4}
 .gallery-undo{right:calc(23 * var(--u));top:calc(24 * var(--u));min-width:48px;min-height:48px}
 .delete-dialog{width:min(440px,88vw);padding:20px;border:5px solid #287bb1;border-radius:22px;background:#e5f7ff;color:#234b67;box-shadow:0 8px 0 #125596;text-align:center;max-height:90dvh}
 .delete-dialog::backdrop{background:#14253699}
