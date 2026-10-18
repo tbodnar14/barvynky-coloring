@@ -38,7 +38,7 @@
 @keyframes space-flame-hop{0%,100%{transform:translateY(0) scaleY(1)}20%{transform:translateY(4px) scaleY(.7)}48%{transform:translateY(-13px) scaleY(1.12)}75%{transform:translateY(-3px) scaleY(.9)}}
 @keyframes space-blink{0%,40%,48%,100%{transform:scaleY(1)}43%,45%{transform:scaleY(.13)}}
 @keyframes space-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.08,1.15)}}
-@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket),:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living [data-part],:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living :is(.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket){animation:none!important}:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}
 
 /* 0.8: selectable reactions. Keep legacy tap/dance aliases above. */
 .living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite){animation:none}
@@ -87,4 +87,4 @@
 @keyframes space-dish-nod{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}}
 @keyframes space-dish-scan{0%,100%{transform:rotate(0)}25%{transform:rotate(-16deg)}65%{transform:rotate(16deg)}85%{transform:rotate(0)}}
 @keyframes space-scan-blink{0%,80%,94%,100%{transform:scaleY(1)}85%,89%{transform:scaleY(.13)}}
-@media(prefers-reduced-motion:reduce){:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite),:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite) #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite){animation:none!important}:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite) #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}

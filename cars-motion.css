@@ -124,10 +124,10 @@
 @keyframes cv8-blink{0%,39%,53%,100%{transform:scaleY(1)}43%,48%{transform:scaleY(.16)}}
 @keyframes cv8-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.1,1.2)}}
 @media(prefers-reduced-motion:reduce){
-.articulated-car_compact,.articulated-car_compact #living *{animation:none!important;transform:none!important;filter:none!important}
-.articulated-car_bus,.articulated-car_bus #living *{animation:none!important;transform:none!important;filter:none!important}
-.articulated-car_fire,.articulated-car_fire #living *{animation:none!important;transform:none!important;filter:none!important}
-.articulated-car_tractor,.articulated-car_tractor #living *{animation:none!important;transform:none!important;filter:none!important}
-.articulated-car_dumptruck,.articulated-car_dumptruck #living *{animation:none!important;transform:none!important;filter:none!important}
-.articulated-car_ambulance,.articulated-car_ambulance #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_compact #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_bus #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_fire #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_tractor #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_dumptruck #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_ambulance #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important;filter:none!important}
 }

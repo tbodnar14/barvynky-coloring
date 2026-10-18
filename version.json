@@ -1,18 +1,19 @@
 {
-  "version": "0.8.0-eight-rc2",
-  "deployment": "eight-category-expansion-qa",
+  "version": "0.8.0-rc1",
+  "deployment": "nine-category-expansion-qa",
   "source_checkpoints": {
     "animals": "5dfb5d7825bc979b99c56edabe138fbb09d36f0b",
-    "dinosaurs": "b5132add708ccdd887bbf428bfbd2749e2c6c4ef",
+    "dinosaurs": "9019cd44b2b223bd1b5905bc1fe6aab112dbd0b3",
     "launch": "019716bba6ca4187db26ef6261cbb3374f337ce4",
     "baby": "e6174fe83b561da33254964b8015f51fa2349598",
     "shared_fix": "7117a7a42d640e35ba33c2e4f638818f8bf0920f",
-    "cars": "1ab680f9717a2adba31f00604d04ca2de394decc",
+    "cars": "e42103382dc4abf9280d8153b36f0b06c3e99a4b",
     "fruit": "f0a797de0a309384298f0244048454549be16b9f",
-    "space": "24f9eb6ec5ebad6c805aec98bbe6e5153279f79a",
+    "space": "51b33e83e8ee08afa26db3e9a8467e9780c6f970",
     "winter": "1a9cb7d44771393f0e409a1ab7fca0224d9b5636",
     "halloween": "b8d803b7f5bc4d25d3d54c770722a3384a9d6e6f",
-    "butterflies": "89c119e2bdf291997c885f835840cd59f568e1d6"
+    "butterflies": "f82802e2efb10c981203e99406e61739fd8ca65e"
   },
-  "base_combined_checkpoint": "51372ab4633f5dc89432467f845f1522990ff52e"
+  "base_combined_checkpoint": "51372ab4633f5dc89432467f845f1522990ff52e",
+  "reaction_engine": "226f36dd9199fa4a8201be107fce339e3300742c"
 }

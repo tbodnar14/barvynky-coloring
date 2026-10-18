@@ -29,7 +29,7 @@
 @keyframes bf-lower-right{0%,100%{transform:scaleX(1) rotate(0)}40%{transform:scaleX(.68) rotate(4deg)}75%{transform:scaleX(.98) rotate(-2deg)}}
 @keyframes bf-nod{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}70%{transform:rotate(5deg)}}
 @keyframes bf-blink{0%,35%,45%,100%{transform:scaleY(1)}40%{transform:scaleY(.2)}}
-@media(prefers-reduced-motion:reduce){:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop),:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop){animation:none!important}:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop) #living *{animation:none!important;transform:none!important}}
 
 /* v0.8 selectable actions. Existing released .hop/.dance above remain valid. */
 .articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
@@ -70,7 +70,7 @@
 .articulated-butterfly_round.reaction-rest #living .expression-eye{animation:bfx-round-sleep 2800ms ease-in-out both}
 @keyframes bfx-round-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
 .articulated-butterfly_round.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
 .articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
 .articulated-butterfly_swallowtail #living [data-part]{transform-box:view-box}
 .articulated-butterfly_swallowtail #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
@@ -109,7 +109,7 @@
 .articulated-butterfly_swallowtail.reaction-rest #living .expression-eye{animation:bfx-swallowtail-sleep 2800ms ease-in-out both}
 @keyframes bfx-swallowtail-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
 .articulated-butterfly_swallowtail.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
 .articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
 .articulated-butterfly_moth #living [data-part]{transform-box:view-box}
 .articulated-butterfly_moth #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
@@ -148,7 +148,7 @@
 .articulated-butterfly_moth.reaction-rest #living .expression-eye{animation:bfx-moth-sleep 2800ms ease-in-out both}
 @keyframes bfx-moth-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
 .articulated-butterfly_moth.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
 .articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
 .articulated-butterfly_leaf #living [data-part]{transform-box:view-box}
 .articulated-butterfly_leaf #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
@@ -197,7 +197,7 @@
 .articulated-butterfly_leaf.dance #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-flight 2200ms ease-in-out infinite}
 .articulated-butterfly_leaf.hop #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-greet 1500ms ease-in-out}
 .articulated-butterfly_leaf.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-leaf-body-flight 2200ms ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
 .articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
 .articulated-butterfly_longwing #living [data-part]{transform-box:view-box}
 .articulated-butterfly_longwing #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
@@ -246,7 +246,7 @@
 .articulated-butterfly_longwing.dance #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-flight 2200ms ease-in-out infinite}
 .articulated-butterfly_longwing.hop #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-greet 1500ms ease-in-out}
 .articulated-butterfly_longwing.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-longwing-body-flight 2200ms ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
 .articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
 .articulated-butterfly_fan #living [data-part]{transform-box:view-box}
 .articulated-butterfly_fan #living :is([data-part="upperLeft"]){transform-origin:162px 165px}
@@ -295,4 +295,4 @@
 .articulated-butterfly_fan.dance #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-flight 2200ms ease-in-out infinite}
 .articulated-butterfly_fan.hop #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-greet 1500ms ease-in-out}
 .articulated-butterfly_fan.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-fan-body-flight 2200ms ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance),.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}

@@ -13,3 +13,5 @@
 .reaction-strip[data-model-reactions]{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .reaction-strip[data-model-reactions] button{min-width:calc(80 * var(--u));flex-shrink:0}
 .reaction-strip[data-model-reactions] button[aria-pressed="true"]{background:#45c7fb}
+
+.reaction-strip[data-model-reactions] button[aria-pressed="false"]{background:transparent}
