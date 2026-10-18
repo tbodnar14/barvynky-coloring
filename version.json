@@ -1,5 +1,5 @@
 {
-  "version": "0.8.2-rc1",
+  "version": "0.8.2-rc2",
   "deployment": "reaction-menu-qa",
   "source_checkpoints": {
     "animals": "5dfb5d7825bc979b99c56edabe138fbb09d36f0b",
@@ -20,5 +20,5 @@
   "no_mode_patch": "874f07da5be73fc96a7c7d0a8556cf6d7945defe",
   "canonical_paint_hotfix": "a4f44d7a5e391fa32b055810982d939ce2208f95",
   "animal_category_icon": "8033e4746755a6965e3d270e6ba1be4acab625b8",
-  "reaction_menu": "5b11bcd2fd1223c02030319c337eda25f807c76e"
+  "reaction_menu": "9d4b80fef125d53f5c433b5bb10215f69c2796e8"
 }
