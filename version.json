@@ -1,6 +1,6 @@
 {
-  "version": "0.7.3-rc1",
-  "deployment": "blank-category-qa",
+  "version": "0.7.4-rc1",
+  "deployment": "guide-band-qa",
   "source_checkpoints": {
     "animals": "8b7446c48f9d11c104d29805a99f2b94bae5a6d1",
     "dinosaurs": "b5132add708ccdd887bbf428bfbd2749e2c6c4ef",
