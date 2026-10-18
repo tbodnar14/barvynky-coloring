@@ -1,5 +1,5 @@
 const CACHE_PREFIX='barvynky-coloring-'+encodeURIComponent(self.registration.scope)+'-';
-const CACHE=CACHE_PREFIX+'v0.5.1-pages1';
+const CACHE=CACHE_PREFIX+'v0.5.2-pages1';
 const FILES=['./','./index.html','./style.css','./app.js','./art.js','./reference-art.js','./game-ui.js','./launch.svg','./paint.js','./drawing-state.js','./favicon.ico','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(CACHE_PREFIX)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
