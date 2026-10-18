@@ -1,6 +1,6 @@
 {
-  "version": "0.7.0-rc2",
-  "deployment": "shared-ui-targeted-qa",
+  "version": "0.7.0-rc3",
+  "deployment": "reference-targeted-recheck",
   "source_checkpoints": {
     "animals": "8b7446c48f9d11c104d29805a99f2b94bae5a6d1",
     "dinosaurs": "b5132add708ccdd887bbf428bfbd2749e2c6c4ef",
