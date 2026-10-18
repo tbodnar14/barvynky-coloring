@@ -1,17 +1,17 @@
 /* All paint remains nested in its transformed data-part. */
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.hop){animation:none}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.hop,.reaction-dance,.reaction-hop){animation:none}
 :is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry) #living [data-part]{transform-box:view-box;transform-origin:167px 270px}
 :is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry) #living [data-part="leftFoot"]{transform-origin:127px 281px}
 :is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry) #living [data-part="rightFoot"]{transform-origin:207px 281px}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).dance #living [data-part]{animation:fruit-sway 2s ease-in-out infinite}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).dance #living [data-part="leaf"],.articulated-fruit_strawberry.dance #living [data-part="crown"]{animation:fruit-leaf 2s ease-in-out infinite}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).dance #living [data-part="leftFoot"]{animation:fruit-step 1s ease-in-out infinite}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).dance #living [data-part="rightFoot"]{animation:fruit-step 1s ease-in-out infinite reverse}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).hop #living [data-part]{animation:fruit-bounce 1.1s ease-in-out}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).hop #living :is([data-part="leftFoot"],[data-part="rightFoot"]){animation:fruit-feet-hop 1.1s ease-in-out}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.reaction-dance) #living [data-part]{animation:fruit-sway 2s ease-in-out infinite}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.reaction-dance) #living [data-part="leaf"],.articulated-fruit_strawberry:is(.dance,.reaction-dance) #living [data-part="crown"]{animation:fruit-leaf 2s ease-in-out infinite}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.reaction-dance) #living [data-part="leftFoot"]{animation:fruit-step 1s ease-in-out infinite}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.reaction-dance) #living [data-part="rightFoot"]{animation:fruit-step 1s ease-in-out infinite reverse}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.hop,.reaction-hop) #living [data-part]{animation:fruit-bounce 1.1s ease-in-out}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.hop,.reaction-hop) #living :is([data-part="leftFoot"],[data-part="rightFoot"]){animation:fruit-feet-hop 1.1s ease-in-out}
 :is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry) #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).dance #living .expression-eye{animation:fruit-blink 3s linear infinite}
-:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry).hop #living .expression-mouth{animation:fruit-smile 1.1s ease-in-out}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.dance,.reaction-dance) #living .expression-eye{animation:fruit-blink 3s linear infinite}
+:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry):is(.hop,.reaction-hop) #living .expression-mouth{animation:fruit-smile 1.1s ease-in-out}
 @keyframes fruit-sway{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-4deg) translateY(-2px)}75%{transform:rotate(4deg) translateY(-2px)}}
 @keyframes fruit-leaf{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-5deg) translateY(-4px)}75%{transform:rotate(5deg) translateY(-4px)}}
 @keyframes fruit-step{0%,100%{transform:rotate(0)}25%{transform:translateY(-3px) rotate(9deg)}75%{transform:translateY(-1px) rotate(-5deg)}}
@@ -20,3 +20,86 @@
 @keyframes fruit-blink{0%,30%,36%,70%,76%,100%{transform:scaleY(1)}33%,73%{transform:scaleY(.2)}}
 @keyframes fruit-smile{0%,100%{transform:scale(1)}48%{transform:scale(1.12,1.2)}}
 @media(prefers-reduced-motion:reduce){:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry) #living *{animation:none!important;transform:none!important}}
+
+/* v0.8 selectable reactions. All selectors are scoped to permanent fruit IDs. */
+:is(.articulated-fruit_banana,.articulated-fruit_cherries,.articulated-fruit_pineapple):is(.dance,.hop,[class*="reaction-"]){animation:none}
+:is(.articulated-fruit_banana,.articulated-fruit_cherries,.articulated-fruit_pineapple) #living [data-part]{transform-box:view-box}
+:is(.articulated-fruit_banana,.articulated-fruit_cherries,.articulated-fruit_pineapple) #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+
+/* Planted greetings: only the leaf/crown and facial expression move. */
+.articulated-fruit_apple.reaction-leaf-wave #living [data-part="leaf"]{transform-origin:174px 78px;animation:fruit8-wave 1700ms ease-in-out infinite}
+.articulated-fruit_strawberry.reaction-crown-wave #living [data-part="crown"]{transform-origin:167px 105px;animation:fruit8-wave 1700ms ease-in-out infinite}
+:is(.articulated-fruit_apple.reaction-leaf-wave,.articulated-fruit_strawberry.reaction-crown-wave) #living .expression-eye:first-child{animation:fruit8-wink 1700ms linear infinite}
+
+/* Pear: a planted bow, then a different tall held tiptoe. */
+.articulated-fruit_pear.reaction-bow #living :is([data-part="body"],[data-part="stem"],[data-part="leaf"]){animation:fruit8-bow 1400ms ease-in-out}
+.articulated-fruit_pear.reaction-bow #living .expression-eye{animation:fruit8-bow-eyes 1400ms ease-in-out}
+.articulated-fruit_pear.reaction-tiptoe #living :is([data-part="body"],[data-part="stem"],[data-part="leaf"]){animation:fruit8-rise 1500ms ease-in-out}
+.articulated-fruit_pear.reaction-tiptoe #living :is([data-part="leftFoot"],[data-part="rightFoot"]){transform-origin:center bottom;transform-box:fill-box;animation:fruit8-tip-feet 1500ms ease-in-out}
+.articulated-fruit_pear.reaction-tiptoe #living .expression-mouth{animation:fruit8-peek 1500ms ease-in-out}
+
+/* Berry turn: its seeds remain rigidly attached throughout the larger rotation. */
+.articulated-fruit_strawberry.reaction-spin #living [data-part]{transform-origin:167px 190px;animation:fruit8-turn 1500ms ease-in-out}
+.articulated-fruit_strawberry.reaction-spin #living .expression-eye{animation:fruit8-bow-eyes 1500ms ease-in-out}
+
+/* Banana curved body and both tips are one rigid painted surface. */
+.articulated-fruit_banana #living [data-part]{transform-origin:155px 275px}
+.articulated-fruit_banana #living [data-part="leftFoot"]{transform-origin:117px 280px}
+.articulated-fruit_banana #living [data-part="rightFoot"]{transform-origin:183px 280px}
+.articulated-fruit_banana:is(.dance,.reaction-rock) #living :is([data-part="body"],[data-part="topTip"],[data-part="bottomTip"]){animation:fruit8-rock 2200ms ease-in-out infinite}
+.articulated-fruit_banana:is(.dance,.reaction-rock) #living [data-part="leftFoot"]{animation:fruit8-rock-left 2200ms ease-in-out infinite}
+.articulated-fruit_banana:is(.dance,.reaction-rock) #living [data-part="rightFoot"]{animation:fruit8-rock-right 2200ms ease-in-out infinite}
+.articulated-fruit_banana.reaction-march #living :is([data-part="body"],[data-part="topTip"],[data-part="bottomTip"]){animation:fruit8-march-body 800ms ease-in-out infinite}
+.articulated-fruit_banana.reaction-march #living [data-part="leftFoot"]{animation:fruit8-march-left 1600ms ease-in-out infinite}
+.articulated-fruit_banana.reaction-march #living [data-part="rightFoot"]{animation:fruit8-march-right 1600ms ease-in-out infinite}
+.articulated-fruit_banana:is(.hop,.reaction-bow) #living :is([data-part="body"],[data-part="topTip"],[data-part="bottomTip"]){animation:fruit8-bow 1400ms ease-in-out}
+.articulated-fruit_banana:is(.hop,.reaction-bow) #living .expression-eye{animation:fruit8-bow-eyes 1400ms ease-in-out}
+.articulated-fruit_banana:is(.dance,.reaction-rock,.reaction-march) #living .expression-eye{animation:fruit-blink 3200ms linear infinite}
+
+/* Cherry fruit+stem pairs pivot about the same junction; no detached stems. */
+.articulated-fruit_cherries #living [data-part]{transform-origin:170px 44px}
+.articulated-fruit_cherries #living [data-part="leaf"]{transform-origin:174px 45px}
+.articulated-fruit_cherries:is(.dance,.reaction-swing) #living :is([data-part="leftFruit"],[data-part="leftStem"]){animation:fruit8-cherry-left 2200ms ease-in-out infinite}
+.articulated-fruit_cherries:is(.dance,.reaction-swing) #living :is([data-part="rightFruit"],[data-part="rightStem"]){animation:fruit8-cherry-right 2200ms ease-in-out infinite}
+.articulated-fruit_cherries:is(.hop,.reaction-bump) #living :is([data-part="leftFruit"],[data-part="leftStem"]){animation:fruit8-bump-left 1400ms ease-in-out}
+.articulated-fruit_cherries:is(.hop,.reaction-bump) #living :is([data-part="rightFruit"],[data-part="rightStem"]){animation:fruit8-bump-right 1400ms ease-in-out}
+.articulated-fruit_cherries:is(.hop,.reaction-bump) #living .expression-eye{animation:fruit8-bow-eyes 1400ms ease-in-out}
+.articulated-fruit_cherries.reaction-leaf-wave #living [data-part="leaf"]{animation:fruit8-wave 1700ms ease-in-out infinite}
+.articulated-fruit_cherries.reaction-leaf-wave #living [data-part="leftFruit"] .expression-eye:first-child{animation:fruit8-wink 1700ms linear infinite}
+.articulated-fruit_cherries.reaction-leaf-wave #living [data-part="rightFruit"] .expression-eye:first-child{animation:fruit8-wink 1700ms 400ms linear infinite}
+
+/* Pineapple: body, belly paint and lattice always share their transform. */
+.articulated-fruit_pineapple #living [data-part]{transform-origin:167px 275px}
+.articulated-fruit_pineapple #living [data-part="leftFoot"]{transform-origin:127px 281px}
+.articulated-fruit_pineapple #living [data-part="rightFoot"]{transform-origin:207px 281px}
+.articulated-fruit_pineapple:is(.dance,.reaction-dance) #living :is([data-part="body"],[data-part="belly"],[data-part="crown"]){animation:fruit-sway 2000ms ease-in-out infinite}
+.articulated-fruit_pineapple:is(.dance,.reaction-dance) #living [data-part="leftFoot"]{animation:fruit-step 1000ms ease-in-out infinite}
+.articulated-fruit_pineapple:is(.dance,.reaction-dance) #living [data-part="rightFoot"]{animation:fruit-step 1000ms ease-in-out infinite reverse}
+.articulated-fruit_pineapple:is(.dance,.reaction-dance) #living .expression-eye{animation:fruit-blink 3000ms linear infinite}
+.articulated-fruit_pineapple.reaction-crown-wave #living [data-part="crown"]{transform-origin:167px 115px;animation:fruit8-wave 1700ms ease-in-out infinite}
+.articulated-fruit_pineapple.reaction-crown-wave #living .expression-eye:first-child{animation:fruit8-wink 1700ms linear infinite}
+.articulated-fruit_pineapple:is(.hop,.reaction-hop) #living :is([data-part="body"],[data-part="belly"],[data-part="crown"]){animation:fruit-bounce 1100ms ease-in-out}
+.articulated-fruit_pineapple:is(.hop,.reaction-hop) #living :is([data-part="leftFoot"],[data-part="rightFoot"]){animation:fruit-feet-hop 1100ms ease-in-out}
+.articulated-fruit_pineapple:is(.hop,.reaction-hop) #living .expression-mouth{animation:fruit-smile 1100ms ease-in-out}
+
+@keyframes fruit8-wave{0%,50%,100%{transform:rotate(0)}20%{transform:rotate(-10deg)}35%{transform:rotate(8deg)}65%{transform:rotate(-8deg)}80%{transform:rotate(10deg)}}
+@keyframes fruit8-wink{0%,22%,42%,100%{transform:scaleY(1)}27%,37%{transform:scaleY(.16)}}
+@keyframes fruit8-bow{0%,100%{transform:rotate(0) scaleY(1)}35%,60%{transform:rotate(-16deg) scaleY(.94)}82%{transform:rotate(2deg)}}
+@keyframes fruit8-bow-eyes{0%,20%,85%,100%{transform:scaleY(1)}35%,65%{transform:scaleY(.25)}}
+@keyframes fruit8-rise{0%,100%{transform:translateY(0)}32%,72%{transform:translateY(-13px)}85%{transform:translateY(-5px)}}
+@keyframes fruit8-tip-feet{0%,100%{transform:scaleY(1)}32%,72%{transform:scaleY(1.4)}85%{transform:scaleY(1.15)}}
+@keyframes fruit8-peek{0%,100%{transform:scale(1)}32%,72%{transform:scale(.8,1.2)}}
+@keyframes fruit8-turn{0%,100%{transform:rotate(0) scale(1)}30%{transform:rotate(-24deg) scale(.95)}65%{transform:rotate(24deg) scale(.95)}85%{transform:rotate(-5deg)}}
+@keyframes fruit8-rock{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(6deg)}}
+@keyframes fruit8-rock-left{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(8deg) translateY(-2px)}75%{transform:rotate(-5deg)}}
+@keyframes fruit8-rock-right{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(4deg)}75%{transform:rotate(-8deg) translateY(-2px)}}
+@keyframes fruit8-march-body{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes fruit8-march-left{0%,50%,100%{transform:translateY(0)}20%{transform:translate(-3px,-13px) rotate(-12deg)}70%{transform:rotate(4deg)}}
+@keyframes fruit8-march-right{0%,50%,100%{transform:translateY(0)}20%{transform:rotate(-4deg)}70%{transform:translate(3px,-13px) rotate(12deg)}}
+@keyframes fruit8-cherry-left{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(5deg)}75%{transform:rotate(-2deg)}}
+@keyframes fruit8-cherry-right{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(2deg)}75%{transform:rotate(-5deg)}}
+@keyframes fruit8-bump-left{0%,100%{transform:rotate(0)}35%,55%{transform:rotate(-2.5deg)}75%{transform:rotate(1deg)}}
+@keyframes fruit8-bump-right{0%,100%{transform:rotate(0)}35%,55%{transform:rotate(2.5deg)}75%{transform:rotate(-1deg)}}
+
+/* Last in file so every new reaction, including legacy shortcuts, is covered. */
+@media(prefers-reduced-motion:reduce){:is(.articulated-fruit_apple,.articulated-fruit_pear,.articulated-fruit_strawberry,.articulated-fruit_banana,.articulated-fruit_cherries,.articulated-fruit_pineapple) #living *{animation:none!important;transform:none!important}}

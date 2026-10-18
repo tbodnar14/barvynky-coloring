@@ -1,14 +1,14 @@
 /* Part motion for the new iteration only. Load after style.css.
  * Every transform targets a data-part group: its paint, erasure mask, outline,
  * and nested face remain together. All pivots use the shared 335 × 332 viewBox.
- * Sheep keeps its existing choreography. No idle/layout styles are changed. */
-.living-target.articulated-animal:not(.articulated-sheep):is(.dance, .hop) {
+ * Sheep choreography is supplied below with category-scoped selectors. No idle/layout styles are changed. */
+.living-target:is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy):is(.dance, .hop, .reaction-dance, .reaction-hop) {
   animation: none;
 }
-.articulated-animal:not(.articulated-sheep) #living [data-part] {
+:is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy) #living [data-part] {
   transform-box: view-box;
 }
-.articulated-animal:not(.articulated-sheep) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
+:is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
   transform-box: fill-box;
   transform-origin: center;
 }
@@ -18,14 +18,14 @@
 .articulated-cat #living :is([data-part="head"], [data-part="ears"]) { transform-origin: 168px 190px; }
 .articulated-cat #living :is([data-part="body"], [data-part="soft"]) { transform-origin: 168px 315px; }
 .articulated-cat #living [data-part="tail"] { transform-origin: 244px 259px; }
-.articulated-cat.dance #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head 1.8s ease-in-out infinite; }
-.articulated-cat.dance #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body 1.8s ease-in-out infinite; }
-.articulated-cat.dance #living [data-part="tail"] { animation: am-cat-tail 1.8s ease-in-out infinite; }
-.articulated-cat.hop #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head-hop 900ms ease-in-out; }
-.articulated-cat.hop #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body-hop 900ms ease-in-out; }
-.articulated-cat.hop #living [data-part="tail"] { animation: am-cat-tail-hop 900ms ease-in-out; }
-.articulated-cat.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
-.articulated-cat.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+.articulated-cat:is(.dance,.reaction-dance) #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head 1.8s ease-in-out infinite; }
+.articulated-cat:is(.dance,.reaction-dance) #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body 1.8s ease-in-out infinite; }
+.articulated-cat:is(.dance,.reaction-dance) #living [data-part="tail"] { animation: am-cat-tail 1.8s ease-in-out infinite; }
+.articulated-cat:is(.hop,.reaction-hop) #living :is([data-part="head"], [data-part="ears"]) { animation: am-cat-head-hop 900ms ease-in-out; }
+.articulated-cat:is(.hop,.reaction-hop) #living :is([data-part="body"], [data-part="soft"]) { animation: am-cat-body-hop 900ms ease-in-out; }
+.articulated-cat:is(.hop,.reaction-hop) #living [data-part="tail"] { animation: am-cat-tail-hop 900ms ease-in-out; }
+.articulated-cat:is(.dance,.reaction-dance) #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
+.articulated-cat:is(.hop,.reaction-hop) #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
 @keyframes am-cat-head {
   0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
   25% { transform: translate(3px, -3px) rotate(-7deg); }
@@ -64,16 +64,16 @@
  * small body sway before articulating, avoiding a gap at the tail attachment. */
 .articulated-fish #living :is([data-part="body"], [data-part="stripe"], [data-part="tail"], [data-part="fins"]) { transform-origin: 200px 172px; }
 .articulated-fish #living [data-part="sidefin"] { transform-origin: 232px 189px; }
-.articulated-fish.dance #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body 2.4s ease-in-out infinite; }
-.articulated-fish.dance #living [data-part="tail"] { animation: am-fish-tail 2.4s ease-in-out infinite; }
-.articulated-fish.dance #living [data-part="fins"] { animation: am-fish-fins 2.4s ease-in-out infinite; }
-.articulated-fish.dance #living [data-part="sidefin"] { animation: am-fish-sidefin 800ms ease-in-out infinite; }
-.articulated-fish.hop #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body-hop 900ms ease-in-out; }
-.articulated-fish.hop #living [data-part="tail"] { animation: am-fish-tail-hop 900ms ease-in-out; }
-.articulated-fish.hop #living [data-part="fins"] { animation: am-fish-fins-hop 900ms ease-in-out; }
-.articulated-fish.hop #living [data-part="sidefin"] { animation: am-fish-sidefin-hop 900ms ease-in-out; }
-.articulated-fish.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 4.8s linear infinite; }
-.articulated-fish.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+.articulated-fish:is(.dance,.reaction-dance) #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body 2.4s ease-in-out infinite; }
+.articulated-fish:is(.dance,.reaction-dance) #living [data-part="tail"] { animation: am-fish-tail 2.4s ease-in-out infinite; }
+.articulated-fish:is(.dance,.reaction-dance) #living [data-part="fins"] { animation: am-fish-fins 2.4s ease-in-out infinite; }
+.articulated-fish:is(.dance,.reaction-dance) #living [data-part="sidefin"] { animation: am-fish-sidefin 800ms ease-in-out infinite; }
+.articulated-fish:is(.hop,.reaction-hop) #living :is([data-part="body"], [data-part="stripe"]) { animation: am-fish-body-hop 900ms ease-in-out; }
+.articulated-fish:is(.hop,.reaction-hop) #living [data-part="tail"] { animation: am-fish-tail-hop 900ms ease-in-out; }
+.articulated-fish:is(.hop,.reaction-hop) #living [data-part="fins"] { animation: am-fish-fins-hop 900ms ease-in-out; }
+.articulated-fish:is(.hop,.reaction-hop) #living [data-part="sidefin"] { animation: am-fish-sidefin-hop 900ms ease-in-out; }
+.articulated-fish:is(.dance,.reaction-dance) #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 4.8s linear infinite; }
+.articulated-fish:is(.hop,.reaction-hop) #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
 @keyframes am-fish-body {
   0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
   25% { transform: translate(3px, -2px) rotate(1.7deg); }
@@ -121,20 +121,20 @@
 .articulated-rabbit #living :is([data-part="body"], [data-part="belly"]) { transform-origin: 167px 286px; }
 .articulated-rabbit #living [data-part="leftPaw"] { transform-origin: 110px 304px; }
 .articulated-rabbit #living [data-part="rightPaw"] { transform-origin: 224px 304px; }
-.articulated-rabbit.dance #living [data-part="head"] { animation: am-rabbit-head 1.8s ease-in-out infinite; }
-.articulated-rabbit.dance #living [data-part="leftEar"] { animation: am-rabbit-left-ear 1.8s ease-in-out infinite; }
-.articulated-rabbit.dance #living [data-part="rightEar"] { animation: am-rabbit-right-ear 1.8s ease-in-out infinite; }
-.articulated-rabbit.dance #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body 1.8s ease-in-out infinite; }
-.articulated-rabbit.dance #living [data-part="leftPaw"] { animation: am-rabbit-left-paw 1.8s ease-in-out infinite; }
-.articulated-rabbit.dance #living [data-part="rightPaw"] { animation: am-rabbit-right-paw 1.8s ease-in-out infinite; }
-.articulated-rabbit.hop #living [data-part="head"] { animation: am-rabbit-head-hop 900ms ease-in-out; }
-.articulated-rabbit.hop #living [data-part="leftEar"] { animation: am-rabbit-left-ear-hop 900ms ease-in-out; }
-.articulated-rabbit.hop #living [data-part="rightEar"] { animation: am-rabbit-right-ear-hop 900ms ease-in-out; }
-.articulated-rabbit.hop #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body-hop 900ms ease-in-out; }
-.articulated-rabbit.hop #living :is([data-part="leftPaw"], [data-part="rightPaw"]) { animation: am-rabbit-paws-hop 900ms ease-in-out; }
-.articulated-rabbit.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
-.articulated-rabbit.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
-.articulated-rabbit.hop #living .expression-mouth { animation: am-happy-mouth 900ms ease-in-out; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living [data-part="head"] { animation: am-rabbit-head 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living [data-part="leftEar"] { animation: am-rabbit-left-ear 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living [data-part="rightEar"] { animation: am-rabbit-right-ear 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living [data-part="leftPaw"] { animation: am-rabbit-left-paw 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living [data-part="rightPaw"] { animation: am-rabbit-right-paw 1.8s ease-in-out infinite; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living [data-part="head"] { animation: am-rabbit-head-hop 900ms ease-in-out; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living [data-part="leftEar"] { animation: am-rabbit-left-ear-hop 900ms ease-in-out; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living [data-part="rightEar"] { animation: am-rabbit-right-ear-hop 900ms ease-in-out; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living :is([data-part="body"], [data-part="belly"]) { animation: am-rabbit-body-hop 900ms ease-in-out; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living :is([data-part="leftPaw"], [data-part="rightPaw"]) { animation: am-rabbit-paws-hop 900ms ease-in-out; }
+.articulated-rabbit:is(.dance,.reaction-dance) #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 3.6s linear infinite; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 900ms linear; }
+.articulated-rabbit:is(.hop,.reaction-hop) #living .expression-mouth { animation: am-happy-mouth 900ms ease-in-out; }
 @keyframes am-rabbit-head {
   0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
   25% { transform: translate(-2px, -3px) rotate(-5deg); }
@@ -202,19 +202,19 @@
 .articulated-turtle #living [data-part="backLeg"] { transform-origin: 89px 248px; }
 .articulated-turtle #living [data-part="frontLeg"] { transform-origin: 226px 249px; }
 .articulated-turtle #living [data-part="tail"] { transform-origin: 54px 224px; }
-.articulated-turtle.dance #living [data-part="head"] { animation: am-turtle-head 2.8s ease-in-out infinite; }
-.articulated-turtle.dance #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell 2.8s ease-in-out infinite; }
-.articulated-turtle.dance #living [data-part="backLeg"] { animation: am-turtle-back-leg 2.8s ease-in-out infinite; }
-.articulated-turtle.dance #living [data-part="frontLeg"] { animation: am-turtle-front-leg 2.8s ease-in-out infinite; }
-.articulated-turtle.dance #living [data-part="tail"] { animation: am-turtle-tail 2.8s ease-in-out infinite; }
-.articulated-turtle.hop #living [data-part="head"] { animation: am-turtle-head-hop 1100ms ease-in-out; }
-.articulated-turtle.hop #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell-hop 1100ms ease-in-out; }
-.articulated-turtle.hop #living [data-part="backLeg"] { animation: am-turtle-back-hop 1100ms ease-in-out; }
-.articulated-turtle.hop #living [data-part="frontLeg"] { animation: am-turtle-front-hop 1100ms ease-in-out; }
-.articulated-turtle.hop #living [data-part="tail"] { animation: am-turtle-tail-hop 1100ms ease-in-out; }
-.articulated-turtle.dance #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 5.6s linear infinite; }
-.articulated-turtle.hop #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 1100ms linear; }
-.articulated-turtle.hop #living .expression-mouth { animation: am-happy-mouth 1100ms ease-in-out; }
+.articulated-turtle:is(.dance,.reaction-dance) #living [data-part="head"] { animation: am-turtle-head 2.8s ease-in-out infinite; }
+.articulated-turtle:is(.dance,.reaction-dance) #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell 2.8s ease-in-out infinite; }
+.articulated-turtle:is(.dance,.reaction-dance) #living [data-part="backLeg"] { animation: am-turtle-back-leg 2.8s ease-in-out infinite; }
+.articulated-turtle:is(.dance,.reaction-dance) #living [data-part="frontLeg"] { animation: am-turtle-front-leg 2.8s ease-in-out infinite; }
+.articulated-turtle:is(.dance,.reaction-dance) #living [data-part="tail"] { animation: am-turtle-tail 2.8s ease-in-out infinite; }
+.articulated-turtle:is(.hop,.reaction-hop) #living [data-part="head"] { animation: am-turtle-head-hop 1100ms ease-in-out; }
+.articulated-turtle:is(.hop,.reaction-hop) #living :is([data-part="shell"], [data-part="belly"], [data-part="plates"]) { animation: am-turtle-shell-hop 1100ms ease-in-out; }
+.articulated-turtle:is(.hop,.reaction-hop) #living [data-part="backLeg"] { animation: am-turtle-back-hop 1100ms ease-in-out; }
+.articulated-turtle:is(.hop,.reaction-hop) #living [data-part="frontLeg"] { animation: am-turtle-front-hop 1100ms ease-in-out; }
+.articulated-turtle:is(.hop,.reaction-hop) #living [data-part="tail"] { animation: am-turtle-tail-hop 1100ms ease-in-out; }
+.articulated-turtle:is(.dance,.reaction-dance) #living :is(.face-details ellipse, .expression-eye) { animation: am-blink 5.6s linear infinite; }
+.articulated-turtle:is(.hop,.reaction-hop) #living :is(.face-details ellipse, .expression-eye) { animation: am-curious-blink 1100ms linear; }
+.articulated-turtle:is(.hop,.reaction-hop) #living .expression-mouth { animation: am-happy-mouth 1100ms ease-in-out; }
 @keyframes am-turtle-head {
   0%, 50%, 100% { transform: translate(0, 0) rotate(0); }
   25% { transform: translate(2px, -2px) rotate(-4deg); }
@@ -285,9 +285,68 @@
   45%, 65% { transform: scale(1.04, 1.12); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .living-target.articulated-animal:not(.articulated-sheep):is(.dance, .hop),
-  .articulated-animal:not(.articulated-sheep) #living [data-part],
-  .articulated-animal:not(.articulated-sheep) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
+  .living-target:is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy):is(.dance, .hop, .reaction-dance, .reaction-hop),
+  :is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy) #living [data-part],
+  :is(.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy) #living :is(.face-details ellipse, .expression-eye, .expression-mouth) {
     animation: none !important;
   }
 }
+
+/* Expansion 0.8: six animal-specific sets, no category-wide catch-all. */
+.living-target:is(.articulated-sheep,.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy){animation:none}
+:is(.articulated-sheep,.articulated-puppy) #living [data-part]{transform-box:view-box}
+.articulated-sheep #living :is([data-part="head"],[data-part="ears"],[data-part="inner"],[data-part="tuft"]){transform-origin:220px 140px}
+.articulated-sheep #living [data-part="body"]{transform-origin:160px 200px}
+.articulated-sheep #living [data-part="tail"]{transform-origin:60px 140px}
+.articulated-sheep #living :is([data-part="legs1"],[data-part="hooves1"]){transform-origin:134px 238px}
+.articulated-sheep #living :is([data-part="legs2"],[data-part="hooves2"]){transform-origin:180px 238px}
+.articulated-sheep:is(.dance,.reaction-dance) #living :is([data-part="head"],[data-part="ears"],[data-part="inner"],[data-part="tuft"]){animation:am-sheep-head 1500ms ease-in-out infinite}
+.articulated-sheep:is(.dance,.reaction-dance) #living [data-part="body"]{animation:am-sheep-body 1500ms ease-in-out infinite}
+.articulated-sheep:is(.dance,.reaction-dance) #living [data-part="tail"]{animation:am-sheep-tail 1500ms ease-in-out infinite}
+.articulated-sheep:is(.dance,.reaction-dance) #living :is([data-part="legs1"],[data-part="hooves1"]){animation:am-sheep-front 1500ms ease-in-out infinite}
+.articulated-sheep:is(.dance,.reaction-dance) #living :is([data-part="legs2"],[data-part="hooves2"]){animation:am-sheep-back 1500ms ease-in-out infinite}
+.articulated-sheep:is(.hop,.reaction-hop) #living [data-part]{animation:am-up 1200ms ease-in-out}
+.articulated-sheep.reaction-tail-wag #living [data-part="tail"]{animation:am-wag 1800ms ease-in-out}
+.articulated-cat.reaction-stretch #living :is([data-part="head"],[data-part="ears"]){animation:am-stretch-head 2400ms ease-in-out}
+.articulated-cat.reaction-stretch #living :is([data-part="body"],[data-part="soft"]){animation:am-stretch-body 2400ms ease-in-out}
+.articulated-cat.reaction-stretch #living [data-part="tail"]{animation:am-stretch-tail 2400ms ease-in-out}
+.articulated-fish.reaction-turn #living [data-part]{transform-origin:167px 166px;animation:am-turn 2600ms ease-in-out}
+.articulated-rabbit.reaction-listen #living [data-part="leftEar"]{transform-origin:123px 123px;animation:am-listen-left 2200ms ease-in-out}
+.articulated-rabbit.reaction-listen #living [data-part="rightEar"]{transform-origin:211px 123px;animation:am-listen-right 2200ms ease-in-out}
+.articulated-rabbit.reaction-listen #living .expression-eye{animation:am-curious-blink 2200ms linear}
+.articulated-turtle.reaction-hide #living [data-part="head"]{animation:am-hide-head 2600ms ease-in-out}
+.articulated-turtle.reaction-hide #living [data-part="backLeg"]{animation:am-hide-back 2600ms ease-in-out}
+.articulated-turtle.reaction-hide #living [data-part="frontLeg"]{animation:am-hide-front 2600ms ease-in-out}
+.articulated-turtle.reaction-hide #living [data-part="tail"]{animation:am-hide-tail 2600ms ease-in-out}
+.articulated-puppy #living :is([data-part="head"],[data-part="muzzle"],[data-part="leftEar"],[data-part="rightEar"]){transform-origin:167px 184px}
+.articulated-puppy #living :is([data-part="body"],[data-part="chest"]){transform-origin:167px 278px}
+.articulated-puppy #living [data-part="paws"]{transform-origin:167px 296px}
+.articulated-puppy #living [data-part="tail"]{transform-origin:229px 256px}
+.articulated-puppy:is(.hop,.reaction-hop) #living [data-part]{animation:am-up 1200ms ease-in-out}
+.articulated-puppy:is(.dance,.reaction-dance) #living :is([data-part="head"],[data-part="muzzle"],[data-part="leftEar"],[data-part="rightEar"]){animation:am-puppy-head 2000ms ease-in-out infinite}
+.articulated-puppy:is(.dance,.reaction-dance) #living :is([data-part="body"],[data-part="chest"]){animation:am-puppy-body 2000ms ease-in-out infinite}
+.articulated-puppy:is(.dance,.reaction-dance) #living [data-part="paws"]{animation:am-puppy-paws 2000ms ease-in-out infinite}
+.articulated-puppy:is(.dance,.reaction-dance) #living [data-part="tail"]{animation:am-puppy-tail 2000ms ease-in-out infinite}
+.articulated-puppy.reaction-tail-wag #living [data-part="tail"]{animation:am-wag 2000ms ease-in-out}
+@keyframes am-sheep-head{0%,50%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(-3px,-3px) rotate(-14deg)}75%{transform:translate(3px,2px) rotate(14deg)}}
+@keyframes am-sheep-body{0%,50%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(-3px,-2px) rotate(-5deg)}75%{transform:translate(3px,2px) rotate(5deg)}}
+@keyframes am-sheep-tail{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+@keyframes am-sheep-front{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(13deg)}75%{transform:rotate(-11deg)}}
+@keyframes am-sheep-back{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(10deg)}75%{transform:rotate(-14deg)}}
+@keyframes am-up{0%,100%{transform:translateY(0)}20%{transform:translateY(3px)}50%{transform:translateY(-12px)}80%{transform:translateY(1px)}}
+@keyframes am-wag{0%,100%{transform:rotate(0)}15%,45%,75%{transform:rotate(-16deg)}30%,60%,90%{transform:rotate(16deg)}}
+@keyframes am-stretch-head{0%,100%{transform:translateY(0) rotate(0)}35%,65%{transform:translateY(-6px) rotate(-7deg)}}
+@keyframes am-stretch-body{0%,100%{transform:scale(1)}35%,65%{transform:scale(.98,1.035)}}
+@keyframes am-stretch-tail{0%,100%{transform:rotate(0)}35%,65%{transform:rotate(-19deg)}}
+@keyframes am-turn{0%{transform:scale(1) rotate(0)}15%{transform:scale(.72) rotate(0)}85%{transform:scale(.72) rotate(360deg)}100%{transform:scale(1) rotate(360deg)}}
+@keyframes am-listen-left{0%,100%{transform:rotate(0)}25%,40%{transform:rotate(-12deg)}65%,80%{transform:rotate(5deg)}}
+@keyframes am-listen-right{0%,100%{transform:rotate(0)}25%,40%{transform:rotate(-5deg)}65%,80%{transform:rotate(12deg)}}
+@keyframes am-hide-head{0%,100%{transform:translate(0,0) scale(1)}35%,70%{transform:translate(-19px,15px) scale(.78)}}
+@keyframes am-hide-back{0%,100%{transform:translate(0,0)}35%,70%{transform:translate(5px,-11px)}}
+@keyframes am-hide-front{0%,100%{transform:translate(0,0)}35%,70%{transform:translate(-5px,-11px)}}
+@keyframes am-hide-tail{0%,100%{transform:translate(0,0) scaleX(1)}35%,70%{transform:translate(12px,0) scaleX(.75)}}
+@keyframes am-puppy-head{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes am-puppy-body{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
+@keyframes am-puppy-paws{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(3deg)}75%{transform:rotate(-3deg)}}
+@keyframes am-puppy-tail{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-9deg)}75%{transform:rotate(9deg)}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-sheep,.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy),:is(.articulated-sheep,.articulated-cat,.articulated-fish,.articulated-rabbit,.articulated-turtle,.articulated-puppy) #living :is([data-part],.expression-eye,.expression-mouth,.face-details circle){animation:none!important}}

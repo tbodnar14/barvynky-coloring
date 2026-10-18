@@ -10,3 +10,8 @@
 .delete-options button:disabled{opacity:.4}
 /* Enlarge the baby's touch hit area without changing its visual layout. */
 .people-mode:after{content:'';position:absolute;left:0;right:0;top:50%;height:max(100%,44px);transform:translateY(-50%)}
+.reaction-strip[data-model-reactions]{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.reaction-strip[data-model-reactions] button{min-width:calc(80 * var(--u));flex-shrink:0}
+.reaction-strip[data-model-reactions] button[aria-pressed="true"]{background:#45c7fb}
+
+.reaction-strip[data-model-reactions] button[aria-pressed="false"]{background:transparent}

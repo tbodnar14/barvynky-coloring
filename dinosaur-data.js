@@ -1,7 +1,7 @@
 import { DINOSAURS } from './dinosaur-art.js';
 
 export { DINOSAURS };
-export const DINOSAUR_IDS = Object.freeze(['bronto', 'stego', 'triceratops']);
+export const DINOSAUR_IDS = Object.freeze(['bronto', 'stego', 'triceratops', 'ankylosaur', 'friendly_trex', 'pterosaur']);
 export const DINOSAUR_CATEGORY = Object.freeze({ id: 'dino', name: 'Динозаври', color: '#27b17a', ids: DINOSAUR_IDS });
 
 // A long neck, four feet, rounded muzzle and long tail read at tab size.

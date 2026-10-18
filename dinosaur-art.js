@@ -381,3 +381,68 @@ export const DINOSAURS = {
     }
   }
 };
+
+// Expansion-only original shapes. Existing objects above retain released data.
+const dinoFace = (x,y,mx,my) => `<g class="expression-eye"><ellipse cx="${x}" cy="${y}" rx="5.5" ry="7" fill="#222"/><circle cx="${x-1.5}" cy="${y-2}" r="1.6" fill="#fff"/></g><path class="expression-mouth" d="M${mx} ${my} Q${mx+10} ${my+8} ${mx+21} ${my-2}" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round"/>`;
+const dinoFullCamera = () => ({x:105,y:122,scale:1.9});
+Object.assign(DINOSAURS, {
+ ankylosaur: {
+  name:'Анкілозаврик',viewBox:'0 0 335 332',detailsPart:'head',
+  steps:['head','body','tail','club','legs2','legs1','armor'],
+  parts:[
+   {id:'club',label:'Булава на хвостику',d:'M40 177 C20 170 10 183 14 197 C5 210 15 224 30 222 C42 235 61 226 60 212 C75 202 65 181 51 182 C48 179 44 177 40 177 Z'},
+   {id:'tail',label:'Хвостик',d:'M109 190 C84 187 65 190 48 191 L43 212 C64 215 89 222 112 215 Z'},
+   {id:'legs2',label:'Дальні ніжки',d:'M117 220 L115 267 C115 275 121 278 129 278 L146 278 C154 278 156 273 154 266 L151 217 Z M216 217 L218 267 C218 275 224 278 232 278 L249 278 C257 278 259 273 255 266 L246 213 Z'},
+   {id:'body',label:'Круглий тулуб',d:'M77 202 C79 164 115 139 164 139 C218 139 258 169 261 205 C264 234 230 253 175 253 C122 253 78 236 77 202 Z'},
+   {id:'legs1',label:'Ближні ніжки',d:'M91 222 C101 228 114 231 130 229 L129 275 C129 283 123 287 114 287 L95 287 C86 287 83 281 86 274 Z M194 233 C208 234 222 229 234 222 L245 273 C247 282 242 287 233 287 L212 287 C203 287 199 282 199 275 Z'},
+   {id:'head',label:'Голівка',d:'M246 177 C267 164 290 173 300 189 C310 194 322 198 323 210 C324 226 308 236 289 232 C268 231 247 216 242 199 C239 188 241 182 246 177 Z'},
+   {id:'armor',label:'Панцир на спинці',d:'M94 187 C108 158 139 148 169 149 C203 149 232 164 244 188 C221 202 193 208 165 206 C135 205 110 198 94 187 Z',details:'<path d="M127 160 L137 182 L121 198 M170 150 L167 181 L188 205 M215 162 L198 183 L229 197 M137 182 L167 181 L198 183" fill="none" stroke="#222" stroke-opacity=".22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'},
+  ],
+  details:dinoFace(281,194,297,216),
+  cameras:[{x:-420,y:-200,scale:3.2},...Array.from({length:6},dinoFullCamera)],
+  rig:{head:[250,204],body:[168,224],armor:[168,224],tail:[103,202],club:[103,202],legs1:[162,229],legs2:[182,221]},
+ },
+ friendly_trex: {
+  name:'Тиранозаврик',viewBox:'0 0 335 332',detailsPart:'head',
+  steps:['head','body','tail','legs2','legs1','arms','belly'],
+  parts:[
+   {id:'tail',label:'Довгий хвостик',d:'M168 187 C125 191 80 207 34 187 C25 184 22 190 29 197 C64 232 112 249 161 230 Z'},
+   {id:'legs2',label:'Дальня ніжка',d:'M159 221 C146 235 144 257 149 278 L132 286 C124 291 129 299 137 299 L177 299 C186 299 188 291 185 283 L189 238 Z'},
+   {id:'body',label:'Тулуб',d:'M195 127 C167 130 145 164 140 203 C132 238 150 261 183 264 C218 268 240 236 241 198 C242 163 230 136 218 127 Z'},
+   {id:'legs1',label:'Ближня ніжка',d:'M200 230 C192 248 198 268 214 281 L211 290 C208 297 213 302 221 302 L263 302 C272 302 274 295 267 289 L245 278 C242 257 230 240 223 232 Z'},
+   {id:'head',label:'Велика голівка',d:'M205 142 C184 128 179 104 187 80 C194 54 223 44 255 47 C282 46 306 59 311 80 L316 111 C317 130 302 143 278 142 L237 137 C226 148 213 149 205 142 Z'},
+   {id:'arms',label:'Короткі ручки',d:'M228 161 C236 163 242 173 245 181 L259 182 C266 182 269 188 265 192 C259 198 245 198 235 193 C228 187 223 172 228 161 Z M153 166 C145 168 138 177 135 186 L122 188 C114 190 115 197 122 199 C134 201 145 197 151 189 C158 180 160 170 153 166 Z'},
+   {id:'belly',label:'Животик',d:'M193 165 C178 167 165 187 163 207 C161 228 171 243 188 243 C205 242 217 220 217 201 C217 182 208 167 193 165 Z'},
+  ],
+  details:dinoFace(266,80,281,117),
+  cameras:[{x:-330,y:80,scale:3},...Array.from({length:6},dinoFullCamera)],
+  rig:{head:[213,136],body:[186,230],belly:[186,230],tail:[151,211],arms:[190,166],legs1:[211,238],legs2:[168,236]},
+ },
+ pterosaur: {
+  name:'Птерозаврик',viewBox:'0 0 335 332',detailsPart:'head',
+  steps:['head','crest','body','leftWing','rightWing','feet','tail'],
+  parts:[
+   {id:'tail',label:'Хвостик',d:'M157 209 C156 232 162 250 162 267 L151 278 C147 283 151 287 157 286 L173 281 L185 287 C191 290 195 285 190 279 L178 266 C181 243 178 221 174 209 Z'},
+   {id:'feet',label:'Лапки',d:'M147 207 L139 239 L130 246 C125 251 128 256 135 256 L159 256 C165 256 167 251 164 246 L164 210 Z M178 210 L181 246 C178 252 182 256 188 256 L211 256 C218 256 220 250 213 246 L203 239 L194 207 Z'},
+   {id:'leftWing',label:'Ліве крило',d:'M166 124 C134 101 77 91 19 104 C12 106 12 111 20 114 C53 127 66 144 71 171 C74 162 85 155 95 160 C107 167 108 184 108 199 C123 182 140 184 151 205 L168 183 Z',details:'<path d="M161 137 C128 123 83 112 26 108 M158 145 L96 160 M157 157 L110 193" fill="none" stroke="#222" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>'},
+   {id:'rightWing',label:'Праве крило',d:'M168 124 C200 101 257 91 315 104 C322 106 322 111 314 114 C281 127 268 144 263 171 C260 162 249 155 239 160 C227 167 226 184 226 199 C211 182 194 184 183 205 L166 183 Z',details:'<path d="M173 137 C206 123 251 112 308 108 M176 145 L238 160 M177 157 L224 193" fill="none" stroke="#222" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>'},
+   {id:'body',label:'Тулуб',d:'M164 98 C146 106 142 137 143 168 C144 199 151 223 169 230 C189 223 197 196 197 165 C197 131 187 106 175 99 Z'},
+   {id:'crest',label:'Чубчик',d:'M151 65 C145 49 139 34 130 22 C127 17 132 14 138 17 C158 28 177 42 187 61 L172 79 Z'},
+   {id:'head',label:'Голівка та дзьобик',d:'M159 48 C178 41 198 53 203 70 L253 80 C261 82 261 87 253 90 L205 98 C199 113 177 118 160 108 C142 98 141 62 159 48 Z'},
+  ],
+  details:dinoFace(182,73,203,91),
+  cameras:[{x:-150,y:120,scale:3},...Array.from({length:6},dinoFullCamera)],
+  rig:{head:[170,105],crest:[170,105],body:[170,177],leftWing:[160,144],rightWing:[178,144],feet:[170,213],tail:[169,217]},
+ },
+});
+
+const dinoIcon = inner => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><g stroke="#37786a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">${inner}</g></svg>`;
+const walkIcon=dinoIcon('<path d="M12 42 C20 38 18 28 35 28 L39 17 C41 11 53 14 52 21 L46 26 L47 42 L41 49 L33 45 L25 48 L22 41 L13 47Z" fill="#9bddad"/><path d="M8 55 H19 M39 56 H51" fill="none"/><circle cx="46" cy="20" r="1.5" fill="#264e4c"/>');
+const greetIcon=dinoIcon('<path d="M17 45 L20 28 C20 18 33 16 40 23 L48 26 L47 34 L35 36 L35 46Z" fill="#9bddad"/><path d="M36 37 L47 18 L52 21 L46 43 M13 19 L9 14 M22 12 L22 6" fill="none"/><circle cx="34" cy="26" r="1.7" fill="#264e4c"/>');
+const restIcon=dinoIcon('<path d="M13 43 C13 31 23 29 34 34 C33 23 49 21 53 31 C57 40 45 48 32 47 L17 47Z" fill="#9bddad"/><path d="M41 32 Q44 35 47 32 M8 53 H55" fill="none"/>');
+const flyIcon=dinoIcon('<path d="M30 30 L8 18 L14 38 L26 34 L32 49 L38 34 L50 38 L56 18 L34 30 L39 17 L49 20 L40 24 L36 31Z" fill="#9bddad"/><path d="M9 46 L5 49 M55 46 L59 49" fill="none"/>');
+for(const [id,m] of Object.entries(DINOSAURS))m.reactions=[
+ {id:id==='pterosaur'?'fly':'walk',label:id==='pterosaur'?'Літати':'Крокувати',icon:id==='pterosaur'?flyIcon:walkIcon,loop:true,durationMs:2400},
+ {id:'greet',label:'Привіт',icon:greetIcon,loop:false,durationMs:1800},
+ {id:'rest',label:'Відпочити',icon:restIcon,loop:false,durationMs:2800},
+];

@@ -47,3 +47,65 @@ export const CHARACTERS = {
     rig:{body:[167,180],nose:[167,180],window:[167,180],leftFin:[167,180],rightFin:[167,180],flame:[167,248]},
   },
 };
+
+// 0.8 additions; released models above retain their canonical save geometry.
+const newCamera=()=>({x:105,y:105,scale:1.85});
+const circlePath=(x,y,r)=>`M${x-r} ${y} C${x-r} ${y-r*.5523} ${x-r*.5523} ${y-r} ${x} ${y-r} C${x+r*.5523} ${y-r} ${x+r} ${y-r*.5523} ${x+r} ${y} C${x+r} ${y+r*.5523} ${x+r*.5523} ${y+r} ${x} ${y+r} C${x-r*.5523} ${y+r} ${x-r} ${y+r*.5523} ${x-r} ${y} Z`;
+const starPath=(x,y,r)=>Array.from({length:10},(_,i)=>{const a=-Math.PI/2+i*Math.PI/5,k=i%2?r*.48:r;return `${i?'L':'M'}${(x+Math.cos(a)*k).toFixed(2)} ${(y+Math.sin(a)*k).toFixed(2)}`}).join(' ')+' Z';
+const friendlyFace=(x,y)=>`<g fill="#20252b">${eyes(x-16,x+16,y)}</g><path class="expression-mouth" d="M${x-12} ${y+17} Q${x} ${y+31} ${x+12} ${y+17}" fill="none" stroke="#20252b" stroke-width="4" stroke-linecap="round"/>`;
+const ray=(deg)=>{const a=deg*Math.PI/180,pt=(u,v)=>`${(167+u*Math.cos(a)-v*Math.sin(a)).toFixed(2)} ${(166+u*Math.sin(a)+v*Math.cos(a)).toFixed(2)}`;return `M${pt(70,-14)} L${pt(126,-14)} C${pt(147,-14)} ${pt(147,14)} ${pt(126,14)} L${pt(70,14)} Z`;};
+Object.assign(CHARACTERS,{
+ space_moon:{
+  name:'Місяць',viewBox:'0 0 335 332',steps:['crescent','craterTop','craterBottom','craterSide','starLeft','starRight'],detailsPart:'crescent',
+  parts:[
+   {id:'crescent',label:'Півмісяць',d:'M222 36 C150 0 57 18 43 96 C15 192 103 287 198 282 C228 280 252 266 270 244 C199 257 132 217 123 157 C114 99 164 62 222 36 Z',details:undefined},
+   {id:'craterTop',label:'Верхній кратер',d:circlePath(83,91,17)},
+   {id:'craterBottom',label:'Нижній кратер',d:circlePath(98,209,21)},
+   {id:'craterSide',label:'Бічний кратер',d:circlePath(165,250,17)},
+   {id:'starLeft',label:'Перша зірочка',d:starPath(251,96,27)},
+   {id:'starRight',label:'Друга зірочка',d:starPath(280,180,23)},
+  ],details:'<path d="M222 36 C150 0 57 18 43 96 C15 192 103 287 198 282 C228 280 252 266 270 244 C199 257 132 217 123 157 C114 99 164 62 222 36 Z" fill="none" stroke="#c2b8d8" stroke-width="2.5"/>'+friendlyFace(86,142),cameras:Array.from({length:6},newCamera),
+  rig:{crescent:[155,151],craterTop:[155,151],craterBottom:[155,151],craterSide:[155,151],starLeft:[251,96],starRight:[280,180]},
+ },
+ space_sun:{
+  name:'Сонечко',viewBox:'0 0 335 332',steps:['disc','raysTop','raysRight','raysBottom','raysLeft'],detailsPart:'disc',
+  parts:[
+   {id:'raysTop',label:'Верхні промінчики',d:ray(-135)+' '+ray(-90)},
+   {id:'raysRight',label:'Праві промінчики',d:ray(-45)+' '+ray(0)},
+   {id:'raysBottom',label:'Нижні промінчики',d:ray(45)+' '+ray(90)},
+   {id:'raysLeft',label:'Ліві промінчики',d:ray(135)+' '+ray(180)},
+   {id:'disc',label:'Кругле сонечко',d:circlePath(167,166,83)},
+  ],details:friendlyFace(167,157),cameras:Array.from({length:5},newCamera),
+  rig:{disc:[167,166],raysTop:[167,166],raysRight:[167,166],raysBottom:[167,166],raysLeft:[167,166]},
+ },
+ space_satellite:{
+  name:'Супутник',viewBox:'0 0 335 332',steps:['body','leftPanel','rightPanel','dish','window'],detailsPart:'window',
+  parts:[
+   {id:'dish',label:'Антена-тарілочка',d:'M120 45 Q167 18 214 45 C208 69 191 83 177 85 L177 111 L157 111 L157 85 C141 82 126 69 120 45 Z',details:'<path d="M131 46 Q167 30 203 46" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="4" stroke-linecap="round"/>'},
+   {id:'leftPanel',label:'Ліве сонячне крило',d:'M40 124 L112 124 L126 145 L126 207 L112 229 L40 229 Q27 229 27 216 L27 137 Q27 124 40 124 Z',details:'<path d="M57 132 L57 221 M87 132 L87 221 M35 159 L111 159 M35 194 L111 194" fill="none" stroke="#304f79" stroke-opacity=".35" stroke-width="3"/>'},
+   {id:'rightPanel',label:'Праве сонячне крило',d:'M294 124 L222 124 L208 145 L208 207 L222 229 L294 229 Q307 229 307 216 L307 137 Q307 124 294 124 Z',details:'<path d="M277 132 L277 221 M247 132 L247 221 M299 159 L223 159 M299 194 L223 194" fill="none" stroke="#304f79" stroke-opacity=".35" stroke-width="3"/>'},
+   {id:'body',label:'Корпус супутника',d:'M139 101 L195 101 Q218 101 218 125 L218 228 Q218 250 195 250 L139 250 Q116 250 116 228 L116 125 Q116 101 139 101 Z'},
+   {id:'window',label:'Віконце з усмішкою',d:'M167 133 C191 133 205 151 205 174 C205 198 189 213 167 213 C145 213 129 198 129 174 C129 151 143 133 167 133 Z'},
+  ],details:friendlyFace(167,169),cameras:Array.from({length:5},newCamera),
+  rig:{body:[167,176],window:[167,176],leftPanel:[120,176],rightPanel:[214,176],dish:[167,105]},
+ },
+});
+// Original self-contained menu symbols; UI consumes strings without external assets.
+const reactionIcon=(path)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#fff2a3"/><path d="${path}" fill="none" stroke="#57438d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const icons={
+ hop:reactionIcon('M17 43 Q32 9 47 43 M36 14 L32 9 L27 16 M20 52 L44 52'),
+ dance:reactionIcon('M17 22 L10 30 L18 38 M47 22 L54 30 L46 38 M25 43 Q32 51 39 43 M26 20 L38 20'),
+ visit:reactionIcon('M12 40 C12 11 52 11 52 40 M44 33 L52 40 L57 31 M27 41 L37 41'),
+ ring:reactionIcon('M10 39 C12 22 51 13 54 24 C57 35 17 49 10 39 Z M24 19 Q38 9 44 25 M21 43 Q36 54 46 38'),
+ turn:reactionIcon('M14 28 C16 9 45 8 50 29 C55 48 25 58 16 42 M11 21 L14 30 L23 26'),
+ rays:reactionIcon('M26 26 L38 26 L38 38 L26 38 Z M32 18 L32 8 M32 46 L32 56 M18 32 L8 32 M46 32 L56 32'),
+ scan:reactionIcon('M19 22 Q32 45 45 22 M32 34 L32 51 M13 15 Q32 4 51 15 M21 18 Q32 11 43 18'),
+ wings:reactionIcon('M25 23 L39 23 L39 44 L25 44 Z M20 17 L9 25 L18 40 M44 17 L55 25 L46 40'),
+};
+const reaction=(id,label,icon,loop=false,durationMs=1200)=>({id,label,icon:icons[icon],loop,durationMs});
+CHARACTERS.space_planet.reactions=[reaction('hop','Підстрибнути','hop',false,1100),reaction('dance','Танцювати','dance',true,2800),reaction('moon-visit','Покликати супутник','visit',false,2600)];
+CHARACTERS.space_ringed_planet.reactions=[reaction('hop','Підстрибнути','hop',false,1100),reaction('dance','Танцювати','dance',true,3200),reaction('ring-wave','Хитнути кільцем','ring',false,2400)];
+CHARACTERS.space_rocket.reactions=[reaction('hop','Злетіти','hop',false,1200),reaction('dance','Танцювати','dance',true,2200),reaction('turn','Розвернутися','turn',false,2600)];
+CHARACTERS.space_moon.reactions=[reaction('hop','Підстрибнути','hop'),reaction('dance','Танцювати','dance',true,3000),reaction('turn','Покрутитися','turn',false,2800)];
+CHARACTERS.space_sun.reactions=[reaction('hop','Підстрибнути','hop'),reaction('dance','Танцювати','dance',true,2800),reaction('rays-open','Розправити промінчики','rays',false,2200)];
+CHARACTERS.space_satellite.reactions=[reaction('hop','Підстрибнути','hop'),reaction('dance','Помахати крилами','wings',true,2400),reaction('scan','Знайти сигнал','scan',false,2600)];

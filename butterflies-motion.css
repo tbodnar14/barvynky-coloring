@@ -29,4 +29,270 @@
 @keyframes bf-lower-right{0%,100%{transform:scaleX(1) rotate(0)}40%{transform:scaleX(.68) rotate(4deg)}75%{transform:scaleX(.98) rotate(-2deg)}}
 @keyframes bf-nod{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}70%{transform:rotate(5deg)}}
 @keyframes bf-blink{0%,35%,45%,100%{transform:scaleY(1)}40%{transform:scaleY(.2)}}
-@media(prefers-reduced-motion:reduce){:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop),:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop) #living *{animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop){animation:none!important}:is(.articulated-butterfly_round,.articulated-butterfly_swallowtail,.articulated-butterfly_moth):is(.dance,.hop) #living *{animation:none!important;transform:none!important}}
+
+/* v0.8 selectable actions. Existing released .hop/.dance above remain valid. */
+.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_round #living [data-part]{transform-box:view-box}
+.articulated-butterfly_round #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_round.reaction-flight #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-round-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-round-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(5deg) scaleX(0.52)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(0.0deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.76)}}
+.articulated-butterfly_round.reaction-greet #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-round-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-round-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(10deg) scaleX(.70)}}
+.articulated-butterfly_round.reaction-rest #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-round-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-round-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.38)}}
+.articulated-butterfly_round #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+.articulated-butterfly_round.reaction-flight #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-round-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-round-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(-5deg) scaleX(0.52)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(0.0deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.76)}}
+.articulated-butterfly_round.reaction-greet #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-round-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-round-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(-10deg) scaleX(.70)}}
+.articulated-butterfly_round.reaction-rest #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-round-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-round-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.38)}}
+.articulated-butterfly_round #living :is([data-part="lowerLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_round.reaction-flight #living :is([data-part="lowerLeft"]){animation:bfx-round-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-round-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-4deg) scaleX(0.7)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(0.0deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.85)}}
+.articulated-butterfly_round.reaction-greet #living :is([data-part="lowerLeft"]){animation:bfx-round-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-round-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_round.reaction-rest #living :is([data-part="lowerLeft"]){animation:bfx-round-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-round-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.38)}}
+.articulated-butterfly_round #living :is([data-part="lowerRight"]){transform-origin:172px 190px}
+.articulated-butterfly_round.reaction-flight #living :is([data-part="lowerRight"]){animation:bfx-round-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-round-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(4deg) scaleX(0.7)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(0.0deg) translate(5px,20px) rotate(2.0deg) scaleX(0.85)}}
+.articulated-butterfly_round.reaction-greet #living :is([data-part="lowerRight"]){animation:bfx-round-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-round-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_round.reaction-rest #living :is([data-part="lowerRight"]){animation:bfx-round-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-round-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.38)}}
+.articulated-butterfly_round.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-round-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-round-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(0deg)}60%{transform:translate(3px,-5px) rotate(0deg)}80%{transform:translate(1px,-2px) rotate(0.0deg)}}
+.articulated-butterfly_round.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-round-greet-head 1800ms ease-in-out both}
+@keyframes bfx-round-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_round #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_round.reaction-rest #living .expression-eye{animation:bfx-round-sleep 2800ms ease-in-out both}
+@keyframes bfx-round-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_round.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_round:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_swallowtail #living [data-part]{transform-box:view-box}
+.articulated-butterfly_swallowtail #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_swallowtail.reaction-flight #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-swallowtail-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-swallowtail-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(-3deg) translate(-5px,-5px) rotate(5deg) scaleX(0.62)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(3deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(1.5deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.81)}}
+.articulated-butterfly_swallowtail.reaction-greet #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-swallowtail-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-swallowtail-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(10deg) scaleX(.70)}}
+.articulated-butterfly_swallowtail.reaction-rest #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-swallowtail-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-swallowtail-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.38)}}
+.articulated-butterfly_swallowtail #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+.articulated-butterfly_swallowtail.reaction-flight #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-swallowtail-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-swallowtail-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(-3deg) translate(5px,-5px) rotate(-5deg) scaleX(0.62)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(3deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(1.5deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.81)}}
+.articulated-butterfly_swallowtail.reaction-greet #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-swallowtail-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-swallowtail-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(-10deg) scaleX(.70)}}
+.articulated-butterfly_swallowtail.reaction-rest #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-swallowtail-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-swallowtail-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.38)}}
+.articulated-butterfly_swallowtail #living :is([data-part="lowerLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_swallowtail.reaction-flight #living :is([data-part="lowerLeft"]){animation:bfx-swallowtail-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-swallowtail-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(-3deg) translate(-5px,20px) rotate(-4deg) scaleX(0.78)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(3deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(1.5deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.89)}}
+.articulated-butterfly_swallowtail.reaction-greet #living :is([data-part="lowerLeft"]){animation:bfx-swallowtail-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-swallowtail-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_swallowtail.reaction-rest #living :is([data-part="lowerLeft"]){animation:bfx-swallowtail-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-swallowtail-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.38)}}
+.articulated-butterfly_swallowtail #living :is([data-part="lowerRight"]){transform-origin:172px 190px}
+.articulated-butterfly_swallowtail.reaction-flight #living :is([data-part="lowerRight"]){animation:bfx-swallowtail-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-swallowtail-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(-3deg) translate(5px,20px) rotate(4deg) scaleX(0.78)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(3deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(1.5deg) translate(5px,20px) rotate(2.0deg) scaleX(0.89)}}
+.articulated-butterfly_swallowtail.reaction-greet #living :is([data-part="lowerRight"]){animation:bfx-swallowtail-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-swallowtail-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_swallowtail.reaction-rest #living :is([data-part="lowerRight"]){animation:bfx-swallowtail-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-swallowtail-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.38)}}
+.articulated-butterfly_swallowtail.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-swallowtail-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-swallowtail-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(-3deg)}60%{transform:translate(3px,-5px) rotate(3deg)}80%{transform:translate(1px,-2px) rotate(1.5deg)}}
+.articulated-butterfly_swallowtail.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-swallowtail-greet-head 1800ms ease-in-out both}
+@keyframes bfx-swallowtail-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_swallowtail #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_swallowtail.reaction-rest #living .expression-eye{animation:bfx-swallowtail-sleep 2800ms ease-in-out both}
+@keyframes bfx-swallowtail-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_swallowtail.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_swallowtail:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_moth #living [data-part]{transform-box:view-box}
+.articulated-butterfly_moth #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_moth.reaction-flight #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-moth-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-moth-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(5deg) scaleX(0.75)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(0.0deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.875)}}
+.articulated-butterfly_moth.reaction-greet #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-moth-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-moth-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(10deg) scaleX(.70)}}
+.articulated-butterfly_moth.reaction-rest #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-moth-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-moth-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.38)}}
+.articulated-butterfly_moth #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+.articulated-butterfly_moth.reaction-flight #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-moth-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-moth-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(-5deg) scaleX(0.75)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(0.0deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.875)}}
+.articulated-butterfly_moth.reaction-greet #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-moth-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-moth-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(-10deg) scaleX(.70)}}
+.articulated-butterfly_moth.reaction-rest #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-moth-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-moth-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.38)}}
+.articulated-butterfly_moth #living :is([data-part="lowerLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_moth.reaction-flight #living :is([data-part="lowerLeft"]){animation:bfx-moth-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-moth-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-4deg) scaleX(0.86)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(0.0deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.9299999999999999)}}
+.articulated-butterfly_moth.reaction-greet #living :is([data-part="lowerLeft"]){animation:bfx-moth-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-moth-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_moth.reaction-rest #living :is([data-part="lowerLeft"]){animation:bfx-moth-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-moth-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.38)}}
+.articulated-butterfly_moth #living :is([data-part="lowerRight"]){transform-origin:172px 190px}
+.articulated-butterfly_moth.reaction-flight #living :is([data-part="lowerRight"]){animation:bfx-moth-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-moth-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(4deg) scaleX(0.86)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(0.0deg) translate(5px,20px) rotate(2.0deg) scaleX(0.9299999999999999)}}
+.articulated-butterfly_moth.reaction-greet #living :is([data-part="lowerRight"]){animation:bfx-moth-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-moth-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_moth.reaction-rest #living :is([data-part="lowerRight"]){animation:bfx-moth-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-moth-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.38)}}
+.articulated-butterfly_moth.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-moth-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-moth-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(0deg)}60%{transform:translate(3px,-5px) rotate(0deg)}80%{transform:translate(1px,-2px) rotate(0.0deg)}}
+.articulated-butterfly_moth.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-moth-greet-head 1800ms ease-in-out both}
+@keyframes bfx-moth-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_moth #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_moth.reaction-rest #living .expression-eye{animation:bfx-moth-sleep 2800ms ease-in-out both}
+@keyframes bfx-moth-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_moth.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_moth:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_leaf #living [data-part]{transform-box:view-box}
+.articulated-butterfly_leaf #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_leaf.reaction-flight #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-leaf-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-leaf-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(-5deg) translate(-5px,-5px) rotate(5deg) scaleX(0.63)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(5deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(2.5deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.815)}}
+.articulated-butterfly_leaf.reaction-greet #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-leaf-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-leaf-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(10deg) scaleX(.70)}}
+.articulated-butterfly_leaf.reaction-rest #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-leaf-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-leaf-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.26)}}
+.articulated-butterfly_leaf #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+.articulated-butterfly_leaf.reaction-flight #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-leaf-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-leaf-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(-5deg) translate(5px,-5px) rotate(-5deg) scaleX(0.63)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(5deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(2.5deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.815)}}
+.articulated-butterfly_leaf.reaction-greet #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-leaf-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-leaf-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(-10deg) scaleX(.70)}}
+.articulated-butterfly_leaf.reaction-rest #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-leaf-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-leaf-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.26)}}
+.articulated-butterfly_leaf #living :is([data-part="lowerLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_leaf.reaction-flight #living :is([data-part="lowerLeft"]){animation:bfx-leaf-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-leaf-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(-5deg) translate(-5px,20px) rotate(-4deg) scaleX(0.78)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(5deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(2.5deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.89)}}
+.articulated-butterfly_leaf.reaction-greet #living :is([data-part="lowerLeft"]){animation:bfx-leaf-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-leaf-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_leaf.reaction-rest #living :is([data-part="lowerLeft"]){animation:bfx-leaf-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-leaf-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.26)}}
+.articulated-butterfly_leaf #living :is([data-part="lowerRight"]){transform-origin:172px 190px}
+.articulated-butterfly_leaf.reaction-flight #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-leaf-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(-5deg) translate(5px,20px) rotate(4deg) scaleX(0.78)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(5deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(2.5deg) translate(5px,20px) rotate(2.0deg) scaleX(0.89)}}
+.articulated-butterfly_leaf.reaction-greet #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-leaf-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_leaf.reaction-rest #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-leaf-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.26)}}
+.articulated-butterfly_leaf.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-leaf-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-leaf-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(-5deg)}60%{transform:translate(3px,-5px) rotate(5deg)}80%{transform:translate(1px,-2px) rotate(2.5deg)}}
+.articulated-butterfly_leaf.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-leaf-greet-head 1800ms ease-in-out both}
+@keyframes bfx-leaf-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_leaf #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_leaf.reaction-rest #living .expression-eye{animation:bfx-leaf-sleep 2800ms ease-in-out both}
+@keyframes bfx-leaf-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_leaf.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+.articulated-butterfly_leaf:is(.hop,.dance){animation:none}
+.articulated-butterfly_leaf.dance #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-leaf-upperLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_leaf.hop #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-leaf-upperLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_leaf.dance #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-leaf-upperRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_leaf.hop #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-leaf-upperRight-greet 1500ms ease-in-out}
+.articulated-butterfly_leaf.dance #living :is([data-part="lowerLeft"]){animation:bfx-leaf-lowerLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_leaf.hop #living :is([data-part="lowerLeft"]){animation:bfx-leaf-lowerLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_leaf.dance #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_leaf.hop #living :is([data-part="lowerRight"]){animation:bfx-leaf-lowerRight-greet 1500ms ease-in-out}
+.articulated-butterfly_leaf.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-leaf-body-flight 2200ms ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_leaf:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_longwing #living [data-part]{transform-box:view-box}
+.articulated-butterfly_longwing #living :is([data-part="upperLeft"],[data-part="spotLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_longwing.reaction-flight #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-longwing-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-longwing-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(5deg) scaleX(0.36)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(0.0deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.6799999999999999)}}
+.articulated-butterfly_longwing.reaction-greet #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-longwing-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-longwing-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(10deg) scaleX(.70)}}
+.articulated-butterfly_longwing.reaction-rest #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-longwing-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-longwing-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.22)}}
+.articulated-butterfly_longwing #living :is([data-part="upperRight"],[data-part="spotRight"]){transform-origin:172px 165px}
+.articulated-butterfly_longwing.reaction-flight #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-longwing-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-longwing-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(-5deg) scaleX(0.36)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(0.0deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.6799999999999999)}}
+.articulated-butterfly_longwing.reaction-greet #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-longwing-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-longwing-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(-10deg) scaleX(.70)}}
+.articulated-butterfly_longwing.reaction-rest #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-longwing-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-longwing-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.22)}}
+.articulated-butterfly_longwing #living :is([data-part="lowerLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_longwing.reaction-flight #living :is([data-part="lowerLeft"]){animation:bfx-longwing-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-longwing-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-4deg) scaleX(0.8)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(0.0deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.9)}}
+.articulated-butterfly_longwing.reaction-greet #living :is([data-part="lowerLeft"]){animation:bfx-longwing-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-longwing-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_longwing.reaction-rest #living :is([data-part="lowerLeft"]){animation:bfx-longwing-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-longwing-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.22)}}
+.articulated-butterfly_longwing #living :is([data-part="lowerRight"]){transform-origin:172px 190px}
+.articulated-butterfly_longwing.reaction-flight #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-longwing-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(4deg) scaleX(0.8)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(0.0deg) translate(5px,20px) rotate(2.0deg) scaleX(0.9)}}
+.articulated-butterfly_longwing.reaction-greet #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-longwing-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_longwing.reaction-rest #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-longwing-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.22)}}
+.articulated-butterfly_longwing.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-longwing-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-longwing-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(0deg)}60%{transform:translate(3px,-5px) rotate(0deg)}80%{transform:translate(1px,-2px) rotate(0.0deg)}}
+.articulated-butterfly_longwing.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-longwing-greet-head 1800ms ease-in-out both}
+@keyframes bfx-longwing-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_longwing #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_longwing.reaction-rest #living .expression-eye{animation:bfx-longwing-sleep 2800ms ease-in-out both}
+@keyframes bfx-longwing-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_longwing.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+.articulated-butterfly_longwing:is(.hop,.dance){animation:none}
+.articulated-butterfly_longwing.dance #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-longwing-upperLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_longwing.hop #living :is([data-part="upperLeft"],[data-part="spotLeft"]){animation:bfx-longwing-upperLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_longwing.dance #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-longwing-upperRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_longwing.hop #living :is([data-part="upperRight"],[data-part="spotRight"]){animation:bfx-longwing-upperRight-greet 1500ms ease-in-out}
+.articulated-butterfly_longwing.dance #living :is([data-part="lowerLeft"]){animation:bfx-longwing-lowerLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_longwing.hop #living :is([data-part="lowerLeft"]){animation:bfx-longwing-lowerLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_longwing.dance #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_longwing.hop #living :is([data-part="lowerRight"]){animation:bfx-longwing-lowerRight-greet 1500ms ease-in-out}
+.articulated-butterfly_longwing.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-longwing-body-flight 2200ms ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_longwing:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}
+.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest){animation:none}
+.articulated-butterfly_fan #living [data-part]{transform-box:view-box}
+.articulated-butterfly_fan #living :is([data-part="upperLeft"]){transform-origin:162px 165px}
+.articulated-butterfly_fan.reaction-flight #living :is([data-part="upperLeft"]){animation:bfx-fan-upperLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-fan-upperLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(5deg) scaleX(0.83)}60%{transform:translate(3px,-5px) translate(5px,5px) rotate(0deg) translate(-5px,-5px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,5px) rotate(0.0deg) translate(-5px,-5px) rotate(2.5deg) scaleX(0.915)}}
+.articulated-butterfly_fan.reaction-greet #living :is([data-part="upperLeft"]){animation:bfx-fan-upperLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-fan-upperLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_fan.reaction-rest #living :is([data-part="upperLeft"]){animation:bfx-fan-upperLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-fan-upperLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(3deg) scaleX(0.38)}}
+.articulated-butterfly_fan #living :is([data-part="upperRight"]){transform-origin:172px 165px}
+.articulated-butterfly_fan.reaction-flight #living :is([data-part="upperRight"]){animation:bfx-fan-upperRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-fan-upperRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(-5deg) scaleX(0.83)}60%{transform:translate(3px,-5px) translate(-5px,5px) rotate(0deg) translate(5px,-5px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,5px) rotate(0.0deg) translate(5px,-5px) rotate(-2.5deg) scaleX(0.915)}}
+.articulated-butterfly_fan.reaction-greet #living :is([data-part="upperRight"]){animation:bfx-fan-upperRight-greet 1800ms ease-in-out both}
+@keyframes bfx-fan-upperRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(0deg) scaleX(1)}}
+.articulated-butterfly_fan.reaction-rest #living :is([data-part="upperRight"]){animation:bfx-fan-upperRight-rest 2800ms ease-in-out both}
+@keyframes bfx-fan-upperRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}28%,72%{transform:rotate(-3deg) scaleX(0.38)}}
+.articulated-butterfly_fan #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){transform-origin:162px 190px}
+.articulated-butterfly_fan.reaction-flight #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){animation:bfx-fan-lowerLeft-flight 2200ms ease-in-out infinite}
+@keyframes bfx-fan-lowerLeft-flight{0%,100%{transform:translate(0px,0px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-4deg) scaleX(0.48)}60%{transform:translate(3px,-5px) translate(5px,-20px) rotate(0deg) translate(-5px,20px) rotate(-2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(5px,-20px) rotate(0.0deg) translate(-5px,20px) rotate(-2.0deg) scaleX(0.74)}}
+.articulated-butterfly_fan.reaction-greet #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){animation:bfx-fan-lowerLeft-greet 1800ms ease-in-out both}
+@keyframes bfx-fan-lowerLeft-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}18%,38%{transform:rotate(-13deg) scaleX(.70)}}
+.articulated-butterfly_fan.reaction-rest #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){animation:bfx-fan-lowerLeft-rest 2800ms ease-in-out both}
+@keyframes bfx-fan-lowerLeft-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(-6deg) scaleX(0.38)}}
+.articulated-butterfly_fan #living :is([data-part="lowerRight"],[data-part="spotRight"]){transform-origin:172px 190px}
+.articulated-butterfly_fan.reaction-flight #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-flight 2200ms ease-in-out infinite}
+@keyframes bfx-fan-lowerRight-flight{0%,100%{transform:translate(0px,0px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(0deg) scaleX(1)}30%{transform:translate(-3px,-8px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(4deg) scaleX(0.48)}60%{transform:translate(3px,-5px) translate(-5px,-20px) rotate(0deg) translate(5px,20px) rotate(2deg) scaleX(0.95)}80%{transform:translate(1px,-2px) translate(-5px,-20px) rotate(0.0deg) translate(5px,20px) rotate(2.0deg) scaleX(0.74)}}
+.articulated-butterfly_fan.reaction-greet #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-greet 1800ms ease-in-out both}
+@keyframes bfx-fan-lowerRight-greet{0%,49%,100%{transform:rotate(0deg) scaleX(1)}65%,82%{transform:rotate(13deg) scaleX(.70)}}
+.articulated-butterfly_fan.reaction-rest #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-rest 2800ms ease-in-out both}
+@keyframes bfx-fan-lowerRight-rest{0%,100%{transform:rotate(0deg) scaleX(1)}38%,72%{transform:rotate(6deg) scaleX(0.38)}}
+.articulated-butterfly_fan.reaction-flight #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-fan-body-flight 2200ms ease-in-out infinite}
+@keyframes bfx-fan-body-flight{0%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-3px,-8px) rotate(0deg)}60%{transform:translate(3px,-5px) rotate(0deg)}80%{transform:translate(1px,-2px) rotate(0.0deg)}}
+.articulated-butterfly_fan.reaction-greet #living [data-part="head"]{transform-origin:167px 136px;animation:bfx-fan-greet-head 1800ms ease-in-out both}
+@keyframes bfx-fan-greet-head{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.articulated-butterfly_fan #living .expression-eye{transform-box:fill-box;transform-origin:center}
+.articulated-butterfly_fan.reaction-rest #living .expression-eye{animation:bfx-fan-sleep 2800ms ease-in-out both}
+@keyframes bfx-fan-sleep{0%,100%{transform:scaleY(1)}30%,72%{transform:scaleY(.12)}}
+.articulated-butterfly_fan.reaction-flight #living .expression-eye{animation:bf-blink 4400ms linear infinite}
+.articulated-butterfly_fan:is(.hop,.dance){animation:none}
+.articulated-butterfly_fan.dance #living :is([data-part="upperLeft"]){animation:bfx-fan-upperLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_fan.hop #living :is([data-part="upperLeft"]){animation:bfx-fan-upperLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_fan.dance #living :is([data-part="upperRight"]){animation:bfx-fan-upperRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_fan.hop #living :is([data-part="upperRight"]){animation:bfx-fan-upperRight-greet 1500ms ease-in-out}
+.articulated-butterfly_fan.dance #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){animation:bfx-fan-lowerLeft-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_fan.hop #living :is([data-part="lowerLeft"],[data-part="spotLeft"]){animation:bfx-fan-lowerLeft-greet 1500ms ease-in-out}
+.articulated-butterfly_fan.dance #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-flight 2200ms ease-in-out infinite}
+.articulated-butterfly_fan.hop #living :is([data-part="lowerRight"],[data-part="spotRight"]){animation:bfx-fan-lowerRight-greet 1500ms ease-in-out}
+.articulated-butterfly_fan.dance #living :is([data-part="head"],[data-part="body"]){transform-origin:167px 170px;animation:bfx-fan-body-flight 2200ms ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-butterfly_fan:is(.reaction-flight,.reaction-greet,.reaction-rest,.hop,.dance) #living *{animation:none!important;transform:none!important}}

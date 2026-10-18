@@ -58,3 +58,358 @@
 @media(prefers-reduced-motion:reduce) {
   :is(.articulated-bronto,.articulated-stego,.articulated-triceratops) .expression-mouth { animation:none!important; }
 }
+
+/* v0.8: independent selectable walks/flights, greetings, and settling rests. */
+.articulated-bronto:is(.reaction-walk,.reaction-greet,.reaction-rest){animation:none}
+.articulated-bronto [data-part]{transform-box:view-box}
+.articulated-bronto [data-part="tail"]{transform-origin:103.23px 196.23000000000002px}
+.articulated-bronto.reaction-walk [data-part="tail"]{animation:dx-bronto-tail-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="tail"]{animation:dx-bronto-tail-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="tail"]{animation:dx-bronto-tail-rest 2800ms ease-in-out both}
+@keyframes dx-bronto-tail-walk{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+@keyframes dx-bronto-tail-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-bronto-tail-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-bronto [data-part="legs2"]{transform-origin:172.98000000000002px 217.62px}
+.articulated-bronto.reaction-walk [data-part="legs2"]{animation:dx-bronto-legs2-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="legs2"]{animation:dx-bronto-legs2-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="legs2"]{animation:dx-bronto-legs2-rest 2800ms ease-in-out both}
+@keyframes dx-bronto-legs2-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes dx-bronto-legs2-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-bronto-legs2-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(-4deg) translateY(2px)}}
+.articulated-bronto [data-part="body"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-bronto.reaction-walk [data-part="body"]{animation:dx-bronto-body-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="body"]{animation:dx-bronto-body-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="body"]{animation:dx-bronto-body-rest 2800ms ease-in-out both}
+@keyframes dx-bronto-body-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-bronto-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-bronto-body-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-bronto [data-part="head"]{transform-origin:230.64000000000001px 210.18px}
+.articulated-bronto.reaction-walk [data-part="head"]{animation:dx-bronto-head-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="head"]{animation:dx-bronto-head-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="head"]{animation:dx-bronto-head-rest 2800ms ease-in-out both}
+@keyframes dx-bronto-head-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-bronto-head-greet{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(-6deg)}42%,78%{transform:rotate(2.0999999999999996deg)}}
+@keyframes dx-bronto-head-rest{0%,100%{transform:translateY(0) rotate(0)}35%,72%{transform:translateY(6px) rotate(8deg)}}
+.articulated-bronto [data-part="legs1"]{transform-origin:161.82000000000002px 222.27px}
+.articulated-bronto.reaction-walk [data-part="legs1"]{animation:dx-bronto-legs1-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="legs1"]{animation:dx-bronto-legs1-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="legs1"]{animation:dx-bronto-legs1-rest 2800ms ease-in-out both}
+@keyframes dx-bronto-legs1-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes dx-bronto-legs1-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-bronto-legs1-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(4deg) translateY(2px)}}
+.articulated-bronto [data-part="spots"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-bronto.reaction-walk [data-part="spots"]{animation:dx-bronto-body-walk 2400ms ease-in-out infinite}
+.articulated-bronto.reaction-greet [data-part="spots"]{animation:dx-bronto-body-greet 1800ms ease-in-out both}
+.articulated-bronto.reaction-rest [data-part="spots"]{animation:dx-bronto-body-rest 2800ms ease-in-out both}
+.articulated-bronto .expression-eye,.articulated-bronto .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-bronto.reaction-rest .expression-eye{animation:dx-bronto-sleep 2800ms ease-in-out both}
+@keyframes dx-bronto-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-bronto.reaction-greet .expression-mouth{animation:dx-bronto-smile 1800ms ease-in-out both}
+@keyframes dx-bronto-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+@media(prefers-reduced-motion:reduce){.articulated-bronto:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-bronto:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}
+.articulated-stego:is(.reaction-walk,.reaction-greet,.reaction-rest){animation:none}
+.articulated-stego [data-part]{transform-box:view-box}
+.articulated-stego [data-part="tail"]{transform-origin:103.23px 196.23000000000002px}
+.articulated-stego.reaction-walk [data-part="tail"]{animation:dx-stego-tail-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="tail"]{animation:dx-stego-tail-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="tail"]{animation:dx-stego-tail-rest 2800ms ease-in-out both}
+@keyframes dx-stego-tail-walk{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+@keyframes dx-stego-tail-greet{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-9deg)}40%,80%{transform:rotate(9deg)}}
+@keyframes dx-stego-tail-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-stego [data-part="legs2"]{transform-origin:172.98000000000002px 217.62px}
+.articulated-stego.reaction-walk [data-part="legs2"]{animation:dx-stego-legs2-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="legs2"]{animation:dx-stego-legs2-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="legs2"]{animation:dx-stego-legs2-rest 2800ms ease-in-out both}
+@keyframes dx-stego-legs2-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes dx-stego-legs2-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-stego-legs2-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(-4deg) translateY(2px)}}
+.articulated-stego [data-part="plates"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-stego.reaction-walk [data-part="plates"]{animation:dx-stego-body-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="plates"]{animation:dx-stego-body-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="plates"]{animation:dx-stego-body-rest 2800ms ease-in-out both}
+@keyframes dx-stego-body-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-stego-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-stego-body-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-stego [data-part="body"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-stego.reaction-walk [data-part="body"]{animation:dx-stego-body-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="body"]{animation:dx-stego-body-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="body"]{animation:dx-stego-body-rest 2800ms ease-in-out both}
+.articulated-stego [data-part="legs1"]{transform-origin:161.82000000000002px 222.27px}
+.articulated-stego.reaction-walk [data-part="legs1"]{animation:dx-stego-legs1-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="legs1"]{animation:dx-stego-legs1-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="legs1"]{animation:dx-stego-legs1-rest 2800ms ease-in-out both}
+@keyframes dx-stego-legs1-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes dx-stego-legs1-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-stego-legs1-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(4deg) translateY(2px)}}
+.articulated-stego [data-part="head"]{transform-origin:242.73000000000002px 194.37px}
+.articulated-stego.reaction-walk [data-part="head"]{animation:dx-stego-head-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="head"]{animation:dx-stego-head-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="head"]{animation:dx-stego-head-rest 2800ms ease-in-out both}
+@keyframes dx-stego-head-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-stego-head-greet{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(5deg)}42%,78%{transform:rotate(-1.75deg)}}
+@keyframes dx-stego-head-rest{0%,100%{transform:translateY(0) rotate(0)}35%,72%{transform:translateY(6px) rotate(6deg)}}
+.articulated-stego [data-part="spots"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-stego.reaction-walk [data-part="spots"]{animation:dx-stego-body-walk 2400ms ease-in-out infinite}
+.articulated-stego.reaction-greet [data-part="spots"]{animation:dx-stego-body-greet 1800ms ease-in-out both}
+.articulated-stego.reaction-rest [data-part="spots"]{animation:dx-stego-body-rest 2800ms ease-in-out both}
+.articulated-stego .expression-eye,.articulated-stego .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-stego.reaction-rest .expression-eye{animation:dx-stego-sleep 2800ms ease-in-out both}
+@keyframes dx-stego-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-stego.reaction-greet .expression-mouth{animation:dx-stego-smile 1800ms ease-in-out both}
+@keyframes dx-stego-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+@media(prefers-reduced-motion:reduce){.articulated-stego:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-stego:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}
+.articulated-triceratops:is(.reaction-walk,.reaction-greet,.reaction-rest){animation:none}
+.articulated-triceratops [data-part]{transform-box:view-box}
+.articulated-triceratops [data-part="tail"]{transform-origin:103.23px 196.23000000000002px}
+.articulated-triceratops.reaction-walk [data-part="tail"]{animation:dx-triceratops-tail-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="tail"]{animation:dx-triceratops-tail-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="tail"]{animation:dx-triceratops-tail-rest 2800ms ease-in-out both}
+@keyframes dx-triceratops-tail-walk{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+@keyframes dx-triceratops-tail-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-triceratops-tail-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-triceratops [data-part="legs2"]{transform-origin:172.98000000000002px 217.62px}
+.articulated-triceratops.reaction-walk [data-part="legs2"]{animation:dx-triceratops-legs2-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="legs2"]{animation:dx-triceratops-legs2-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="legs2"]{animation:dx-triceratops-legs2-rest 2800ms ease-in-out both}
+@keyframes dx-triceratops-legs2-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes dx-triceratops-legs2-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-triceratops-legs2-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(-4deg) translateY(2px)}}
+.articulated-triceratops [data-part="body"]{transform-origin:164.61px 219.48000000000002px}
+.articulated-triceratops.reaction-walk [data-part="body"]{animation:dx-triceratops-body-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="body"]{animation:dx-triceratops-body-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="body"]{animation:dx-triceratops-body-rest 2800ms ease-in-out both}
+@keyframes dx-triceratops-body-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-triceratops-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-triceratops-body-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-triceratops [data-part="legs1"]{transform-origin:161.82000000000002px 222.27px}
+.articulated-triceratops.reaction-walk [data-part="legs1"]{animation:dx-triceratops-legs1-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="legs1"]{animation:dx-triceratops-legs1-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="legs1"]{animation:dx-triceratops-legs1-rest 2800ms ease-in-out both}
+@keyframes dx-triceratops-legs1-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes dx-triceratops-legs1-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-triceratops-legs1-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(4deg) translateY(2px)}}
+.articulated-triceratops [data-part="frill"]{transform-origin:232.5px 195.3px}
+.articulated-triceratops.reaction-walk [data-part="frill"]{animation:dx-triceratops-head-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="frill"]{animation:dx-triceratops-head-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="frill"]{animation:dx-triceratops-head-rest 2800ms ease-in-out both}
+@keyframes dx-triceratops-head-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-triceratops-head-greet{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(7deg)}42%,78%{transform:rotate(-2.4499999999999997deg)}}
+@keyframes dx-triceratops-head-rest{0%,100%{transform:translateY(0) rotate(0)}35%,72%{transform:translateY(6px) rotate(6deg)}}
+.articulated-triceratops [data-part="head"]{transform-origin:232.5px 195.3px}
+.articulated-triceratops.reaction-walk [data-part="head"]{animation:dx-triceratops-head-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="head"]{animation:dx-triceratops-head-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="head"]{animation:dx-triceratops-head-rest 2800ms ease-in-out both}
+.articulated-triceratops [data-part="horns"]{transform-origin:232.5px 195.3px}
+.articulated-triceratops.reaction-walk [data-part="horns"]{animation:dx-triceratops-head-walk 2400ms ease-in-out infinite}
+.articulated-triceratops.reaction-greet [data-part="horns"]{animation:dx-triceratops-head-greet 1800ms ease-in-out both}
+.articulated-triceratops.reaction-rest [data-part="horns"]{animation:dx-triceratops-head-rest 2800ms ease-in-out both}
+.articulated-triceratops .expression-eye,.articulated-triceratops .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-triceratops.reaction-rest .expression-eye{animation:dx-triceratops-sleep 2800ms ease-in-out both}
+@keyframes dx-triceratops-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-triceratops.reaction-greet .expression-mouth{animation:dx-triceratops-smile 1800ms ease-in-out both}
+@keyframes dx-triceratops-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+@media(prefers-reduced-motion:reduce){.articulated-triceratops:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-triceratops:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}
+.articulated-ankylosaur:is(.reaction-walk,.reaction-greet,.reaction-rest){animation:none}
+.articulated-ankylosaur [data-part]{transform-box:view-box}
+.articulated-ankylosaur [data-part="club"]{transform-origin:103px 202px}
+.articulated-ankylosaur.reaction-walk [data-part="club"]{animation:dx-ankylosaur-tail-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="club"]{animation:dx-ankylosaur-tail-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="club"]{animation:dx-ankylosaur-tail-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="club"]{animation:dx-ankylosaur-tail-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="club"]{animation:dx-ankylosaur-tail-greet 1500ms ease-in-out}
+@keyframes dx-ankylosaur-tail-walk{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+@keyframes dx-ankylosaur-tail-greet{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-9deg)}40%,80%{transform:rotate(9deg)}}
+@keyframes dx-ankylosaur-tail-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-ankylosaur [data-part="tail"]{transform-origin:103px 202px}
+.articulated-ankylosaur.reaction-walk [data-part="tail"]{animation:dx-ankylosaur-tail-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="tail"]{animation:dx-ankylosaur-tail-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="tail"]{animation:dx-ankylosaur-tail-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="tail"]{animation:dx-ankylosaur-tail-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="tail"]{animation:dx-ankylosaur-tail-greet 1500ms ease-in-out}
+.articulated-ankylosaur [data-part="legs2"]{transform-origin:182px 221px}
+.articulated-ankylosaur.reaction-walk [data-part="legs2"]{animation:dx-ankylosaur-legs2-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="legs2"]{animation:dx-ankylosaur-legs2-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="legs2"]{animation:dx-ankylosaur-legs2-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="legs2"]{animation:dx-ankylosaur-legs2-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="legs2"]{animation:dx-ankylosaur-legs2-greet 1500ms ease-in-out}
+@keyframes dx-ankylosaur-legs2-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes dx-ankylosaur-legs2-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-ankylosaur-legs2-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(-4deg) translateY(2px)}}
+.articulated-ankylosaur [data-part="body"]{transform-origin:168px 224px}
+.articulated-ankylosaur.reaction-walk [data-part="body"]{animation:dx-ankylosaur-body-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="body"]{animation:dx-ankylosaur-body-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="body"]{animation:dx-ankylosaur-body-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="body"]{animation:dx-ankylosaur-body-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="body"]{animation:dx-ankylosaur-body-greet 1500ms ease-in-out}
+@keyframes dx-ankylosaur-body-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-ankylosaur-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-ankylosaur-body-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-ankylosaur [data-part="legs1"]{transform-origin:162px 229px}
+.articulated-ankylosaur.reaction-walk [data-part="legs1"]{animation:dx-ankylosaur-legs1-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="legs1"]{animation:dx-ankylosaur-legs1-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="legs1"]{animation:dx-ankylosaur-legs1-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="legs1"]{animation:dx-ankylosaur-legs1-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="legs1"]{animation:dx-ankylosaur-legs1-greet 1500ms ease-in-out}
+@keyframes dx-ankylosaur-legs1-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes dx-ankylosaur-legs1-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-ankylosaur-legs1-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(4deg) translateY(2px)}}
+.articulated-ankylosaur [data-part="head"]{transform-origin:250px 204px}
+.articulated-ankylosaur.reaction-walk [data-part="head"]{animation:dx-ankylosaur-head-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="head"]{animation:dx-ankylosaur-head-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="head"]{animation:dx-ankylosaur-head-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="head"]{animation:dx-ankylosaur-head-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="head"]{animation:dx-ankylosaur-head-greet 1500ms ease-in-out}
+@keyframes dx-ankylosaur-head-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-ankylosaur-head-greet{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(3deg)}42%,78%{transform:rotate(-1.0499999999999998deg)}}
+@keyframes dx-ankylosaur-head-rest{0%,100%{transform:translateY(0) rotate(0)}35%,72%{transform:translateY(6px) rotate(6deg)}}
+.articulated-ankylosaur [data-part="armor"]{transform-origin:168px 224px}
+.articulated-ankylosaur.reaction-walk [data-part="armor"]{animation:dx-ankylosaur-body-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.reaction-greet [data-part="armor"]{animation:dx-ankylosaur-body-greet 1800ms ease-in-out both}
+.articulated-ankylosaur.reaction-rest [data-part="armor"]{animation:dx-ankylosaur-body-rest 2800ms ease-in-out both}
+.articulated-ankylosaur.dance [data-part="armor"]{animation:dx-ankylosaur-body-walk 2400ms ease-in-out infinite}
+.articulated-ankylosaur.hop [data-part="armor"]{animation:dx-ankylosaur-body-greet 1500ms ease-in-out}
+.articulated-ankylosaur .expression-eye,.articulated-ankylosaur .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-ankylosaur.reaction-rest .expression-eye{animation:dx-ankylosaur-sleep 2800ms ease-in-out both}
+@keyframes dx-ankylosaur-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-ankylosaur.reaction-greet .expression-mouth{animation:dx-ankylosaur-smile 1800ms ease-in-out both}
+@keyframes dx-ankylosaur-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+.articulated-ankylosaur:is(.hop,.dance){animation:none}
+@media(prefers-reduced-motion:reduce){.articulated-ankylosaur:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-ankylosaur:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}
+.articulated-friendly_trex:is(.reaction-walk,.reaction-greet,.reaction-rest){animation:none}
+.articulated-friendly_trex [data-part]{transform-box:view-box}
+.articulated-friendly_trex [data-part="tail"]{transform-origin:151px 211px}
+.articulated-friendly_trex.reaction-walk [data-part="tail"]{animation:dx-friendly_trex-tail-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="tail"]{animation:dx-friendly_trex-tail-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="tail"]{animation:dx-friendly_trex-tail-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="tail"]{animation:dx-friendly_trex-tail-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="tail"]{animation:dx-friendly_trex-tail-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-tail-walk{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+@keyframes dx-friendly_trex-tail-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-friendly_trex-tail-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-friendly_trex [data-part="legs2"]{transform-origin:168px 236px}
+.articulated-friendly_trex.reaction-walk [data-part="legs2"]{animation:dx-friendly_trex-legs2-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="legs2"]{animation:dx-friendly_trex-legs2-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="legs2"]{animation:dx-friendly_trex-legs2-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="legs2"]{animation:dx-friendly_trex-legs2-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="legs2"]{animation:dx-friendly_trex-legs2-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-legs2-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+@keyframes dx-friendly_trex-legs2-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-friendly_trex-legs2-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(-4deg) translateY(2px)}}
+.articulated-friendly_trex [data-part="body"]{transform-origin:186px 230px}
+.articulated-friendly_trex.reaction-walk [data-part="body"]{animation:dx-friendly_trex-body-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="body"]{animation:dx-friendly_trex-body-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="body"]{animation:dx-friendly_trex-body-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="body"]{animation:dx-friendly_trex-body-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="body"]{animation:dx-friendly_trex-body-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-body-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-friendly_trex-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-friendly_trex-body-rest{0%,100%{transform:translateY(0)}35%,72%{transform:translateY(6px)}}
+.articulated-friendly_trex [data-part="legs1"]{transform-origin:211px 238px}
+.articulated-friendly_trex.reaction-walk [data-part="legs1"]{animation:dx-friendly_trex-legs1-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="legs1"]{animation:dx-friendly_trex-legs1-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="legs1"]{animation:dx-friendly_trex-legs1-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="legs1"]{animation:dx-friendly_trex-legs1-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="legs1"]{animation:dx-friendly_trex-legs1-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-legs1-walk{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg)}75%{transform:rotate(-6deg)}}
+@keyframes dx-friendly_trex-legs1-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-friendly_trex-legs1-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(4deg) translateY(2px)}}
+.articulated-friendly_trex [data-part="head"]{transform-origin:213px 136px}
+.articulated-friendly_trex.reaction-walk [data-part="head"]{animation:dx-friendly_trex-head-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="head"]{animation:dx-friendly_trex-head-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="head"]{animation:dx-friendly_trex-head-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="head"]{animation:dx-friendly_trex-head-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="head"]{animation:dx-friendly_trex-head-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-head-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-friendly_trex-head-greet{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(5deg)}42%,78%{transform:rotate(-1.75deg)}}
+@keyframes dx-friendly_trex-head-rest{0%,100%{transform:translateY(0) rotate(0)}35%,72%{transform:translateY(6px) rotate(6deg)}}
+.articulated-friendly_trex [data-part="arms"]{transform-origin:190px 166px}
+.articulated-friendly_trex.reaction-walk [data-part="arms"]{animation:dx-friendly_trex-arms-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="arms"]{animation:dx-friendly_trex-arms-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="arms"]{animation:dx-friendly_trex-arms-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="arms"]{animation:dx-friendly_trex-arms-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="arms"]{animation:dx-friendly_trex-arms-greet 1500ms ease-in-out}
+@keyframes dx-friendly_trex-arms-walk{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes dx-friendly_trex-arms-greet{0%,100%{transform:rotate(0)}20%,55%{transform:rotate(-13deg)}38%,72%{transform:rotate(7deg)}}
+@keyframes dx-friendly_trex-arms-rest{0%,100%{transform:rotate(0)}35%,72%{transform:translateY(6px) rotate(8deg)}}
+.articulated-friendly_trex [data-part="belly"]{transform-origin:186px 230px}
+.articulated-friendly_trex.reaction-walk [data-part="belly"]{animation:dx-friendly_trex-body-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.reaction-greet [data-part="belly"]{animation:dx-friendly_trex-body-greet 1800ms ease-in-out both}
+.articulated-friendly_trex.reaction-rest [data-part="belly"]{animation:dx-friendly_trex-body-rest 2800ms ease-in-out both}
+.articulated-friendly_trex.dance [data-part="belly"]{animation:dx-friendly_trex-body-walk 2400ms ease-in-out infinite}
+.articulated-friendly_trex.hop [data-part="belly"]{animation:dx-friendly_trex-body-greet 1500ms ease-in-out}
+.articulated-friendly_trex .expression-eye,.articulated-friendly_trex .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-friendly_trex.reaction-rest .expression-eye{animation:dx-friendly_trex-sleep 2800ms ease-in-out both}
+@keyframes dx-friendly_trex-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-friendly_trex.reaction-greet .expression-mouth{animation:dx-friendly_trex-smile 1800ms ease-in-out both}
+@keyframes dx-friendly_trex-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+.articulated-friendly_trex:is(.hop,.dance){animation:none}
+@media(prefers-reduced-motion:reduce){.articulated-friendly_trex:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-friendly_trex:is(.reaction-walk,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}
+.articulated-pterosaur:is(.reaction-fly,.reaction-greet,.reaction-rest){animation:none}
+.articulated-pterosaur [data-part]{transform-box:view-box}
+.articulated-pterosaur [data-part="tail"]{transform-origin:169px 217px}
+.articulated-pterosaur.reaction-fly [data-part="tail"]{animation:dx-pterosaur-tail-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="tail"]{animation:dx-pterosaur-tail-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="tail"]{animation:dx-pterosaur-tail-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="tail"]{animation:dx-pterosaur-tail-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="tail"]{animation:dx-pterosaur-tail-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-tail-fly{0%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}65%{transform:translateY(-4px)}}
+@keyframes dx-pterosaur-tail-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-pterosaur-tail-rest{0%,100%{transform:translateY(0)}}
+.articulated-pterosaur [data-part="feet"]{transform-origin:170px 213px}
+.articulated-pterosaur.reaction-fly [data-part="feet"]{animation:dx-pterosaur-feet-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="feet"]{animation:dx-pterosaur-feet-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="feet"]{animation:dx-pterosaur-feet-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="feet"]{animation:dx-pterosaur-feet-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="feet"]{animation:dx-pterosaur-feet-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-feet-fly{0%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}65%{transform:translateY(-4px)}}
+@keyframes dx-pterosaur-feet-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-pterosaur-feet-rest{0%,100%{transform:rotate(0)}35%,72%{transform:translateY(-4px)}}
+.articulated-pterosaur [data-part="leftWing"]{transform-origin:160px 144px}
+.articulated-pterosaur.reaction-fly [data-part="leftWing"]{animation:dx-pterosaur-leftWing-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="leftWing"]{animation:dx-pterosaur-leftWing-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="leftWing"]{animation:dx-pterosaur-leftWing-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="leftWing"]{animation:dx-pterosaur-leftWing-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="leftWing"]{animation:dx-pterosaur-leftWing-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-leftWing-fly{0%,100%{transform:translateY(0) rotate(0) scaleY(1)}30%{transform:translateY(-8px) rotate(9deg) scaleY(.58)}65%{transform:translateY(-4px) rotate(-5deg) scaleY(.95)}}
+@keyframes dx-pterosaur-leftWing-greet{0%,100%{transform:rotate(0)}24%,57%{transform:rotate(17deg) scaleY(.86)}40%,75%{transform:rotate(3deg)}}
+@keyframes dx-pterosaur-leftWing-rest{0%,100%{transform:scaleX(1) rotate(0)}35%,72%{transform:scaleX(.30) rotate(-12deg)}}
+.articulated-pterosaur [data-part="rightWing"]{transform-origin:178px 144px}
+.articulated-pterosaur.reaction-fly [data-part="rightWing"]{animation:dx-pterosaur-rightWing-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="rightWing"]{animation:dx-pterosaur-rightWing-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="rightWing"]{animation:dx-pterosaur-rightWing-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="rightWing"]{animation:dx-pterosaur-rightWing-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="rightWing"]{animation:dx-pterosaur-rightWing-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-rightWing-fly{0%,100%{transform:translateY(0) rotate(0) scaleY(1)}30%{transform:translateY(-8px) rotate(-9deg) scaleY(.58)}65%{transform:translateY(-4px) rotate(5deg) scaleY(.95)}}
+@keyframes dx-pterosaur-rightWing-greet{0%,100%{transform:rotate(0)}}
+@keyframes dx-pterosaur-rightWing-rest{0%,100%{transform:scaleX(1) rotate(0)}35%,72%{transform:scaleX(.30) rotate(12deg)}}
+.articulated-pterosaur [data-part="body"]{transform-origin:170px 177px}
+.articulated-pterosaur.reaction-fly [data-part="body"]{animation:dx-pterosaur-body-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="body"]{animation:dx-pterosaur-body-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="body"]{animation:dx-pterosaur-body-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="body"]{animation:dx-pterosaur-body-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="body"]{animation:dx-pterosaur-body-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-body-fly{0%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}65%{transform:translateY(-4px)}}
+@keyframes dx-pterosaur-body-greet{0%,100%{transform:translateY(0)}}
+@keyframes dx-pterosaur-body-rest{0%,100%{transform:translateY(0)}}
+.articulated-pterosaur [data-part="crest"]{transform-origin:170px 105px}
+.articulated-pterosaur.reaction-fly [data-part="crest"]{animation:dx-pterosaur-head-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="crest"]{animation:dx-pterosaur-head-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="crest"]{animation:dx-pterosaur-head-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="crest"]{animation:dx-pterosaur-head-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="crest"]{animation:dx-pterosaur-head-greet 1500ms ease-in-out}
+@keyframes dx-pterosaur-head-fly{0%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}65%{transform:translateY(-4px)}}
+@keyframes dx-pterosaur-head-greet{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}65%{transform:rotate(4deg)}}
+@keyframes dx-pterosaur-head-rest{0%,100%{transform:rotate(0)}35%,72%{transform:rotate(8deg)}}
+.articulated-pterosaur [data-part="head"]{transform-origin:170px 105px}
+.articulated-pterosaur.reaction-fly [data-part="head"]{animation:dx-pterosaur-head-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.reaction-greet [data-part="head"]{animation:dx-pterosaur-head-greet 1800ms ease-in-out both}
+.articulated-pterosaur.reaction-rest [data-part="head"]{animation:dx-pterosaur-head-rest 2800ms ease-in-out both}
+.articulated-pterosaur.dance [data-part="head"]{animation:dx-pterosaur-head-fly 2400ms ease-in-out infinite}
+.articulated-pterosaur.hop [data-part="head"]{animation:dx-pterosaur-head-greet 1500ms ease-in-out}
+.articulated-pterosaur .expression-eye,.articulated-pterosaur .expression-mouth{transform-box:fill-box;transform-origin:center}
+.articulated-pterosaur.reaction-rest .expression-eye{animation:dx-pterosaur-sleep 2800ms ease-in-out both}
+@keyframes dx-pterosaur-sleep{0%,100%{transform:scaleY(1)}35%,72%{transform:scaleY(.10)}}
+.articulated-pterosaur.reaction-greet .expression-mouth{animation:dx-pterosaur-smile 1800ms ease-in-out both}
+@keyframes dx-pterosaur-smile{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.08,1.2)}}
+.articulated-pterosaur:is(.hop,.dance){animation:none}
+@media(prefers-reduced-motion:reduce){.articulated-pterosaur:is(.reaction-fly,.reaction-greet,.reaction-rest,.hop,.dance){animation:none!important}.articulated-pterosaur:is(.reaction-fly,.reaction-greet,.reaction-rest,.hop,.dance) *{animation:none!important;transform:none!important}}

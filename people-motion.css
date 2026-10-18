@@ -35,3 +35,61 @@
 @media(prefers-reduced-motion:reduce) {
  .living-target[class*="articulated-kid_"], .living-target[class*="articulated-kid_"] #living * { animation:none!important; transition:none!important; }
 }
+
+/* Explicit per-character menu reactions. Existing legacy shortcuts remain above. */
+.articulated-kid_baby[class*="reaction-"]{animation:none}
+.articulated-kid_baby.reaction-kid_baby_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_baby.reaction-kid_baby_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_baby.reaction-kid_baby_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_baby.reaction-kid_baby_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_baby.reaction-kid_baby_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_baby.reaction-kid_baby_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_baby.reaction-kid_baby_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_baby #living [data-part]{animation:none!important;transform:none!important}}
+.articulated-kid_bows[class*="reaction-"]{animation:none}
+.articulated-kid_bows.reaction-kid_bows_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_bows.reaction-kid_bows_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_bows.reaction-kid_bows_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_bows.reaction-kid_bows_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_bows.reaction-kid_bows_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_bows.reaction-kid_bows_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_bows.reaction-kid_bows_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_bows #living [data-part]{animation:none!important;transform:none!important}}
+.articulated-kid_curls[class*="reaction-"]{animation:none}
+.articulated-kid_curls.reaction-kid_curls_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_curls.reaction-kid_curls_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_curls.reaction-kid_curls_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_curls.reaction-kid_curls_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_curls.reaction-kid_curls_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_curls.reaction-kid_curls_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_curls.reaction-kid_curls_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_curls #living [data-part]{animation:none!important;transform:none!important}}
+.articulated-kid_rain[class*="reaction-"]{animation:none}
+.articulated-kid_rain.reaction-kid_rain_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_rain.reaction-kid_rain_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_rain.reaction-kid_rain_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_rain.reaction-kid_rain_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_rain.reaction-kid_rain_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_rain.reaction-kid_rain_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_rain.reaction-kid_rain_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_rain #living [data-part]{animation:none!important;transform:none!important}}
+.articulated-kid_sleepy[class*="reaction-"]{animation:none}
+.articulated-kid_sleepy.reaction-kid_sleepy_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_sleepy.reaction-kid_sleepy_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_sleepy.reaction-kid_sleepy_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_sleepy.reaction-kid_sleepy_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_sleepy.reaction-kid_sleepy_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_sleepy.reaction-kid_sleepy_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_sleepy.reaction-kid_sleepy_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_sleepy #living [data-part]{animation:none!important;transform:none!important}}
+.articulated-kid_chef[class*="reaction-"]{animation:none}
+.articulated-kid_chef.reaction-kid_chef_wave #living [data-part="rightarm"]{animation:people-menu-wave 2.2s ease-in-out}
+.articulated-kid_chef.reaction-kid_chef_dance #living :is([data-part="head"],[data-part="hair"],[data-part="bow"]){animation:people-nod 2.4s ease-in-out infinite}
+.articulated-kid_chef.reaction-kid_chef_dance #living :is([data-part="leftarm"]){animation:people-wave-left 2.4s ease-in-out infinite}
+.articulated-kid_chef.reaction-kid_chef_dance #living :is([data-part="rightarm"]){animation:people-wave-right 2.4s ease-in-out infinite}
+.articulated-kid_chef.reaction-kid_chef_dance #living :is([data-part="leftleg"]){animation:people-step-left 2.4s ease-in-out infinite}
+.articulated-kid_chef.reaction-kid_chef_dance #living :is([data-part="rightleg"]){animation:people-step-right 2.4s ease-in-out infinite}
+.articulated-kid_chef.reaction-kid_chef_jump #living [data-part]{animation:people-menu-jump 1.6s ease-in-out}
+@media(prefers-reduced-motion:reduce){.articulated-kid_chef #living [data-part]{animation:none!important;transform:none!important}}
+@keyframes people-menu-wave {0%,100%{transform:rotate(0)}22%,62%{transform:rotate(-65deg)}42%,82%{transform:rotate(-42deg)}}
+@keyframes people-menu-jump {0%,100%{transform:translateY(0)}18%{transform:translateY(3px)}48%{transform:translateY(-8px)}76%{transform:translateY(2px)}}

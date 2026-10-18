@@ -1,29 +1,29 @@
 /* Transform whole painted regions. Never replace the child's marks. */
-.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket):is(.dance,.hop){animation:none}
+.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket):is(.dance,.hop,.reaction-dance,.reaction-hop){animation:none}
 :is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living [data-part]{transform-box:view-box}
 :is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
 .articulated-space_planet #living :is([data-part="globe"],[data-part="west"],[data-part="east"],[data-part="cap"]){transform-origin:157px 184px}
 .articulated-space_planet #living [data-part="moon"]{transform-origin:285px 52px}
-.articulated-space_planet.dance #living :is([data-part="globe"],[data-part="west"],[data-part="east"],[data-part="cap"]){animation:space-sway 2.8s ease-in-out infinite}
-.articulated-space_planet.dance #living [data-part="moon"]{animation:space-moon 2.8s ease-in-out infinite}
-.articulated-space_planet.hop #living :is([data-part="globe"],[data-part="west"],[data-part="east"],[data-part="cap"]){animation:space-pop 1100ms ease-in-out}
-.articulated-space_planet.hop #living [data-part="moon"]{animation:space-moon-hop 1100ms ease-in-out}
+.articulated-space_planet:is(.dance,.reaction-dance) #living :is([data-part="globe"],[data-part="west"],[data-part="east"],[data-part="cap"]){animation:space-sway 2.8s ease-in-out infinite}
+.articulated-space_planet:is(.dance,.reaction-dance) #living [data-part="moon"]{animation:space-moon 2.8s ease-in-out infinite}
+.articulated-space_planet:is(.hop,.reaction-hop) #living :is([data-part="globe"],[data-part="west"],[data-part="east"],[data-part="cap"]){animation:space-pop 1100ms ease-in-out}
+.articulated-space_planet:is(.hop,.reaction-hop) #living [data-part="moon"]{animation:space-moon-hop 1100ms ease-in-out}
 .articulated-space_ringed_planet #living :is([data-part="globe"],[data-part="band"],[data-part="backRing"],[data-part="frontRing"]){transform-origin:166px 167px}
 .articulated-space_ringed_planet #living [data-part="star"]{transform-origin:49px 52px}
-.articulated-space_ringed_planet.dance #living :is([data-part="globe"],[data-part="band"]){animation:space-sway 3.2s ease-in-out infinite}
-.articulated-space_ringed_planet.dance #living :is([data-part="backRing"],[data-part="frontRing"]){animation:space-ring 3.2s ease-in-out infinite}
-.articulated-space_ringed_planet.dance #living [data-part="star"]{animation:space-star 1.6s ease-in-out infinite}
-.articulated-space_ringed_planet.hop #living :is([data-part="globe"],[data-part="band"]){animation:space-pop 1100ms ease-in-out}
-.articulated-space_ringed_planet.hop #living :is([data-part="backRing"],[data-part="frontRing"]){animation:space-ring-hop 1100ms ease-in-out}
-.articulated-space_ringed_planet.hop #living [data-part="star"]{animation:space-star-hop 1100ms ease-in-out}
+.articulated-space_ringed_planet:is(.dance,.reaction-dance) #living :is([data-part="globe"],[data-part="band"]){animation:space-sway 3.2s ease-in-out infinite}
+.articulated-space_ringed_planet:is(.dance,.reaction-dance) #living :is([data-part="backRing"],[data-part="frontRing"]){animation:space-ring 3.2s ease-in-out infinite}
+.articulated-space_ringed_planet:is(.dance,.reaction-dance) #living [data-part="star"]{animation:space-star 1.6s ease-in-out infinite}
+.articulated-space_ringed_planet:is(.hop,.reaction-hop) #living :is([data-part="globe"],[data-part="band"]){animation:space-pop 1100ms ease-in-out}
+.articulated-space_ringed_planet:is(.hop,.reaction-hop) #living :is([data-part="backRing"],[data-part="frontRing"]){animation:space-ring-hop 1100ms ease-in-out}
+.articulated-space_ringed_planet:is(.hop,.reaction-hop) #living [data-part="star"]{animation:space-star-hop 1100ms ease-in-out}
 .articulated-space_rocket #living [data-part]{transform-origin:167px 180px}
 .articulated-space_rocket #living [data-part="flame"]{transform-origin:167px 248px}
-.articulated-space_rocket.dance #living :not([data-part="flame"])[data-part]{animation:space-rocket 2.2s ease-in-out infinite}
-.articulated-space_rocket.dance #living [data-part="flame"]{animation:space-flame 2.2s ease-in-out infinite}
-.articulated-space_rocket.hop #living :not([data-part="flame"])[data-part]{animation:space-launch 1200ms ease-in-out}
-.articulated-space_rocket.hop #living [data-part="flame"]{animation:space-flame-hop 1200ms ease-in-out}
-:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket).dance #living .expression-eye{animation:space-blink 3.4s linear infinite}
-:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket).hop #living .expression-mouth{animation:space-smile 1100ms ease-in-out}
+.articulated-space_rocket:is(.dance,.reaction-dance) #living :not([data-part="flame"])[data-part]{animation:space-rocket 2.2s ease-in-out infinite}
+.articulated-space_rocket:is(.dance,.reaction-dance) #living [data-part="flame"]{animation:space-flame 2.2s ease-in-out infinite}
+.articulated-space_rocket:is(.hop,.reaction-hop) #living :not([data-part="flame"])[data-part]{animation:space-launch 1200ms ease-in-out}
+.articulated-space_rocket:is(.hop,.reaction-hop) #living [data-part="flame"]{animation:space-flame-hop 1200ms ease-in-out}
+:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket):is(.dance,.reaction-dance) #living .expression-eye{animation:space-blink 3.4s linear infinite}
+:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket):is(.hop,.reaction-hop) #living .expression-mouth{animation:space-smile 1100ms ease-in-out}
 @keyframes space-sway{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-4px) rotate(-4deg)}75%{transform:translateY(-4px) rotate(4deg)}}
 @keyframes space-moon{0%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(-8px,-5px) rotate(-10deg)}50%{transform:translate(-12px,3px) rotate(0)}75%{transform:translate(-4px,8px) rotate(10deg)}}
 @keyframes space-pop{0%,100%{transform:translateY(0) scale(1)}20%{transform:translateY(3px) scale(1.03,.97)}48%{transform:translateY(-11px) scale(.98,1.02)}75%{transform:translateY(1px) scale(1)}}
@@ -38,4 +38,53 @@
 @keyframes space-flame-hop{0%,100%{transform:translateY(0) scaleY(1)}20%{transform:translateY(4px) scaleY(.7)}48%{transform:translateY(-13px) scaleY(1.12)}75%{transform:translateY(-3px) scaleY(.9)}}
 @keyframes space-blink{0%,40%,48%,100%{transform:scaleY(1)}43%,45%{transform:scaleY(.13)}}
 @keyframes space-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.08,1.15)}}
-@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket),:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living [data-part],:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living :is(.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket){animation:none!important}:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket) #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}
+
+/* 0.8: selectable reactions. Keep legacy tap/dance aliases above. */
+.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite){animation:none}
+:is(.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite) #living [data-part]{transform-box:view-box}
+:is(.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite) #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-space_planet.reaction-moon-visit #living [data-part="moon"]{animation:space-visit 2600ms ease-in-out}
+.articulated-space_ringed_planet.reaction-ring-wave #living :is([data-part="backRing"],[data-part="frontRing"]){animation:space-ring-wave 2400ms ease-in-out}
+.articulated-space_rocket.reaction-turn #living [data-part]{transform-origin:167px 180px;animation:space-turn 2600ms ease-in-out}
+.articulated-space_moon #living :is([data-part="crescent"],[data-part="craterTop"],[data-part="craterBottom"],[data-part="craterSide"]){transform-origin:155px 151px}
+.articulated-space_moon #living [data-part="starLeft"]{transform-origin:251px 96px}
+.articulated-space_moon #living [data-part="starRight"]{transform-origin:280px 180px}
+.articulated-space_moon:is(.hop,.reaction-hop) #living [data-part]{animation:space-pop 1200ms ease-in-out}
+.articulated-space_moon:is(.dance,.reaction-dance) #living :is([data-part="crescent"],[data-part="craterTop"],[data-part="craterBottom"],[data-part="craterSide"]){animation:space-moon-rock 3000ms ease-in-out infinite}
+.articulated-space_moon:is(.dance,.reaction-dance) #living :is([data-part="starLeft"],[data-part="starRight"]){animation:space-star 1500ms ease-in-out infinite}
+.articulated-space_moon:is(.dance,.reaction-dance) #living [data-part="starRight"]{animation-direction:reverse}
+.articulated-space_moon.reaction-turn #living :is([data-part="crescent"],[data-part="craterTop"],[data-part="craterBottom"],[data-part="craterSide"]){animation:space-turn 2800ms ease-in-out}
+.articulated-space_sun #living [data-part]{transform-origin:167px 166px}
+.articulated-space_sun:is(.hop,.reaction-hop) #living [data-part]{animation:space-pop 1200ms ease-in-out}
+.articulated-space_sun:is(.dance,.reaction-dance) #living [data-part]{animation:space-sun-rock 2800ms ease-in-out infinite}
+.articulated-space_sun.reaction-rays-open #living [data-part="raysTop"]{animation:space-open-top 2200ms ease-in-out}
+.articulated-space_sun.reaction-rays-open #living [data-part="raysRight"]{animation:space-open-right 2200ms ease-in-out}
+.articulated-space_sun.reaction-rays-open #living [data-part="raysBottom"]{animation:space-open-bottom 2200ms ease-in-out}
+.articulated-space_sun.reaction-rays-open #living [data-part="raysLeft"]{animation:space-open-left 2200ms ease-in-out}
+.articulated-space_satellite #living :is([data-part="body"],[data-part="window"]){transform-origin:167px 176px}
+.articulated-space_satellite #living [data-part="leftPanel"]{transform-origin:120px 176px}
+.articulated-space_satellite #living [data-part="rightPanel"]{transform-origin:214px 176px}
+.articulated-space_satellite #living [data-part="dish"]{transform-origin:167px 105px}
+.articulated-space_satellite:is(.hop,.reaction-hop) #living [data-part]{animation:space-satellite-hop 1200ms ease-in-out}
+.articulated-space_satellite:is(.dance,.reaction-dance) #living [data-part="leftPanel"]{animation:space-panel-left 2400ms ease-in-out infinite}
+.articulated-space_satellite:is(.dance,.reaction-dance) #living [data-part="rightPanel"]{animation:space-panel-right 2400ms ease-in-out infinite}
+.articulated-space_satellite:is(.dance,.reaction-dance) #living [data-part="dish"]{animation:space-dish-nod 2400ms ease-in-out infinite}
+.articulated-space_satellite.reaction-scan #living [data-part="dish"]{animation:space-dish-scan 2600ms ease-in-out}
+.articulated-space_satellite.reaction-scan #living .expression-eye{animation:space-scan-blink 2600ms linear}
+@keyframes space-visit{0%,100%{transform:translate(0,0)}25%{transform:translate(-94px,-8px)}50%{transform:translate(-200px,0)}75%{transform:translate(-105px,10px)}}
+@keyframes space-ring-wave{0%,100%{transform:rotate(0) scaleY(1)}25%{transform:rotate(-13deg) scaleY(.76)}65%{transform:rotate(13deg) scaleY(1.06)}}
+@keyframes space-turn{0%{transform:scale(1) rotate(0)}15%{transform:scale(.73) rotate(0)}85%{transform:scale(.73) rotate(360deg)}100%{transform:scale(1) rotate(360deg)}}
+@keyframes space-moon-rock{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+@keyframes space-sun-rock{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-9deg)}75%{transform:rotate(9deg)}}
+@keyframes space-open-top{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(0,-7px)}}
+@keyframes space-open-right{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(7px,0)}}
+@keyframes space-open-bottom{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(0,7px)}}
+@keyframes space-open-left{0%,100%{transform:translate(0,0)}35%,65%{transform:translate(-7px,0)}}
+@keyframes space-satellite-hop{0%,100%{transform:translateY(0)}25%{transform:translateY(4px)}55%{transform:translateY(-14px)}80%{transform:translateY(1px)}}
+@keyframes space-panel-left{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(12deg)}75%{transform:rotate(-7deg)}}
+@keyframes space-panel-right{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(7deg)}75%{transform:rotate(-12deg)}}
+@keyframes space-dish-nod{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}}
+@keyframes space-dish-scan{0%,100%{transform:rotate(0)}25%{transform:rotate(-16deg)}65%{transform:rotate(16deg)}85%{transform:rotate(0)}}
+@keyframes space-scan-blink{0%,80%,94%,100%{transform:scaleY(1)}85%,89%{transform:scaleY(.13)}}
+@media(prefers-reduced-motion:reduce){.living-target:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite){animation:none!important}:is(.articulated-space_planet,.articulated-space_ringed_planet,.articulated-space_rocket,.articulated-space_moon,.articulated-space_sun,.articulated-space_satellite) #living :is([data-part],.expression-eye,.expression-mouth){animation:none!important;transform:none!important}}

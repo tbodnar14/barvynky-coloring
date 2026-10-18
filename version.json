@@ -1,18 +1,21 @@
 {
-  "version": "0.7.4-rc1",
-  "deployment": "guide-band-qa",
+  "version": "0.8.0",
+  "deployment": "github-pages",
   "source_checkpoints": {
-    "animals": "8b7446c48f9d11c104d29805a99f2b94bae5a6d1",
-    "dinosaurs": "b5132add708ccdd887bbf428bfbd2749e2c6c4ef",
+    "animals": "5dfb5d7825bc979b99c56edabe138fbb09d36f0b",
+    "dinosaurs": "9019cd44b2b223bd1b5905bc1fe6aab112dbd0b3",
     "launch": "019716bba6ca4187db26ef6261cbb3374f337ce4",
-    "baby": "95b8116e4d5f4bd700fddecd32f6dd02bb81a216",
+    "baby": "e6174fe83b561da33254964b8015f51fa2349598",
     "shared_fix": "7117a7a42d640e35ba33c2e4f638818f8bf0920f",
-    "cars": "0b875513a97017cfcb0034bf7045b24c65a2262f",
-    "fruit": "9984b7f0a8d0d6d7639b066c580ef60672f0bdb1",
-    "space": "bf1d37cd6e3ffd5156187736add9dfc1dfb55aba",
-    "winter": "718c442e6053f84c1f2ca22c5cfb4b00ea3c215c",
-    "halloween": "ed043ebd75e0c8f41e72ec4248aacabf481cc219",
-    "butterflies": "d75a22a3c925b058df31f3c95532b759d12aaea7"
+    "cars": "e42103382dc4abf9280d8153b36f0b06c3e99a4b",
+    "fruit": "f0a797de0a309384298f0244048454549be16b9f",
+    "space": "51b33e83e8ee08afa26db3e9a8467e9780c6f970",
+    "winter": "1a9cb7d44771393f0e409a1ab7fca0224d9b5636",
+    "halloween": "b8d803b7f5bc4d25d3d54c770722a3384a9d6e6f",
+    "butterflies": "f82802e2efb10c981203e99406e61739fd8ca65e"
   },
-  "base_combined_checkpoint": "51372ab4633f5dc89432467f845f1522990ff52e"
+  "base_combined_checkpoint": "51372ab4633f5dc89432467f845f1522990ff52e",
+  "reaction_engine": "226f36dd9199fa4a8201be107fce339e3300742c",
+  "guide_hotfix": "4d1675247190feafb3be38ce9770c8f25eb96c6e",
+  "no_mode_patch": "874f07da5be73fc96a7c7d0a8556cf6d7945defe"
 }
