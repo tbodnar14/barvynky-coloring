@@ -49,6 +49,27 @@ export const PEOPLE = {
   faceMarkup:'<path class="expression-eye" d="M137 103 Q143 111 149 103 M185 103 Q191 111 197 103" fill="none" stroke="#26242a" stroke-width="4" stroke-linecap="round"/><path class="expression-mouth" d="M157 124 Q167 131 177 124" fill="none" stroke="#26242a" stroke-width="4" stroke-linecap="round"/>'
  })
 };
+
+// Sixth original child: the toque and apron give a distinct, broad silhouette.
+PEOPLE.kid_chef = child({name:'Малюк-кухар',
+ hair:'M111 80 L110 61 C92 56 89 37 104 27 C115 18 131 22 137 30 C141 10 168 9 179 25 C192 8 219 17 220 34 C240 29 254 46 245 61 Q238 73 224 70 L223 82 Q166 93 111 80 Z',
+ outfit:'M128 147 Q167 161 206 147 L225 179 L210 192 L211 264 L178 264 L167 240 L156 264 L123 264 L124 192 L109 179 Z',
+ outfitDetails:'<path d="M117 174 L130 180 M204 180 L217 174" fill="none" stroke="#303038" stroke-width="3" stroke-linecap="round"/>',
+ extra:part('apron','Фартушок','M145 155 L189 155 L190 193 L208 245 Q167 260 126 245 L144 193 Z','<path d="M148 209 L186 209 L185 228 Q167 238 149 228 Z" fill="none" stroke="#303038" stroke-width="3" stroke-linejoin="round"/>')
+});
+const peopleActionIcon=(paths)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">${paths}</g></svg>`;
+const peopleIcons={
+ wave:peopleActionIcon('<path d="M17 40 L12 26 Q9 20 13 18 L19 24 V10 Q22 4 25 10 L26 23 Q38 15 36 27 L30 40 Z M6 7 L9 11 M36 6 L33 11"/>'),
+ dance:peopleActionIcon('<circle cx="24" cy="9" r="5"/><path d="M24 16 L21 29 L10 39 M21 29 L32 39 M22 21 L9 15 M23 21 L37 17 M37 7 V12 M34 10 H40"/>'),
+ jump:peopleActionIcon('<path d="M9 41 H39 M24 29 V6 M16 14 L24 6 L32 14 M13 32 Q24 23 35 32"/>'),
+};
+// Each menu has three different trajectories; IDs are unique to each model.
+for(const [id,model] of Object.entries(PEOPLE)) model.reactions=[
+ {id:id+'_wave',label:'Помахати',icon:peopleIcons.wave,loop:false,durationMs:2200},
+ {id:id+'_dance',label:'Танцювати',icon:peopleIcons.dance,loop:true,durationMs:2400},
+ {id:id+'_jump',label:'Підстрибнути',icon:peopleIcons.jump,loop:false,durationMs:1600},
+];
+
 export const PEOPLE_CATALOG = Object.freeze(Object.keys(PEOPLE));
 // A category-scoped control uses the existing engine's free/guided model.
 // It retains all paint and the current step when switching either direction.

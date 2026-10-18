@@ -11,7 +11,7 @@ import {buttonSVG,categorySVG,colorSVG,frameSVG,blankSVG,bannerSVG} from './game
 const reactionPlayer=createReactionPlayer();
 const $=s=>document.querySelector(s),KEY='barvynky.drawings.v1';
 const colors=[['#ffffff','Білий'],['#ff2b2b','Червоний'],['#c90000','Темно-червоний'],['#f08200','Помаранчевий'],['#ffed35','Жовтий'],['#793d00','Коричневий'],['#42d315','Зелений'],['#008b04','Темно-зелений'],['#28c9ee','Блакитний'],['#2b73f8','Синій'],['#60008f','Темно-фіолетовий'],['#ab3ff4','Фіолетовий'],['#ff43b7','Рожевий']];
-const animalCatalog=['rabbit','sheep','cat','fish','turtle','blank'];
+const animalCatalog=['rabbit','sheep','cat','fish','turtle','puppy','blank'];
 const categories=[['animal','Тваринки','#ffd434'],['space','Планети','#a663f1'],['dino','Динозаври','#27b17a'],['tree','Зима','#31b2d9'],['car','Машинки','#418bc5'],['baby','Малюки','#d7549b'],['fruit','Фрукти','#e96140'],['pumpkin','Геловін','#e9a02c'],['butterfly','Метелики','#72c64c']];
 let drawings=[],current,route=[],tool='pencil',color=colors[1][0],stroke,uid=0,toastTimer,reactionTimer,reactions=false,removed=null,paletteScroll=0,paletteRecord=null,viewerReadyAt=0,pendingDelete=null,deleteReadyAt=0;
 try{const a=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(a))drawings=a.filter(d=>d&&Array.isArray(d.actions)&&(ANIMALS[d.animal]||LEGACY[d.animal]||d.animal==='blank'));}catch{}

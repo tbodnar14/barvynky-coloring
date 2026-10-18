@@ -46,3 +46,82 @@
  :is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) #living [data-part],
  :is(.articulated-winter_snowman,.articulated-winter_tree,.articulated-winter_mittens) .expression-eye{animation:none!important}
 }
+
+/* v0.8 selectable reactions; legacy hop/dance above remain compatible. */
+.living-target.articulated-winter_snowman:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_snowman #living [data-part]{transform-box:view-box}
+.living-target.articulated-winter_tree:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_tree #living [data-part]{transform-box:view-box}
+.living-target.articulated-winter_mittens:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_mittens #living [data-part]{transform-box:view-box}
+.living-target.articulated-winter_penguin:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_penguin #living [data-part]{transform-box:view-box}
+.living-target.articulated-winter_sled:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_sled #living [data-part]{transform-box:view-box}
+.living-target.articulated-winter_snowglobe:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-winter_snowglobe #living [data-part]{transform-box:view-box}
+.articulated-winter_snowman.reaction-winter_greet #living :is([data-part="arms"]){animation:win-wave 2.4s ease-in-out}
+.articulated-winter_snowman.reaction-winter_greet #living :is([data-part="head"],[data-part="hat"],[data-part="nose"]){animation:win-nod 2.4s ease-in-out}
+.articulated-winter_snowman.reaction-winter_bow #living :is([data-part="body"]){animation:wx-bow-body 2.4s ease-in-out}
+.articulated-winter_snowman.reaction-winter_bow #living :is([data-part="head"],[data-part="hat"],[data-part="nose"],[data-part="scarf"]){animation:wx-bow 2.4s ease-in-out}
+.articulated-winter_snowman.reaction-winter_jump #living [data-part]{animation:wx-jump 1.8s ease-in-out}
+.articulated-winter_tree.reaction-winter_wind #living [data-part]{animation:win-tree 2.8s ease-in-out infinite}
+.articulated-winter_tree.reaction-winter_star #living :is([data-part="star"]){transform-origin:167px 49px;animation:wx-star-turn 2.4s ease-in-out}
+.articulated-winter_tree.reaction-winter_baubles #living :is([data-part="ornaments"]){animation:wx-bauble 2.4s ease-in-out}
+.articulated-winter_mittens.reaction-winter_clap #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){animation:wx-clap-left 2.4s ease-in-out}
+.articulated-winter_mittens.reaction-winter_hops #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){animation:wx-hop-left 2.4s ease-in-out}
+.articulated-winter_mittens.reaction-winter_clap #living :is([data-part="right"],[data-part="rightCuff"],[data-part="rightPatch"]){animation:wx-clap-right 2.4s ease-in-out}
+.articulated-winter_mittens.reaction-winter_hops #living :is([data-part="right"],[data-part="rightCuff"],[data-part="rightPatch"]){animation:wx-hop-right 2.4s ease-in-out}
+.articulated-winter_mittens.reaction-winter_wave #living :is([data-part="left"],[data-part="leftCuff"],[data-part="leftPatch"]){animation:wx-mitten-wave 2.4s ease-in-out}
+.articulated-winter_penguin #living [data-part="body"]{transform-origin:167px 280px}
+.articulated-winter_penguin #living [data-part="bib"]{transform-origin:167px 280px}
+.articulated-winter_penguin #living [data-part="beak"]{transform-origin:167px 280px}
+.articulated-winter_penguin #living [data-part="leftWing"]{transform-origin:106px 151px}
+.articulated-winter_penguin #living [data-part="rightWing"]{transform-origin:229px 151px}
+.articulated-winter_penguin #living [data-part="leftFoot"]{transform-origin:132px 291px}
+.articulated-winter_penguin #living [data-part="rightFoot"]{transform-origin:203px 291px}
+.articulated-winter_penguin.reaction-winter_flap #living :is([data-part="leftWing"]),.articulated-winter_penguin.dance #living :is([data-part="leftWing"]){animation:wx-flap-left 2.2s ease-in-out infinite}
+.articulated-winter_penguin.reaction-winter_flap #living :is([data-part="rightWing"]),.articulated-winter_penguin.dance #living :is([data-part="rightWing"]){animation:wx-flap-right 2.2s ease-in-out infinite}
+.articulated-winter_penguin.reaction-winter_waddle #living :is([data-part="body"],[data-part="bib"],[data-part="beak"],[data-part="leftWing"],[data-part="rightWing"]){transform-origin:167px 280px;animation:wx-waddle 2.2s ease-in-out infinite}
+.articulated-winter_penguin.reaction-winter_waddle #living :is([data-part="leftFoot"]){animation:wx-step-left 2.2s ease-in-out infinite}
+.articulated-winter_penguin.reaction-winter_waddle #living :is([data-part="rightFoot"]){animation:wx-step-right 2.2s ease-in-out infinite}
+.articulated-winter_penguin.reaction-winter_slide #living [data-part]{transform-origin:167px 220px;animation:wx-slide 2.6s ease-in-out}
+.articulated-winter_penguin.hop #living [data-part]{animation:wx-jump 1.8s ease-in-out}
+.articulated-winter_sled #living [data-part]{transform-origin:173px 286px}
+.articulated-winter_sled.reaction-winter_ride #living [data-part],.articulated-winter_sled.dance #living [data-part]{animation:wx-ride 2.6s ease-in-out infinite}
+.articulated-winter_sled.reaction-winter_rock #living [data-part]{animation:wx-rock 2.4s ease-in-out}
+.articulated-winter_sled.reaction-winter_bump #living [data-part],.articulated-winter_sled.hop #living [data-part]{animation:wx-sled-bump 1.8s ease-in-out}
+.articulated-winter_sled.reaction-winter_bump #living :is([data-part="cushion"]),.articulated-winter_sled.hop #living :is([data-part="cushion"]){animation:wx-cushion-bump 1.8s ease-in-out}
+.articulated-winter_snowglobe #living [data-part]{transform-origin:167px 261px}
+.articulated-winter_snowglobe.reaction-winter_snowfall #living :is([data-part="snowflakes"]),.articulated-winter_snowglobe.dance #living :is([data-part="snowflakes"]){animation:wx-snowfall 2.8s ease-in-out infinite}
+.articulated-winter_snowglobe.reaction-winter_shake #living :is([data-part="dome"],[data-part="snowbank"],[data-part="cottage"],[data-part="roof"],[data-part="snowflakes"]){animation:wx-globe-shake 2.4s ease-in-out}
+.articulated-winter_snowglobe.reaction-winter_cottage #living :is([data-part="cottage"],[data-part="roof"]),.articulated-winter_snowglobe.hop #living :is([data-part="cottage"],[data-part="roof"]){animation:wx-cottage 2.4s ease-in-out}
+@keyframes wx-bow-body{0%,100%{transform:scale(1)}40%,60%{transform:scale(1.025,.97)}}
+@keyframes wx-bow{0%,100%{transform:translateY(0) scaleY(1)}40%,60%{transform:translateY(12px) scaleY(.94)}}
+@keyframes wx-jump{0%,100%{transform:translateY(0)}18%{transform:translateY(3px)}48%{transform:translateY(-8px)}76%{transform:translateY(2px)}}
+@keyframes wx-star-turn{0%{transform:rotate(0)}80%,100%{transform:rotate(360deg)}}
+@keyframes wx-bauble{0%,35%,70%,100%{transform:translateY(0)}18%,53%{transform:translateY(-7px)}}
+@keyframes wx-clap-left{0%,100%{transform:translateX(0) rotate(0)}18%{transform:translateX(-16px) rotate(-8deg)}36%,65%{transform:translateX(2px) rotate(2deg)}50%{transform:translateX(-14px) rotate(-6deg)}}
+@keyframes wx-clap-right{0%,100%{transform:translateX(0) rotate(0)}18%{transform:translateX(16px) rotate(8deg)}36%,65%{transform:translateX(-2px) rotate(-2deg)}50%{transform:translateX(14px) rotate(6deg)}}
+@keyframes wx-hop-left{0%,45%,100%{transform:translateY(0)}22%{transform:translateY(-18px)}}
+@keyframes wx-hop-right{0%,45%,100%{transform:translateY(0)}72%{transform:translateY(-18px)}}
+@keyframes wx-mitten-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-13deg)}40%,80%{transform:rotate(6deg)}}
+@keyframes wx-flap-left{0%,50%,100%{transform:rotate(0)}25%,75%{transform:rotate(22deg)}}
+@keyframes wx-flap-right{0%,50%,100%{transform:rotate(0)}25%,75%{transform:rotate(-22deg)}}
+@keyframes wx-waddle{0%,50%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-5px) rotate(-4deg)}75%{transform:translateX(5px) rotate(4deg)}}
+@keyframes wx-step-left{0%,50%,100%{transform:translateY(0)}25%{transform:translateY(-8px) rotate(-8deg)}}
+@keyframes wx-step-right{0%,50%,100%{transform:translateY(0)}75%{transform:translateY(-8px) rotate(8deg)}}
+@keyframes wx-slide{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-12px) rotate(-8deg)}65%{transform:translateX(13px) rotate(-8deg)}85%{transform:translateX(7px) rotate(0)}}
+@keyframes wx-ride{0%,100%{transform:translateX(0)}30%{transform:translateX(-9px)}70%{transform:translateX(5px)}}
+@keyframes wx-rock{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+@keyframes wx-sled-bump{0%,100%{transform:translateY(0)}20%{transform:translateY(2px)}50%{transform:translateY(-16px)}75%{transform:translateY(2px)}}
+@keyframes wx-cushion-bump{0%,100%{transform:translateY(0) scaleY(1)}20%{transform:translateY(2px) scaleY(.97)}50%{transform:translateY(-16px)}75%{transform:translateY(2px) scaleY(.98)}}
+@keyframes wx-snowfall{0%{transform:translateY(0);opacity:1}75%{transform:translateY(58px);opacity:1}90%{transform:translateY(65px);opacity:0}91%{transform:translateY(0);opacity:0}100%{transform:translateY(0);opacity:1}}
+@keyframes wx-globe-shake{0%,50%,100%{transform:rotate(0)}20%,65%{transform:rotate(-3deg)}35%,80%{transform:rotate(3deg)}}
+@keyframes wx-cottage{0%,35%,75%,100%{transform:translateY(0)}18%,55%{transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_snowman #living [data-part],.articulated-winter_snowman #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_tree #living [data-part],.articulated-winter_tree #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_mittens #living [data-part],.articulated-winter_mittens #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_penguin #living [data-part],.articulated-winter_penguin #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_sled #living [data-part],.articulated-winter_sled #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.articulated-winter_snowglobe #living [data-part],.articulated-winter_snowglobe #living .expression-eye{animation:none!important;transform:none!important;opacity:1!important}}

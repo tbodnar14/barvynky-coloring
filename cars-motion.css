@@ -18,3 +18,116 @@
 @keyframes cars-blink{0%,38%,51%,100%{transform:scaleY(1)}43%,46%{transform:scaleY(.15)}}
 @keyframes cars-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.1,1.25)}}
 @media(prefers-reduced-motion:reduce){.living-target:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire),:is(.articulated-car_compact,.articulated-car_bus,.articulated-car_fire) #living *{animation:none!important}}
+
+/* v0.8 selectable reactions. Character-scoped; all child paint moves with its group. */
+.articulated-car_compact:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_compact #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_compact:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_compact:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_compact.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_compact.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_compact #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_compact:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_compact.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_compact #living [data-part="rearWheel"]{transform-origin:80px 254px}
+.articulated-car_compact #living [data-part="frontWheel"]{transform-origin:254px 254px}
+.articulated-car_bus:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_bus #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_bus:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_bus:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_bus.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_bus.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_bus #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_bus:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_bus.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_bus #living [data-part="rearWheel"]{transform-origin:80px 254px}
+.articulated-car_bus #living [data-part="frontWheel"]{transform-origin:254px 254px}
+.articulated-car_fire:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_fire #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_fire:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_fire:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_fire.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_fire.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_fire #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_fire:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_fire.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_fire #living [data-part="rearWheel"]{transform-origin:80px 254px}
+.articulated-car_fire #living [data-part="frontWheel"]{transform-origin:254px 254px}
+.articulated-car_tractor:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_tractor #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_tractor:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_tractor:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_tractor.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_tractor.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_tractor #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_tractor:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_tractor.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_tractor #living [data-part="rearWheel"]{transform-origin:80px 254px}
+.articulated-car_tractor #living [data-part="frontWheel"]{transform-origin:217px 264px}
+.articulated-car_dumptruck:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_dumptruck #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_dumptruck:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_dumptruck:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_dumptruck.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_dumptruck.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_dumptruck #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_dumptruck:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_dumptruck.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_dumptruck #living [data-part="rearWheel"]{transform-origin:72px 254px}
+.articulated-car_dumptruck #living [data-part="frontWheel"]{transform-origin:257px 254px}
+.articulated-car_ambulance:is([class*="reaction-"],.dance,.hop){animation:none}
+.articulated-car_ambulance #living [data-part]{transform-box:view-box;transform-origin:167px 238px}
+.articulated-car_ambulance:is(.reaction-drive,.dance) #living [data-part]{animation:cv8-drive-body 1800ms linear infinite}
+.articulated-car_ambulance:is(.reaction-drive,.dance) #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-drive-wheel 1800ms linear infinite}
+.articulated-car_ambulance.hop #living [data-part]{animation:cv8-greeting 1100ms ease-in-out}
+.articulated-car_ambulance.hop #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-greeting-wheel 1100ms ease-in-out}
+.articulated-car_ambulance #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-car_ambulance:is(.reaction-drive,.dance) #living .expression-eye{animation:cv8-blink 3600ms linear infinite}
+.articulated-car_ambulance.hop #living .expression-mouth{animation:cv8-smile 1100ms ease-in-out}
+.articulated-car_ambulance #living [data-part="rearWheel"]{transform-origin:80px 254px}
+.articulated-car_ambulance #living [data-part="frontWheel"]{transform-origin:254px 254px}
+.articulated-car_compact.reaction-bounce #living [data-part]{animation:cv8-suspension 1800ms ease-in-out}
+.articulated-car_compact.reaction-bounce #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-suspension-wheel 1800ms ease-in-out}
+.articulated-car_compact.reaction-bounce #living .expression-mouth{animation:cv8-smile 1800ms ease-in-out}
+.articulated-car_bus.reaction-bounce #living [data-part]{animation:cv8-suspension 1800ms ease-in-out}
+.articulated-car_bus.reaction-bounce #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-suspension-wheel 1800ms ease-in-out}
+.articulated-car_bus.reaction-bounce #living .expression-mouth{animation:cv8-smile 1800ms ease-in-out}
+.articulated-car_dumptruck.reaction-cab_bounce #living [data-part]{animation:cv8-suspension 1800ms ease-in-out}
+.articulated-car_dumptruck.reaction-cab_bounce #living :is([data-part="rearWheel"],[data-part="frontWheel"]){animation:cv8-suspension-wheel 1800ms ease-in-out}
+.articulated-car_dumptruck.reaction-cab_bounce #living .expression-mouth{animation:cv8-smile 1800ms ease-in-out}
+
+.articulated-car_compact.reaction-headlight #living [data-part="lamp"]{animation:cv8-light 2400ms ease-in-out}
+.articulated-car_compact.reaction-headlight #living .expression-eye{animation:cv8-blink 2400ms linear}
+.articulated-car_bus.reaction-windows #living [data-part="rearWindow"]{transform-origin:105px 171px;animation:cv8-open-window 2200ms ease-in-out}
+.articulated-car_fire.reaction-beacon #living [data-part="beacon"]{animation:cv8-light 2400ms ease-in-out}
+.articulated-car_fire.reaction-beacon #living .expression-eye{animation:cv8-blink 2400ms linear}
+.articulated-car_fire.reaction-shutter #living [data-part="equipment"]{transform-origin:101px 153px;animation:cv8-open-window 2200ms ease-in-out}
+.articulated-car_tractor.reaction-scoop #living :is([data-part="arm"],[data-part="bucket"]){transform-origin:183px 201px;animation:cv8-scoop 2600ms ease-in-out}
+.articulated-car_tractor.reaction-hill #living [data-part]{transform-origin:80px 254px;animation:cv8-hill 1800ms ease-in-out}
+.articulated-car_tractor.reaction-hill #living [data-part="rearWheel"]{animation:none}
+.articulated-car_dumptruck.reaction-tip #living :is([data-part="bed"],[data-part="cargo"]){transform-origin:43px 212px;animation:cv8-tip 2600ms ease-in-out}
+.articulated-car_ambulance.reaction-beacon #living [data-part="beacon"]{animation:cv8-light 2400ms ease-in-out}
+.articulated-car_ambulance.reaction-beacon #living .expression-eye{animation:cv8-blink 2400ms linear}
+.articulated-car_ambulance.reaction-door #living :is([data-part="door"],[data-part="heart"]){transform-origin:42px 173px;animation:cv8-door 2600ms ease-in-out}
+@keyframes cv8-drive-body{0%,50%,100%{transform:translate(0,0)}25%{transform:translate(6px,-2px)}75%{transform:translate(-6px,-2px)}}
+@keyframes cv8-drive-wheel{0%{transform:translateX(0) rotate(0)}25%{transform:translateX(6px) rotate(90deg)}50%{transform:translateX(0) rotate(180deg)}75%{transform:translateX(-6px) rotate(270deg)}100%{transform:translateX(0) rotate(360deg)}}
+@keyframes cv8-greeting{0%,100%{transform:translateY(0)}20%{transform:translateY(3px)}48%{transform:translateY(-9px)}75%{transform:translateY(2px)}}
+@keyframes cv8-greeting-wheel{0%,100%{transform:rotate(0)}20%{transform:rotate(-10deg)}48%{transform:translateY(-2px) rotate(20deg)}75%{transform:rotate(-5deg)}}
+@keyframes cv8-suspension{0%,100%{transform:translateY(0) scaleY(1)}18%{transform:translateY(3px) scaleY(.96)}42%{transform:translateY(-14px) scaleY(1.02)}66%{transform:translateY(3px) scaleY(.97)}83%{transform:translateY(-4px) scaleY(1)}}
+@keyframes cv8-suspension-wheel{0%,100%{transform:translateY(0) rotate(0)}18%{transform:scaleY(.95)}42%{transform:translateY(-5px) rotate(12deg)}66%{transform:scaleY(.96)}83%{transform:translateY(-1px) rotate(-5deg)}}
+@keyframes cv8-light{0%,100%{filter:drop-shadow(0 0 0 transparent)}22%,68%{filter:drop-shadow(0 0 10px #ffe590) drop-shadow(0 0 4px #fff3c4)}45%,88%{filter:drop-shadow(0 0 1px #ffe590)}}
+@keyframes cv8-open-window{0%,100%{transform:scaleY(1)}32%,65%{transform:scaleY(.12)}}
+@keyframes cv8-scoop{0%,100%{transform:rotate(0)}35%,65%{transform:rotate(-28deg)}}
+@keyframes cv8-hill{0%,100%{transform:rotate(0)}35%,60%{transform:rotate(-6deg)}}
+@keyframes cv8-tip{0%,100%{transform:rotate(0)}35%,65%{transform:rotate(-26deg)}}
+@keyframes cv8-door{0%,100%{transform:scaleX(1)}35%,65%{transform:scaleX(.12)}}
+@keyframes cv8-blink{0%,39%,53%,100%{transform:scaleY(1)}43%,48%{transform:scaleY(.16)}}
+@keyframes cv8-smile{0%,100%{transform:scale(1)}45%,65%{transform:scale(1.1,1.2)}}
+@media(prefers-reduced-motion:reduce){
+.articulated-car_compact,.articulated-car_compact #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_bus,.articulated-car_bus #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_fire,.articulated-car_fire #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_tractor,.articulated-car_tractor #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_dumptruck,.articulated-car_dumptruck #living *{animation:none!important;transform:none!important;filter:none!important}
+.articulated-car_ambulance,.articulated-car_ambulance #living *{animation:none!important;transform:none!important;filter:none!important}
+}

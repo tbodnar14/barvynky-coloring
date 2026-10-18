@@ -88,3 +88,22 @@ export const ANIMALS = {
     cameras: [{ x: 176, y: 72, scale: 1 }],
   },
 };
+
+// Selectable animation metadata only; released animal geometry is frozen.
+const animalReactionIcon=path=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#d7f2ff"/><path d="${path}" fill="none" stroke="#4e5595" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const animalIcons={
+ hop:animalReactionIcon('M16 44 Q32 7 48 44 M25 17 L32 10 L38 18 M22 53 L42 53'),
+ dance:animalReactionIcon('M17 20 L9 30 L18 40 M47 20 L55 30 L46 40 M25 43 Q32 50 39 43'),
+ tail:animalReactionIcon('M18 49 C45 50 46 31 34 23 C23 15 39 8 48 17 M11 19 L16 25 M54 29 L51 36'),
+ stretch:animalReactionIcon('M21 43 L21 22 L13 29 M21 22 L29 29 M43 21 L43 42 L35 35 M43 42 L51 35'),
+ turn:animalReactionIcon('M13 28 C16 8 47 10 51 31 C54 51 23 57 15 41 M10 20 L13 29 L23 25'),
+ ears:animalReactionIcon('M24 42 C13 29 14 9 22 12 C30 16 30 32 28 42 M36 42 C34 32 34 16 42 12 C50 9 51 29 40 42 M23 51 L41 51'),
+ hide:animalReactionIcon('M12 43 C12 14 52 14 52 43 Z M32 11 L32 31 M24 24 L32 32 L40 24'),
+};
+const animalReaction=(id,label,icon,loop=false,durationMs=1200)=>({id,label,icon:animalIcons[icon],loop,durationMs});
+ANIMALS.sheep.reactions=[animalReaction('hop','Підстрибнути','hop'),animalReaction('dance','Танцювати','dance',true,1500),animalReaction('tail-wag','Помахати хвостиком','tail',false,1800)];
+ANIMALS.cat.reactions=[animalReaction('hop','Підстрибнути','hop',false,900),animalReaction('dance','Танцювати','dance',true,1800),animalReaction('stretch','Потягнутися','stretch',false,2400)];
+ANIMALS.fish.reactions=[animalReaction('hop','Хлюпнути','hop',false,900),animalReaction('dance','Плавати','dance',true,2400),animalReaction('turn','Покружляти','turn',false,2600)];
+ANIMALS.rabbit.reactions=[animalReaction('hop','Підстрибнути','hop',false,900),animalReaction('dance','Танцювати','dance',true,1800),animalReaction('listen','Прислухатися','ears',false,2200)];
+ANIMALS.turtle.reactions=[animalReaction('hop','Привітатися','hop',false,1100),animalReaction('dance','Крокувати','dance',true,2800),animalReaction('hide','Сховатися','hide',false,2600)];
+ANIMALS.puppy.reactions=[animalReaction('hop','Підстрибнути','hop'),animalReaction('dance','Танцювати','dance',true,2000),animalReaction('tail-wag','Помахати хвостиком','tail',false,2000)];

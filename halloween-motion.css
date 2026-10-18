@@ -74,3 +74,125 @@
 .articulated-halloween_ghost:is(.dance,.hop) #living *,
 .articulated-halloween_bat:is(.dance,.hop) #living * {animation:none!important;transform:none!important;}
 }
+
+/* v0.8: explicit selectable choreography. Legacy rules above stay compatible. */
+.living-target.articulated-halloween_spider:is(.hop,.dance){animation:none}
+.articulated-halloween_spider #living [data-part]{transform-box:view-box}
+.articulated-halloween_spider #living [data-part="body"]{transform-origin:167px 211px}
+.articulated-halloween_spider #living [data-part="head"]{transform-origin:167px 166px}
+.articulated-halloween_spider #living [data-part="frontLeft"]{transform-origin:128px 182px}
+.articulated-halloween_spider #living [data-part="frontRight"]{transform-origin:207px 182px}
+.articulated-halloween_spider #living [data-part="rearLeft"]{transform-origin:131px 225px}
+.articulated-halloween_spider #living [data-part="rearRight"]{transform-origin:204px 225px}
+.living-target.articulated-halloween_hat:is(.hop,.dance){animation:none}
+.articulated-halloween_hat #living [data-part]{transform-box:view-box}
+.articulated-halloween_hat #living [data-part="crown"]{transform-origin:167px 231px}
+.articulated-halloween_hat #living [data-part="band"]{transform-origin:167px 231px}
+.articulated-halloween_hat #living [data-part="buckle"]{transform-origin:167px 231px}
+.articulated-halloween_hat #living [data-part="brim"]{transform-origin:167px 268px}
+.articulated-halloween_hat #living [data-part="star"]{transform-origin:254px 263px}
+.living-target.articulated-halloween_cauldron:is(.hop,.dance){animation:none}
+.articulated-halloween_cauldron #living [data-part]{transform-box:view-box}
+.articulated-halloween_cauldron #living [data-part="body"]{transform-origin:167px 282px}
+.articulated-halloween_cauldron #living [data-part="rim"]{transform-origin:167px 282px}
+.articulated-halloween_cauldron #living [data-part="leftHandle"]{transform-origin:91px 188px}
+.articulated-halloween_cauldron #living [data-part="rightHandle"]{transform-origin:244px 188px}
+.articulated-halloween_cauldron #living [data-part="leftBubble"]{transform-origin:120px 107px}
+.articulated-halloween_cauldron #living [data-part="rightBubble"]{transform-origin:205px 73px}
+.living-target.articulated-halloween_pumpkin[class*="reaction-"]{animation:none}
+.articulated-halloween_pumpkin #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.living-target.articulated-halloween_ghost[class*="reaction-"]{animation:none}
+.articulated-halloween_ghost #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.living-target.articulated-halloween_bat[class*="reaction-"]{animation:none}
+.articulated-halloween_bat #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.living-target.articulated-halloween_spider[class*="reaction-"]{animation:none}
+.articulated-halloween_spider #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.living-target.articulated-halloween_hat[class*="reaction-"]{animation:none}
+.articulated-halloween_hat #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.living-target.articulated-halloween_cauldron[class*="reaction-"]{animation:none}
+.articulated-halloween_cauldron #living :is(.expression-eye,.expression-mouth){transform-box:fill-box;transform-origin:center}
+.articulated-halloween_pumpkin.reaction-sway #living [data-part="body"],.articulated-halloween_pumpkin.reaction-sway #living [data-part="leftLobe"],.articulated-halloween_pumpkin.reaction-sway #living [data-part="rightLobe"]{animation:hw8-sway 2200ms ease-in-out infinite}
+.articulated-halloween_pumpkin.reaction-sway #living [data-part="stem"]{transform-origin:167px 284px;animation:hw8-pumpkin-stem 2200ms ease-in-out infinite}
+.articulated-halloween_pumpkin.reaction-sway #living [data-part="leaf"]{transform-origin:167px 284px;animation:hw8-pumpkin-leaf 2200ms ease-in-out infinite}
+.articulated-halloween_pumpkin.reaction-bounce #living [data-part="body"],.articulated-halloween_pumpkin.reaction-bounce #living [data-part="leftLobe"],.articulated-halloween_pumpkin.reaction-bounce #living [data-part="rightLobe"],.articulated-halloween_pumpkin.reaction-bounce #living [data-part="stem"],.articulated-halloween_pumpkin.reaction-bounce #living [data-part="leaf"]{transform-origin:167px 284px;animation:hw8-bounce 1400ms ease-in-out}
+.articulated-halloween_pumpkin.reaction-wink #living .expression-eye:first-of-type{animation:hw8-wink 1500ms ease-in-out}
+.articulated-halloween_pumpkin.reaction-wink #living .expression-mouth{animation:hw8-smile 1500ms ease-in-out}
+.articulated-halloween_pumpkin.reaction-wink #living [data-part="leaf"]{animation:hw8-leaf-wave 1500ms ease-in-out}
+.articulated-halloween_ghost.reaction-float #living [data-part="body"],.articulated-halloween_ghost.reaction-float #living [data-part="bowLeft"],.articulated-halloween_ghost.reaction-float #living [data-part="bowRight"],.articulated-halloween_ghost.reaction-float #living [data-part="leftArm"],.articulated-halloween_ghost.reaction-float #living [data-part="rightArm"]{animation:hw8-float 3000ms ease-in-out infinite}
+.articulated-halloween_ghost.reaction-wave #living [data-part="rightArm"]{animation:hw8-wave-right 1600ms ease-in-out}
+.articulated-halloween_ghost.reaction-wave #living .expression-eye{animation:hw8-wink 1600ms ease-in-out}
+.articulated-halloween_ghost.reaction-dance #living [data-part="body"],.articulated-halloween_ghost.reaction-dance #living [data-part="bowLeft"],.articulated-halloween_ghost.reaction-dance #living [data-part="bowRight"]{animation:hw8-sway 2000ms ease-in-out infinite}
+.articulated-halloween_ghost.reaction-dance #living [data-part="leftArm"]{transform-origin:167px 220px;animation:hw8-ghost-left 2000ms ease-in-out infinite}
+.articulated-halloween_ghost.reaction-dance #living [data-part="rightArm"]{transform-origin:167px 220px;animation:hw8-ghost-right 2000ms ease-in-out infinite}
+.articulated-halloween_bat.reaction-fly #living [data-part="body"],.articulated-halloween_bat.reaction-fly #living [data-part="belly"],.articulated-halloween_bat.reaction-fly #living [data-part="leftEar"],.articulated-halloween_bat.reaction-fly #living [data-part="rightEar"]{animation:hw8-bob 1600ms ease-in-out infinite}
+.articulated-halloween_bat.reaction-fly #living [data-part="leftWing"]{animation:hw8-flap-left 1600ms ease-in-out infinite}
+.articulated-halloween_bat.reaction-fly #living [data-part="rightWing"]{animation:hw8-flap-right 1600ms ease-in-out infinite}
+.articulated-halloween_bat.reaction-listen #living [data-part="leftEar"]{animation:hw8-listen-left 1800ms ease-in-out}
+.articulated-halloween_bat.reaction-listen #living [data-part="rightEar"]{animation:hw8-listen-right 1800ms ease-in-out}
+.articulated-halloween_bat.reaction-listen #living .expression-eye{animation:hw8-eyes-wide 1800ms ease-in-out}
+.articulated-halloween_bat.reaction-cuddle #living [data-part="leftWing"]{animation:hw8-cuddle-left 2000ms ease-in-out}
+.articulated-halloween_bat.reaction-cuddle #living [data-part="rightWing"]{animation:hw8-cuddle-right 2000ms ease-in-out}
+.articulated-halloween_bat.reaction-cuddle #living .expression-eye{animation:hw8-soft-eyes 2000ms ease-in-out}
+.articulated-halloween_spider.reaction-walk #living [data-part="frontLeft"],.articulated-halloween_spider.reaction-walk #living [data-part="rearRight"]{animation:hw8-walk-a 1800ms ease-in-out infinite}
+.articulated-halloween_spider.reaction-walk #living [data-part="frontRight"],.articulated-halloween_spider.reaction-walk #living [data-part="rearLeft"]{animation:hw8-walk-b 1800ms ease-in-out infinite}
+.articulated-halloween_spider.reaction-walk #living [data-part="head"],.articulated-halloween_spider.reaction-walk #living [data-part="body"]{animation:hw8-bob 1800ms ease-in-out infinite}
+.articulated-halloween_spider.reaction-wave #living [data-part="frontRight"]{animation:hw8-wave-right 1700ms ease-in-out}
+.articulated-halloween_spider.reaction-wave #living [data-part="head"]{animation:hw8-nod 1700ms ease-in-out}
+.articulated-halloween_spider.reaction-curl #living [data-part="frontLeft"],.articulated-halloween_spider.reaction-curl #living [data-part="rearLeft"]{animation:hw8-curl-left 1900ms ease-in-out}
+.articulated-halloween_spider.reaction-curl #living [data-part="frontRight"],.articulated-halloween_spider.reaction-curl #living [data-part="rearRight"]{animation:hw8-curl-right 1900ms ease-in-out}
+.articulated-halloween_spider.reaction-curl #living [data-part="head"]{animation:hw8-tuck 1900ms ease-in-out}
+.articulated-halloween_hat.reaction-bow #living [data-part="crown"],.articulated-halloween_hat.reaction-bow #living [data-part="band"],.articulated-halloween_hat.reaction-bow #living [data-part="buckle"]{animation:hw8-bow 1500ms ease-in-out}
+.articulated-halloween_hat.reaction-bow #living [data-part="brim"],.articulated-halloween_hat.reaction-bow #living [data-part="star"]{transform-origin:167px 268px;animation:hw8-brim-bow 1500ms ease-in-out}
+.articulated-halloween_hat.reaction-magic #living [data-part="star"]{animation:hw8-star 2600ms ease-in-out infinite}
+.articulated-halloween_hat.reaction-magic #living [data-part="crown"],.articulated-halloween_hat.reaction-magic #living [data-part="band"],.articulated-halloween_hat.reaction-magic #living [data-part="buckle"]{animation:hw8-hat-quiver 2600ms ease-in-out infinite}
+.articulated-halloween_hat.reaction-magic #living .expression-eye:first-of-type{animation:hw8-wink 2600ms ease-in-out infinite}
+.articulated-halloween_hat.reaction-bounce #living [data-part="crown"],.articulated-halloween_hat.reaction-bounce #living [data-part="band"],.articulated-halloween_hat.reaction-bounce #living [data-part="buckle"],.articulated-halloween_hat.reaction-bounce #living [data-part="brim"],.articulated-halloween_hat.reaction-bounce #living [data-part="star"]{transform-origin:167px 288px;animation:hw8-bounce 1500ms ease-in-out}
+.articulated-halloween_cauldron.reaction-bubble #living [data-part="leftBubble"]{animation:hw8-bubble-a 2400ms ease-in-out infinite}
+.articulated-halloween_cauldron.reaction-bubble #living [data-part="rightBubble"]{animation:hw8-bubble-b 2400ms ease-in-out infinite}
+.articulated-halloween_cauldron.reaction-rock #living [data-part="body"],.articulated-halloween_cauldron.reaction-rock #living [data-part="rim"],.articulated-halloween_cauldron.reaction-rock #living [data-part="leftHandle"],.articulated-halloween_cauldron.reaction-rock #living [data-part="rightHandle"],.articulated-halloween_cauldron.reaction-rock #living [data-part="leftBubble"],.articulated-halloween_cauldron.reaction-rock #living [data-part="rightBubble"]{transform-origin:167px 282px;animation:hw8-sway 2100ms ease-in-out infinite}
+.articulated-halloween_cauldron.reaction-wave #living [data-part="rightHandle"]{animation:hw8-handle-wave 1700ms ease-in-out}
+.articulated-halloween_cauldron.reaction-wave #living .expression-eye:first-of-type{animation:hw8-wink 1700ms ease-in-out}
+.articulated-halloween_spider.dance #living [data-part="frontLeft"],.articulated-halloween_spider.dance #living [data-part="rearRight"]{animation:hw8-walk-a 1800ms ease-in-out infinite}
+.articulated-halloween_spider.hop #living [data-part="frontLeft"],.articulated-halloween_spider.hop #living [data-part="rearRight"]{animation:hw8-walk-a 1100ms ease-in-out}
+.articulated-halloween_spider.dance #living [data-part="frontRight"],.articulated-halloween_spider.dance #living [data-part="rearLeft"]{animation:hw8-walk-b 1800ms ease-in-out infinite}
+.articulated-halloween_spider.hop #living [data-part="frontRight"],.articulated-halloween_spider.hop #living [data-part="rearLeft"]{animation:hw8-walk-b 1100ms ease-in-out}
+.articulated-halloween_hat.dance #living [data-part="crown"],.articulated-halloween_hat.dance #living [data-part="band"],.articulated-halloween_hat.dance #living [data-part="buckle"]{animation:hw8-bow 1500ms ease-in-out infinite}
+.articulated-halloween_hat.hop #living [data-part="crown"],.articulated-halloween_hat.hop #living [data-part="band"],.articulated-halloween_hat.hop #living [data-part="buckle"]{animation:hw8-bow 1100ms ease-in-out}
+.articulated-halloween_cauldron.dance #living [data-part="leftBubble"]{animation:hw8-bubble-a 2400ms ease-in-out infinite}
+.articulated-halloween_cauldron.hop #living [data-part="leftBubble"]{animation:hw8-bubble-a 1100ms ease-in-out}
+.articulated-halloween_cauldron.dance #living [data-part="rightBubble"]{animation:hw8-bubble-b 2400ms ease-in-out infinite}
+.articulated-halloween_cauldron.hop #living [data-part="rightBubble"]{animation:hw8-bubble-b 1100ms ease-in-out}
+@keyframes hw8-sway{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes hw8-pumpkin-stem{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg) translate(0,-188px) rotate(-5deg) translate(0,188px)}75%{transform:rotate(3deg) translate(0,-188px) rotate(5deg) translate(0,188px)}}
+@keyframes hw8-pumpkin-leaf{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg) translate(14px,-194px) rotate(9deg) translate(-14px,194px)}75%{transform:rotate(3deg) translate(14px,-194px) rotate(-9deg) translate(-14px,194px)}}
+@keyframes hw8-bounce{0%,100%{transform:translateY(0) scale(1)}18%{transform:scale(1.035,.96)}43%{transform:translateY(-12px) scale(.99,1.01)}72%{transform:scale(1.02,.98)}}
+@keyframes hw8-wink{0%,25%,65%,100%{transform:scaleY(1)}40%,50%{transform:scaleY(.18)}}
+@keyframes hw8-smile{0%,100%{transform:scale(1)}40%,60%{transform:scale(1.12,1.04)}}
+@keyframes hw8-leaf-wave{0%,100%{transform:rotate(0)}25%,60%{transform:rotate(11deg)}40%,75%{transform:rotate(-7deg)}}
+@keyframes hw8-float{0%,100%{transform:translate(0,0)}25%{transform:translate(5px,-8px)}50%{transform:translate(0,-12px)}75%{transform:translate(-5px,-8px)}}
+@keyframes hw8-wave-right{0%,100%{transform:rotate(0)}25%,65%{transform:rotate(-18deg)}45%,80%{transform:rotate(4deg)}}
+@keyframes hw8-ghost-left{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg) translate(-76px,-45px) rotate(10deg) translate(76px,45px)}75%{transform:rotate(3deg) translate(-76px,-45px) rotate(-5deg) translate(76px,45px)}}
+@keyframes hw8-ghost-right{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-3deg) translate(77px,-45px) rotate(5deg) translate(-77px,45px)}75%{transform:rotate(3deg) translate(77px,-45px) rotate(-10deg) translate(-77px,45px)}}
+@keyframes hw8-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-3px)}}
+@keyframes hw8-flap-left{0%,50%,100%{transform:rotate(0) scaleX(1)}25%,75%{transform:translateY(-3px) rotate(10deg) scaleX(.8)}}
+@keyframes hw8-flap-right{0%,50%,100%{transform:rotate(0) scaleX(1)}25%,75%{transform:translateY(-3px) rotate(-10deg) scaleX(.8)}}
+@keyframes hw8-listen-left{0%,45%,100%{transform:rotate(0)}20%,30%{transform:translate(-39px,-127px) rotate(-10deg) translate(39px,127px)}}
+@keyframes hw8-listen-right{0%,45%,100%{transform:rotate(0)}65%,75%{transform:translate(39px,-127px) rotate(10deg) translate(-39px,127px)}}
+@keyframes hw8-eyes-wide{0%,100%{transform:scaleY(1)}25%,70%{transform:scaleY(1.2)}}
+@keyframes hw8-cuddle-left{0%,100%{transform:scaleX(1) rotate(0)}35%,65%{transform:scaleX(.47) rotate(-8deg)}}
+@keyframes hw8-cuddle-right{0%,100%{transform:scaleX(1) rotate(0)}35%,65%{transform:scaleX(.47) rotate(8deg)}}
+@keyframes hw8-soft-eyes{0%,100%{transform:scaleY(1)}35%,65%{transform:scaleY(.4)}}
+@keyframes hw8-walk-a{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(6deg) translateY(-2px)}75%{transform:rotate(-6deg)}}
+@keyframes hw8-walk-b{0%,50%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg) translateY(-2px)}}
+@keyframes hw8-nod{0%,100%{transform:rotate(0)}35%,65%{transform:rotate(6deg)}}
+@keyframes hw8-curl-left{0%,100%{transform:scaleX(1) rotate(0)}35%,65%{transform:scaleX(.75) rotate(-9deg)}}
+@keyframes hw8-curl-right{0%,100%{transform:scaleX(1) rotate(0)}35%,65%{transform:scaleX(.75) rotate(9deg)}}
+@keyframes hw8-tuck{0%,100%{transform:translateY(0)}35%,65%{transform:translateY(6px)}}
+@keyframes hw8-bow{0%,100%{transform:rotate(0) scaleY(1)}40%,60%{transform:rotate(7deg) scaleY(.93)}}
+@keyframes hw8-brim-bow{0%,100%{transform:scaleY(1)}40%,60%{transform:scaleY(.94)}}
+@keyframes hw8-star{0%,100%{transform:scale(1) rotate(0)}33%{transform:scale(1.15) rotate(9deg)}66%{transform:scale(1.1) rotate(-9deg)}}
+@keyframes hw8-hat-quiver{0%,35%,70%,100%{transform:rotate(0)}40%,60%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+@keyframes hw8-bubble-a{0%,50%,100%{transform:translateY(0) scale(1)}25%{transform:translateY(-16px) scale(1.08)}}
+@keyframes hw8-bubble-b{0%,50%,100%{transform:translateY(0) scale(1)}75%{transform:translateY(-12px) scale(1.06)}}
+@keyframes hw8-handle-wave{0%,100%{transform:rotate(0)}25%,65%{transform:rotate(-18deg)}45%,80%{transform:rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.articulated-halloween_pumpkin:is([class*="reaction-"],.hop,.dance) #living *,.articulated-halloween_ghost:is([class*="reaction-"],.hop,.dance) #living *,.articulated-halloween_bat:is([class*="reaction-"],.hop,.dance) #living *,.articulated-halloween_spider:is([class*="reaction-"],.hop,.dance) #living *,.articulated-halloween_hat:is([class*="reaction-"],.hop,.dance) #living *,.articulated-halloween_cauldron:is([class*="reaction-"],.hop,.dance) #living *{animation:none!important;transform:none!important}}

@@ -108,3 +108,24 @@ const turtle = {
 };
 
 export const NEW_ANIMALS = { rabbit, turtle };
+
+// Original puppy: floppy ears, broad muzzle and short rounded paws.
+// Appended content leaves both released NEW_ANIMALS models untouched.
+const puppyCamera=()=>({x:110,y:100,scale:1.9});
+NEW_ANIMALS.puppy={
+ name:'Цуцик',viewBox:'0 0 335 332',
+ steps:['head','leftEar','rightEar','body','chest','tail','paws','muzzle'],detailsPart:'muzzle',
+ parts:[
+  {id:'tail',label:'Хвостик',d:'M220 244 C249 253 265 236 263 210 C261 187 273 178 286 190 C303 207 297 238 282 257 C266 278 239 279 220 265 Z'},
+  {id:'body',label:'Тулуб',d:'M145 168 C121 178 109 207 109 250 C108 283 129 298 168 298 C207 298 230 283 229 250 C229 207 217 178 191 168 Z'},
+  {id:'leftEar',label:'Ліве висяче вушко',d:'M108 76 C84 60 65 76 59 103 C51 130 49 175 67 193 C78 205 96 195 104 177 C113 155 119 119 121 96 Z'},
+  {id:'rightEar',label:'Праве висяче вушко',d:'M226 76 C250 60 269 76 275 103 C283 130 285 175 267 193 C256 205 238 195 230 177 C221 155 215 119 213 96 Z'},
+  {id:'head',label:'Голівка',d:'M167 57 C120 57 89 85 90 128 C88 169 114 196 167 196 C220 196 246 169 244 128 C245 85 214 57 167 57 Z',details:'<g fill="#20252b"><ellipse class="expression-eye" cx="137" cy="123" rx="7" ry="9"/><ellipse class="expression-eye" cx="197" cy="123" rx="7" ry="9"/></g>'},
+  {id:'chest',label:'Грудка',d:'M167 207 C146 207 132 226 132 250 C132 272 145 285 167 285 C189 285 202 272 202 250 C202 226 188 207 167 207 Z'},
+  {id:'paws',label:'Круглі лапки',d:'M117 271 C94 271 79 282 82 297 C84 310 103 314 123 312 C144 311 153 304 150 291 C148 279 134 271 117 271 Z M217 271 C240 271 255 282 252 297 C250 310 231 314 211 312 C190 311 181 304 184 291 C186 279 200 271 217 271 Z',details:'<path d="M104 295 L104 303 M119 296 L119 305 M215 296 L215 305 M230 295 L230 303" fill="none" stroke="#493425" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>'},
+  {id:'muzzle',label:'Мордочка',d:'M167 148 C149 135 118 142 112 164 C105 188 127 207 149 204 Q167 213 185 204 C207 207 229 188 222 164 C216 142 185 135 167 148 Z'},
+ ],
+ details:'<path d="M152 158 C152 149 182 149 182 158 C181 168 172 174 167 174 C162 174 153 168 152 158 Z" fill="#20252b"/><path class="expression-mouth" d="M167 174 L167 184 M148 182 Q151 196 167 185 Q183 196 186 182" fill="none" stroke="#20252b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>',
+ cameras:[{x:-90,y:0,scale:3},puppyCamera(),puppyCamera(),puppyCamera(),puppyCamera(),puppyCamera(),puppyCamera(),puppyCamera()],
+ rig:{head:[167,184],muzzle:[167,184],leftEar:[167,184],rightEar:[167,184],body:[167,278],chest:[167,278],tail:[229,256],paws:[167,296]},
+};

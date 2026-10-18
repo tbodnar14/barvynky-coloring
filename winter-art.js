@@ -40,4 +40,76 @@ const mittens={
  ],details:face(105,157),cameras:Array.from({length:6},camera),
  rig:{left:[118,266],leftCuff:[118,266],leftPatch:[118,266],right:[217,266],rightCuff:[217,266],rightPatch:[217,266]},
 };
-export const CHARACTERS={winter_snowman:snowman,winter_tree:tree,winter_mittens:mittens};
+
+// New v0.8 subjects use closed paint regions; released vectors above stay untouched.
+const penguin={name:'Пінгвін',viewBox:'0 0 335 332',
+ steps:['body','bib','leftWing','rightWing','leftFoot','rightFoot','beak'],detailsPart:'bib',
+ parts:[
+ {id:'leftWing',label:'Ліве крильце',d:'M104 137 Q62 145 47 204 Q40 232 55 237 Q76 241 102 191 L123 159 Z'},
+ {id:'rightWing',label:'Праве крильце',d:'M231 137 Q273 145 288 204 Q295 232 280 237 Q259 241 233 191 L212 159 Z'},
+ {id:'leftFoot',label:'Ліва лапка',d:'M117 274 Q97 283 84 301 Q79 311 94 314 L150 314 Q161 311 156 300 L148 277 Z'},
+ {id:'rightFoot',label:'Права лапка',d:'M218 274 Q238 283 251 301 Q256 311 241 314 L185 314 Q174 311 179 300 L187 277 Z'},
+ {id:'body',label:'Пінгвінчик',d:'M167 28 C111 28 89 75 91 129 C68 180 77 257 113 281 Q167 311 222 281 C258 257 267 180 244 129 C246 75 223 28 167 28 Z'},
+ {id:'bib',label:'Світла грудка',d:'M167 99 C151 71 118 77 112 108 C109 125 119 137 119 147 C98 175 96 239 126 260 Q167 283 209 260 C239 239 237 175 216 147 C216 137 226 125 223 108 C217 77 184 71 167 99 Z'},
+ {id:'beak',label:'Дзьобик',d:'M148 132 Q167 125 187 132 Q193 135 188 143 L174 158 Q167 163 160 158 L146 143 Q141 135 148 132 Z'},
+ ],details:face(167,117),cameras:Array.from({length:7},camera),
+ rig:{body:[167,280],bib:[167,280],leftWing:[106,151],rightWing:[229,151],leftFoot:[132,291],rightFoot:[203,291],beak:[167,280]},
+};
+const sled={name:'Санчата',viewBox:'0 0 335 332',
+ steps:['rearRunner','frontRunner','seat','backrest','cushion','rope'],detailsPart:'cushion',
+ parts:[
+ {id:'rearRunner',label:'Дальня полозка',d:'M65 207 L79 207 L84 249 L253 249 Q281 249 284 226 Q285 216 296 219 Q304 223 299 240 Q290 267 258 267 L58 267 Q43 267 43 257 Q43 249 55 249 L69 249 Z'},
+ {id:'backrest',label:'Спинка',d:'M65 105 Q63 91 77 89 L108 89 Q121 89 124 103 L144 212 L89 218 Z'},
+ {id:'seat',label:'Сидіння',d:'M77 201 Q78 192 92 191 L244 191 Q258 191 258 204 L255 225 Q254 233 241 233 L88 233 Q77 233 77 223 Z'},
+ {id:'frontRunner',label:'Ближня полозка',d:'M96 224 L112 224 L115 277 L230 277 L234 224 L250 224 L246 277 L267 277 Q291 277 299 251 Q302 240 312 244 Q320 249 313 265 Q301 294 267 295 L66 295 Q53 295 53 286 Q53 277 66 277 L100 277 Z'},
+ {id:'cushion',label:'М’яка подушка',d:'M112 144 Q171 127 232 145 Q247 151 243 172 L240 196 Q238 207 224 207 L116 207 Q104 207 103 195 L101 164 Q100 150 112 144 Z'},
+ {id:'rope',label:'Мотузочка',d:'M250 196 Q265 142 298 131 Q320 121 322 142 Q324 165 307 188 Q301 196 294 189 Q290 184 296 176 Q310 156 307 148 Q296 143 283 160 Q272 174 265 201 Z'},
+ ],details:face(173,164),cameras:Array.from({length:6},camera),
+ rig:{rearRunner:[173,286],frontRunner:[173,286],seat:[173,286],backrest:[173,286],cushion:[173,286],rope:[256,197]},
+};
+const snowglobe={name:'Снігова куля',viewBox:'0 0 335 332',
+ steps:['dome','base','snowbank','cottage','roof','snowflakes'],detailsPart:'cottage',
+ parts:[
+ {id:'dome',label:'Скляна куля',d:'M167 28 C94 28 43 78 43 150 C43 209 79 251 118 267 L216 267 C255 251 291 209 291 150 C291 78 240 28 167 28 Z'},
+ {id:'snowbank',label:'Сніговий пагорб',d:'M66 214 Q111 180 156 205 Q195 178 267 212 Q247 246 212 260 L122 260 Q87 244 66 214 Z'},
+ {id:'cottage',label:'Хатинка',d:'M114 143 L167 107 L220 143 L220 228 Q168 241 114 228 Z'},
+ {id:'roof',label:'Дах',d:'M103 151 Q98 146 105 139 L157 91 Q167 82 177 91 L230 139 Q238 148 230 152 L218 155 L168 115 L117 155 Z'},
+ {id:'snowflakes',label:'Сніжинки',d:'M95 99 A11 11 0 1 0 73 99 A11 11 0 1 0 95 99 Z M250 95 A11 11 0 1 0 228 95 A11 11 0 1 0 250 95 Z M180 61 A11 11 0 1 0 158 61 A11 11 0 1 0 180 61 Z',details:'<path d="M79 96 L85 102 M85 96 L79 102 M235 92 L241 98 M241 92 L235 98 M166 58 L172 64 M172 58 L166 64" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>'},
+ {id:'base',label:'Підставка',d:'M112 250 Q167 268 222 250 L247 283 Q255 295 241 300 Q167 320 93 300 Q79 295 87 283 Z',details:'<path d="M103 284 Q167 301 231 284" fill="none" stroke="#263b48" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/>'},
+ ],details:face(167,178),cameras:Array.from({length:6},camera),
+ rig:{dome:[167,261],base:[167,299],snowbank:[167,261],cottage:[167,229],roof:[167,229],snowflakes:[167,261]},
+};
+// Compact, original action drawings. Icons are standalone SVG, without external assets.
+const actionIcon=(paths)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">${paths}</g></svg>`;
+const reaction=(id,label,paths,durationMs=2400,loop=false)=>({id,label,icon:actionIcon(paths),loop,durationMs});
+snowman.reactions=[
+ reaction('winter_greet','Привіт','<path d="M14 36 L14 17 Q14 12 18 15 L22 26 L23 9 Q25 5 28 10 L28 24 L34 13 Q38 10 39 15 L33 34 Q26 45 14 36 M6 10 L9 14 M37 4 L34 7"/>'),
+ reaction('winter_bow','Уклін','<circle cx="31" cy="14" r="6"/><path d="M25 22 L16 19 L10 33 M17 20 L25 35 M31 28 Q36 29 39 24 M38 19 L39 24 L44 24"/>'),
+ reaction('winter_jump','Підстрибнути','<path d="M10 39 H38 M24 30 V7 M16 15 L24 7 L32 15 M14 31 Q24 21 34 31"/>',1800),
+];
+tree.reactions=[
+ reaction('winter_wind','Вітер','<path d="M5 16 H31 Q42 16 39 9 Q36 3 31 8 M7 24 H38 M5 32 H28 Q38 32 35 39 Q31 44 27 39"/>',2800,true),
+ reaction('winter_star','Зірочка','<path d="M24 9 L28 20 L40 20 L30 27 L34 39 L24 32 L14 39 L18 27 L8 20 L20 20 Z"/>'),
+ reaction('winter_baubles','Кульки','<circle cx="13" cy="31" r="7"/><circle cx="35" cy="31" r="7"/><path d="M13 18 V6 M8 11 L13 6 L18 11 M35 18 V6 M30 11 L35 6 L40 11"/>'),
+];
+mittens.reactions=[
+ reaction('winter_clap','Хлопки','<path d="M5 35 L13 19 Q17 15 20 20 L22 35 Z M43 35 L35 19 Q31 15 28 20 L26 35 Z M24 5 V12 M12 8 L17 13 M36 8 L31 13"/>'),
+ reaction('winter_wave','Помахати','<path d="M17 40 L12 26 Q9 20 13 18 L19 24 V10 Q22 4 25 10 L26 23 Q38 15 36 27 L30 40 Z M6 7 L9 11 M36 6 L33 11"/>'),
+ reaction('winter_hops','Стрибки','<path d="M7 37 Q9 29 16 29 Q23 29 25 37 Z M27 24 Q29 16 36 16 Q43 16 44 24 Z M15 21 V7 M10 12 L15 7 L20 12 M35 35 V40"/>'),
+];
+penguin.reactions=[
+ reaction('winter_flap','Крильця','<path d="M24 37 C10 34 4 24 6 12 Q20 15 24 26 Q28 15 42 12 C44 24 38 34 24 37 Z M9 5 L13 9 M39 5 L35 9"/>',2200,true),
+ reaction('winter_waddle','Крокувати','<ellipse cx="15" cy="19" rx="6" ry="10" transform="rotate(-15 15 19)"/><ellipse cx="32" cy="31" rx="6" ry="10" transform="rotate(15 32 31)"/>',2200,true),
+ reaction('winter_slide','Ковзати','<path d="M6 33 H42 L34 25 M17 11 Q31 6 35 19 L12 24 Q7 18 17 11 Z M5 41 H29"/>',2600),
+];
+sled.reactions=[
+ reaction('winter_ride','Їхати','<path d="M8 19 H33 V30 H12 Z M7 36 H35 Q42 36 42 29 M4 11 H18 M4 25 H8 M32 8 H42 L37 4 M42 8 L37 12"/>',2600,true),
+ reaction('winter_rock','Гойдатися','<path d="M9 21 H37 L33 31 H14 Z M6 31 Q24 46 42 31 M9 7 L4 13 L12 14 M4 13 Q24 1 41 13"/>'),
+ reaction('winter_bump','На горбочку','<path d="M5 39 Q24 17 43 39 M12 18 H35 M16 13 V18 M31 13 V18 M24 4 V10 M20 8 L24 4 L28 8"/>',1800),
+];
+snowglobe.reactions=[
+ reaction('winter_snowfall','Снігопад','<path d="M12 6 V20 M6 13 H18 M8 9 L16 17 M16 9 L8 17 M34 21 V37 M26 29 H42 M29 24 L39 34 M39 24 L29 34 M12 29 V41 M8 37 L12 41 L16 37"/>',2800,true),
+ reaction('winter_shake','Похитати','<circle cx="24" cy="20" r="12"/><path d="M15 32 L12 41 H36 L33 32 M4 12 V29 M1 25 L4 29 L7 25 M44 10 V27 M41 14 L44 10 L47 14"/>'),
+ reaction('winter_cottage','Хатинка','<path d="M11 37 V23 L24 12 L37 23 V37 Z M7 24 L24 9 L41 24 M20 37 V28 H28 V37 M16 4 L14 1 M32 4 L34 1"/>'),
+];
+export const CHARACTERS={winter_snowman:snowman,winter_tree:tree,winter_mittens:mittens,winter_penguin:penguin,winter_sled:sled,winter_snowglobe:snowglobe};
