@@ -1,0 +1,26 @@
+/* Small controls use the same illustrated buttons as the existing scene. */
+.touch-undo{left:calc(25 * var(--u));top:calc(137 * var(--u));min-width:48px;min-height:48px}
+.touch-undo:disabled{opacity:.4}
+.gallery-undo{right:calc(23 * var(--u));top:calc(24 * var(--u));min-width:48px;min-height:48px}
+.delete-dialog{width:min(440px,88vw);padding:20px;border:5px solid #287bb1;border-radius:22px;background:#e5f7ff;color:#234b67;box-shadow:0 8px 0 #125596;text-align:center;max-height:90dvh}
+.delete-dialog::backdrop{background:#14253699}
+.delete-dialog h2{font-size:clamp(20px,3vw,26px);margin:0 0 12px}
+.delete-preview{height:min(190px,26dvh);background:#fff;border-radius:12px;padding:10px}
+.delete-preview svg{width:100%;height:100%}
+.delete-options{display:flex;justify-content:space-around;gap:24px;margin-top:18px}
+.delete-options .game-button{position:relative;width:76px;height:76px;flex:none}
+.delete-options button:disabled{opacity:.4}
+.feed-button{position:absolute;left:calc(28 * var(--u));bottom:calc(28 * var(--u));width:clamp(72px,calc(112 * var(--u)),128px);min-height:80px;z-index:7;touch-action:none}
+.feed-button svg{height:auto;filter:drop-shadow(0 3px 0 #0002)}
+.feed-button span{display:block;font-size:clamp(12px,calc(16 * var(--u)),18px);font-weight:bold;color:#466a26;background:#eefad7;border-radius:18px;padding:5px 3px}
+.feed-button.feeding-now{opacity:.55}
+.flying-food{position:fixed;width:70px;height:70px;transform:translate(-50%,-50%);z-index:90;pointer-events:none}
+.flying-food svg{width:100%;height:100%}
+.food-drop-zone{position:fixed;transform:translate(-50%,-50%);border:4px dashed #83ce4a;border-radius:50%;background:#b6e85a22;pointer-events:none;z-index:80}
+.living-target.feeding [data-feed-face]{transform-box:fill-box;transform-origin:center 75%;animation:food-chew .32s ease-in-out 4}
+.feed-heart{position:absolute;left:75%;top:2%;width:clamp(32px,calc(55 * var(--u)),64px);height:clamp(32px,calc(55 * var(--u)),64px);pointer-events:none;animation:food-heart 1.2s ease-out}
+@keyframes food-chew{50%{transform:scale(1.04,.87)}}
+@keyframes food-heart{from{opacity:0;transform:translateY(12px) scale(.5)}30%{opacity:1}to{opacity:0;transform:translateY(-20px) scale(1.15)}}
+@media(prefers-reduced-motion:reduce){.living-target.feeding [data-feed-face],.feed-heart{animation:none}.feed-heart{opacity:1}}
+/* Enlarge the baby's touch hit area without changing its visual layout. */
+.people-mode:after{content:'';position:absolute;left:0;right:0;top:50%;height:max(100%,44px);transform:translateY(-50%)}

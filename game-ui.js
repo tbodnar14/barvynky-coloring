@@ -19,6 +19,7 @@ const toolTones = {pencil:'cyan',fill:'yellow',spray:'purple',crayon:'green',era
 function sign(kind) {
   const signs = {
     home:'<path d="M22 45Q24 40 45 22Q50 18 55 22L79 43Q83 49 75 49H72V75Q72 80 67 80H55V61Q55 58 51 58H43Q39 58 39 62V80H30Q25 80 25 75V49Q18 49 22 45Z"/><rect x="58" y="58" width="10" height="12" rx="2" fill="#1cb8f4"/>',
+    undo:'<path d="M22 22V49H49L39 39Q59 31 70 45Q83 65 61 76Q47 81 36 70L26 79Q47 100 72 83Q96 64 81 40Q65 16 31 29Z"/>',
     back:'<path d="M22 46L43 29Q48 25 49 31L50 38H70Q78 38 78 47V55Q78 62 71 62H50L49 70Q48 75 43 72L22 55Q16 50 22 46Z"/>',
     next:'<path d="M78 46L57 29Q52 25 51 31L50 38H30Q22 38 22 47V55Q22 62 29 62H50L51 70Q52 75 57 72L78 55Q84 50 78 46Z"/>',
     gallery:'<path fill-rule="evenodd" d="M25 24H75Q81 24 81 30V73Q81 79 75 79H25Q19 79 19 73V30Q19 24 25 24ZM27 32V61L42 49L54 59L66 44L74 51V32Z"/><circle cx="39" cy="41" r="5"/>',
