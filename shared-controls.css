@@ -15,3 +15,82 @@
 .reaction-strip[data-model-reactions] button[aria-pressed="true"]{background:#45c7fb}
 
 .reaction-strip[data-model-reactions] button[aria-pressed="false"]{background:transparent}
+
+/* Completion controls: one joined strip attached to the purple reaction
+   button, with the separate brush on its left, as in the supplied reference.
+   Only this screen changes; category artwork and painting remain untouched. */
+.completion .living-target{
+ width:calc(335 * var(--u));
+ height:calc(332 * var(--u));
+}
+.completion .reactions{
+ --reaction-u:var(--u);
+ width:max-content;
+ left:calc(50% - 110 * var(--reaction-u));
+ bottom:max(calc(33 * var(--reaction-u)),env(safe-area-inset-bottom));
+ height:calc(90 * var(--reaction-u));
+ gap:0;
+ align-items:stretch;
+}
+.completion .reactions>.game-button{
+ width:calc(90 * var(--reaction-u));
+ height:calc(90 * var(--reaction-u));
+ flex:0 0 calc(90 * var(--reaction-u));
+}
+.completion .reactions>[data-action="restart"]{
+ margin-right:calc(40 * var(--reaction-u));
+}
+.completion .reactions>[data-action="reactions"]{z-index:2}
+.completion .reaction-strip{
+ position:relative;
+ left:auto;
+ top:auto;
+ z-index:1;
+ flex:0 0 calc(278 * var(--reaction-u));
+ width:calc(278 * var(--reaction-u));
+ height:calc(90 * var(--reaction-u));
+ margin-left:calc(-6 * var(--reaction-u));
+ border:calc(4 * var(--reaction-u)) solid #656a6d;
+ border-left:0;
+ border-radius:0 calc(19 * var(--reaction-u)) calc(19 * var(--reaction-u)) 0;
+ background:#aeb2b5;
+ box-shadow:0 calc(4 * var(--reaction-u)) 0 #0002;
+ overflow:hidden;
+}
+.completion .reaction-strip[data-model-reactions]{overflow:hidden}
+.completion .reaction-strip button,
+.completion .reaction-strip[data-model-reactions] button{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex:1 1 0;
+ min-width:0;
+ color:#686f73;
+ border-left:calc(3 * var(--reaction-u)) solid #656a6d;
+}
+.completion .reaction-strip button:first-child,
+.completion .reaction-strip[data-model-reactions] button[aria-pressed="false"]{
+ background:#aeb2b5;
+}
+.completion .reaction-strip[data-model-reactions] button[aria-pressed="true"]{
+ background:#27c3f8;
+ color:#039cdb;
+}
+.completion .reaction-strip button:focus-visible{
+ outline:calc(4 * var(--reaction-u)) solid white;
+ outline-offset:calc(-6 * var(--reaction-u));
+}
+.completion .reaction-strip svg{
+ position:static;
+ width:90%;
+ height:90%;
+ margin:0;
+ flex:none;
+}
+@media(max-width:600px){
+ .completion .reactions{
+  --reaction-u:.5px;
+  left:50%;
+  transform:translateX(-50%);
+ }
+}
