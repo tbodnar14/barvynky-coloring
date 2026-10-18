@@ -1,6 +1,6 @@
 {
-  "version": "0.8.0",
-  "deployment": "github-pages",
+  "version": "0.8.1-rc1",
+  "deployment": "canonical-paint-qa",
   "source_checkpoints": {
     "animals": "5dfb5d7825bc979b99c56edabe138fbb09d36f0b",
     "dinosaurs": "9019cd44b2b223bd1b5905bc1fe6aab112dbd0b3",
